@@ -55,16 +55,18 @@ puts '(2/6) Creating new users...'
 
 investor1 = User.new(
     type: "investor",
+    email: "klaus@lakestar.com",
+    password: "123456",
     first_name: "Klaus",
     last_name: "Hommels",
     mobile: "015678240008",
     company_name: "Lakestar",
-    position: "General Partner"
+    position: "General Partner",
     company_city: "London, United Kingdom",
     sectors: "Mobility, Food, FinTech",
     ticket_size_min: "100000",
     ticket_size_max: "3000000",
-    stage: "Seed, Series All, Series B, Later",
+    stage: "Seed, Series A, Series B, Later",
     selling_to: "B2C, B2B",
     generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
@@ -72,66 +74,183 @@ investor1 = User.new(
   investor1.save!
 
 investor2 = User.new(
-    first_name: "Dominik",
-    last_name: "Wojciechowsk",
-    email: "dominik.wojciechowski@gmail.com",
-    password: "123456")
+    type: "investor",
+    email: "diana@index-venturesd.com",
+    password: "123456",
+    first_name: "Diana",
+    last_name: "von Fürstenberg",
+    mobile: "015678540008",
+    company_name: "Index Ventures",
+    position: "General Partner",
+    company_city: "London, United Kingdom",
+    sectors: "HRTech, Blockchain, Food",
+    ticket_size_min: "100000",
+    ticket_size_max: "10000000",
+    stage: "Seed, Series A, Series B, Later",
+    selling_to: "B2C, B2B",
+    generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
+    profitable: false, # Is profitability an investment requirement? Here: "Yes"
+    launch_status: "no MVP, closed beta, public beta, publicly launched")
   investor2.save!
 
 investor3 = User.new(
-    first_name: "Max",
-    last_name: "Example",
-    email: "example@example.com",
-    password: "123456")
+    type: "investor",
+    email: "timo@benchmark.com",
+    password: "123456",
+    first_name: "Timo",
+    last_name: "Heidenstrauch",
+    mobile: "015678240808",
+    company_name: "Benchmark Capital",
+    position: "Managing Partner",
+    company_city: "Menlow Park, USA",
+    sectors: "Mobility, Food, FinTech, AI",
+    ticket_size_min: "100000",
+    ticket_size_max: "1000000",
+    stage: "Seed, Series A, Series B, Later",
+    selling_to: "B2C, B2B",
+    generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
+    profitable: false, # Is profitability an investment requirement? Here: "Yes"
+    launch_status: "no MVP, closed beta, public beta, publicly launched")
   investor3.save!
 
 investor4 = User.new(
-    first_name: "Simone",
-    last_name: "Hoffmann",
-    email: "simone.hoffmann@gmail.com",
-    password: "123456")
+    type: "investor",
+    email: "simon@creandum.com",
+    password: "123456",
+    first_name: "Simon",
+    last_name: "Schmincke",
+    mobile: "015672240008",
+    company_name: "Creandum",
+    position: "Partner",
+    company_city: "Berlin, Germany",
+    sectors: "Mobility, ConsumerTech, Food, Blockchain",
+    ticket_size_min: "100000",
+    ticket_size_max: "6000000",
+    stage: "Pre-Seed, Seed, Series A, Series B, Later",
+    selling_to: "B2C, B2B",
+    generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
+    profitable: false, # Is profitability an investment requirement? Here: "Yes"
+    launch_status: "no MVP, closed beta, public beta, publicly launched")
   investor4.save!
 
 investor5 = User.new(
-    first_name: "Dominik",
-    last_name: "Wojciechowsk",
-    email: "dominik.wojciechowski@gmail.com",
-    password: "123456")
+    type: "investor",
+    email: "Dieter@holtzbrinck.com",
+    password: "123456",
+    first_name: "Dieter",
+    last_name: "von Heisen",
+    mobile: "015978240008",
+    company_name: "Holtzbrinck Ventures",
+    position: "Investment Manager",
+    company_city: "Munich, Germany",
+    sectors: "Mobility, HealthTech",
+    ticket_size_min: "50000",
+    ticket_size_max: "20000000",
+    stage: "Seed, Series A, Series B, Later",
+    selling_to: "B2C, B2B",
+    generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
+    profitable: false, # Is profitability an investment requirement? Here: "Yes"
+    launch_status: "no MVP, closed beta, public beta, publicly launched")
   investor5.save!
 
 investor6 = User.new(
-    first_name: "Max",
-    last_name: "Example",
-    email: "example@example.com",
-    password: "123456")
+    type: "investor",
+    email: "kerstin@partech.com",
+    password: "123456",
+    first_name: "Kerstin",
+    last_name: "Theissen",
+    mobile: "015278240008",
+    company_name: "Partech Ventures",
+    position: "Principal",
+    company_city: "Paris, France",
+    sectors: "Mobility, SaaS, FinTech, InsurTech",
+    ticket_size_min: "100000",
+    ticket_size_max: "5000000",
+    stage: "Seed, Series A, Series B, Later",
+    selling_to: "B2C, B2B",
+    generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
+    profitable: false, # Is profitability an investment requirement? Here: "Yes"
+    launch_status: "no MVP, closed beta, public beta, publicly launched")
   investor6.save!
 
 investor7 = User.new(
-    first_name: "Max",
-    last_name: "Example",
-    email: "example@example.com",
-    password: "123456")
+    type: "investor",
+    email: "john@greylock.com",
+    password: "123456",
+    first_name: "John",
+    last_name: "Simson",
+    mobile: "015678240008",
+    company_name: "Greylock",
+    position: "General Partner",
+    company_city: "San Francisco, USA",
+    sectors: "Mobility, Food, FinTech, InsurTech, HRTech, FinTech",
+    ticket_size_min: "500000",
+    ticket_size_max: "20000000",
+    stage: "Seed, Series A, Series B, Later",
+    selling_to: "B2C, B2B",
+    generating_revenue: false, # Is revenue an investment requirement? Here: "Yes"
+    profitable: false, # Is profitability an investment requirement? Here: "Yes"
+    launch_status: "closed beta, public beta, publicly launched")
   investor7.save!
 
 investor8 = User.new(
-    first_name: "Dominik",
-    last_name: "Wojciechowsk",
-    email: "dominik.wojciechowski@gmail.com",
-    password: "123456")
+    type: "investor",
+    email: "alan@bessemer.com",
+    password: "123456",
+    first_name: "Alan",
+    last_name: "Forchester",
+    mobile: "015578240008",
+    company_name: "Bessemer Ventures",
+    position: "General Partner",
+    company_city: "London, United Kingdom",
+    sectors: "Mobility, Food, FinTech",
+    ticket_size_min: "100000",
+    ticket_size_max: "3000000",
+    stage: "Seed, Series A, Series B, Later",
+    selling_to: "B2C, B2B",
+    generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
+    profitable: false, # Is profitability an investment requirement? Here: "Yes"
+    launch_status: "no MVP, closed beta, public beta, publicly launched")
   investor8.save!
 
 investor9 = User.new(
-    first_name: "Max",
-    last_name: "Example",
-    email: "example@example.com",
-    password: "123456")
+    type: "investor",
+    email: "klaus@cherry.com",
+    password: "123456",
+    first_name: "Klaus",
+    last_name: "Hommels",
+    mobile: "015678240008",
+    company_name: "Lakestar",
+    position: "General Partner",
+    company_city: "London, United Kingdom",
+    sectors: "Mobility, Food, FinTech",
+    ticket_size_min: "100000",
+    ticket_size_max: "3000000",
+    stage: "Seed, Series A, Series B, Later",
+    selling_to: "B2C, B2B",
+    generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
+    profitable: false, # Is profitability an investment requirement? Here: "Yes"
+    launch_status: "no MVP, closed beta, public beta, publicly launched")
   investor9.save!
 
 investor10 = User.new(
-    first_name: "Max",
-    last_name: "Example",
-    email: "example@example.com",
-    password: "123456")
+    type: "investor",
+    email: "klaus@gfc.com",
+    password: "123456",
+    first_name: "Klaus",
+    last_name: "Hommels",
+    mobile: "015678240008",
+    company_name: "Lakestar",
+    position: "General Partner",
+    company_city: "London, United Kingdom",
+    sectors: "Mobility, Food, FinTech",
+    ticket_size_min: "100000",
+    ticket_size_max: "3000000",
+    stage: "Seed, Series A, Series B, Later",
+    selling_to: "B2C, B2B",
+    generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
+    profitable: false, # Is profitability an investment requirement? Here: "Yes"
+    launch_status: "no MVP, closed beta, public beta, publicly launched")
   investor10.save!
 
 startup1 = User.new(
