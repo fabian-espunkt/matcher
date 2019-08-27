@@ -22,5 +22,4 @@ class MatchingsController < ApplicationController
   # basierend darauf, checken ob 2 viewings matched (checked durch Service Objekt) - wird angezeigt
 
   # die viewings von current_user,
-
 end
