@@ -12,7 +12,7 @@
            Select Meeting Spot
          </button>
          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-           <a class="dropdown-item .active" href="#">Coffe Area</a>
+           <a class="dropdown-item .active" href="#">Coffee Area</a>
            <a class="dropdown-item" href="#">Office room 1</a>
            <a class="dropdown-item" href="#">Office room 2</a>
          </div>
@@ -24,5 +24,24 @@
       </div>
     </div>
   </div>
-  <h2>CALENDAR</h2>
+
+  <!-- calendar view with simple_calendar gem -->
+
+  <div class="simple-calendar bg-white">
+    <%= calendar number_of_days: 2 do |date| %>
+      <div class="border">
+        <%= date %>
+      </div>
+      <% 10.upto(18).each do |hour| %>
+        <div>
+          <div>
+            <%= Time.parse("#{hour}:00").strftime("%l %P") %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+
+
 </div>
