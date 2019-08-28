@@ -65,7 +65,8 @@ investor1 = User.new(
     selling_to: "B2C, B2B",
     generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
-    launch_status: "no MVP, closed beta, public beta, publicly launched")
+    launch_status: "no MVP, closed beta, public beta, publicly launched",
+    admin: true)
   investor1.save!
 
 investor2 = User.new(
