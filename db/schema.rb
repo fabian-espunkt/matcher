@@ -78,8 +78,8 @@ ActiveRecord::Schema.define(version: 2019_08_28_143843) do
     t.string "company_url"
     t.string "launch_status"
     t.integer "company_founding_year"
-    t.boolean "generating_revenue", default: false, null: false
-    t.boolean "profitable", default: false, null: false
+    t.boolean "generating_revenue"
+    t.boolean "profitable"
     t.string "ticket_size_min"
     t.string "mobile"
     t.string "ticket_size_max"
