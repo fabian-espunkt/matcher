@@ -21,24 +21,31 @@ puts 'Cleaning current database initiated...'
 puts '(1/6) Destroying current availabilities...'
 availabilities = Availability.count
 Availability.destroy_all
+sleep(1)
 puts '(2/6) Destroying current viewings...'
 viewings = Viewing.count
 Viewing.destroy_all
+sleep(1)
 puts '(3/6) Destroying current meetings...'
 meeetings = Meeting.count
 Meeting.destroy_all
+sleep(1)
 puts '(4/6) Destroying current attendances...'
 attendances = Attendance.count
 Attendance.destroy_all
+sleep(1)
 puts '(5/6) Destroying current users...'
 users = User.count
 User.destroy_all
+sleep(1)
 puts '(6/6) Destroying current events...'
 events = Event.count
 Event.destroy_all
+sleep(1)
 puts "Success! #{availabilities} availabilities, #{viewings} viewings, #{meetings} meetings,#{attendances} attendances, #{users} users and #{events} events have irreversibly been deleted from the database!"
 
 puts 'Seeding new database initiated...'
+sleep(2)
 
 puts '(1/6) Creating new events...'
 
@@ -197,16 +204,16 @@ investor8 = User.new(
     type: "investor",
     email: "alan@bessemer.com",
     password: "123456",
-    first_name: "Alan",
+    first_name: "Jennifer",
     last_name: "Forchester",
     mobile: "015578240008",
     company_name: "Bessemer Ventures",
     position: "General Partner",
     company_city: "London, United Kingdom",
-    sectors: "Mobility, Food, FinTech",
-    ticket_size_min: "100000",
-    ticket_size_max: "3000000",
-    stage: "Seed, Series A, Series B, Later",
+    sectors: "Mobility, Food, MedTech, FinTech",
+    ticket_size_min: "250000",
+    ticket_size_max: "8000000",
+    stage: "Series A, Series B, Later",
     selling_to: "B2C, B2B",
     generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
@@ -215,36 +222,36 @@ investor8 = User.new(
 
 investor9 = User.new(
     type: "investor",
-    email: "klaus@cherry.com",
+    email: "christian@cherry.com",
     password: "123456",
-    first_name: "Klaus",
-    last_name: "Hommels",
-    mobile: "015678240008",
-    company_name: "Lakestar",
-    position: "General Partner",
-    company_city: "London, United Kingdom",
-    sectors: "Mobility, Food, FinTech",
-    ticket_size_min: "100000",
-    ticket_size_max: "3000000",
-    stage: "Seed, Series A, Series B, Later",
+    first_name: "Christian",
+    last_name: "Meermann",
+    mobile: "015578240008",
+    company_name: "Cherry Ventures",
+    position: "Managing Partner",
+    company_city: "Berlin, Germany",
+    sectors: "Food, AgTech, FinTech",
+    ticket_size_min: "150000",
+    ticket_size_max: "6000000",
+    stage: "Seed, Series A, Series B",
     selling_to: "B2C, B2B",
-    generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
+    generating_revenue: false, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
     launch_status: "no MVP, closed beta, public beta, publicly launched")
   investor9.save!
 
 investor10 = User.new(
     type: "investor",
-    email: "klaus@gfc.com",
+    email: "marc@gfc.com",
     password: "123456",
-    first_name: "Klaus",
-    last_name: "Hommels",
+    first_name: "Marc",
+    last_name: "Samwer",
     mobile: "015678240008",
-    company_name: "Lakestar",
+    company_name: "Global Founders Fund",
     position: "General Partner",
-    company_city: "London, United Kingdom",
-    sectors: "Mobility, Food, FinTech",
-    ticket_size_min: "100000",
+    company_city: "Berlin, Germany",
+    sectors: "Mobility, Food, AI, SaaS, Marketplace, FinTech",
+    ticket_size_min: "200000",
     ticket_size_max: "3000000",
     stage: "Seed, Series A, Series B, Later",
     selling_to: "B2C, B2B",
@@ -254,73 +261,213 @@ investor10 = User.new(
   investor10.save!
 
 startup1 = User.new(
-    first_name: "Simone",
-    last_name: "Hoffmann",
-    email: "simone.hoffmann@gmail.com",
-    password: "123456")
+    type: "startup",
+    email: "startup1@getyourguide.com",
+    password: "123456",
+    first_name: "Hans",
+    last_name: "Mühlenbein",
+    mobile: "015678240008",
+    company_name: "GetYourGuide",
+    position: "Co-Founder",
+    company_city: "Berlin, Germany",
+    company_url: "www.getyourguide.com",
+    firm_description: "GetYourGuide is the place to book the best experiences in destinations across the globe. Since 2009, we’ve made it easy for millions of travelers to find unique and unmissable things to do wherever their travels take them. By connecting people to activities and attractions they love, we create trips full of meaningful memories. All of this is brought together in one easy-to-use website and app that makes planning and booking simple so travelers can focus on what counts: having an incredible time. Backed by leading venture capital investors, GetYourGuide has raised over $650 million in funding to date and has over 500 employees spread across 16 offices worldwide. See our open positions (careers.getyourguide.com) or get a behind-the-scenes look of life at GetYourGuide on our blog ()inside.getyourguide.com).",
+    company_founding_year: 2009,
+    launch_status: "publicly launched",
+    sectors: "TravelTech, ConsumerTech",
+    stage: "Pre-seed, Series A, Series B, Later",
+    selling_to: "B2C",
+    generating_revenue: true, # Does the company generate revenue? Here: "Yes"
+    profitable: false) # Is the company profitable? Here: "Yes"
   startup1.save!
 
 startup2 = User.new(
+    type: "startup",
+    email: "startup2@hellofresh.com",
+    password: "123456",
     first_name: "Dominik",
-    last_name: "Wojciechowsk",
-    email: "dominik.wojciechowski@gmail.com",
-    password: "123456")
+    last_name: "Richter",
+    mobile: "015578240008",
+    company_name: "HelloFresh",
+    position: "Founder",
+    company_city: "Berlin, Germany",
+    company_url: "www.hellofresh.com",
+    firm_description: "lHelloFresh is on a mission to change the way people eat, forever!  As the world's leading meal kit provider, we serve more than 13 million meals per month to over 1.3 million customers in 10 countries across 3 continents. Yep, we’re that good. HelloFresh supplies everything you need to prepare quality, delicious, home-cooked meals that require no planning, no shopping and no hassle. Every ingredient needed for our thousands of exclusive recipes is carefully planned, locally sourced and delivered to your door when it’s most convenient for you.  Making dinner an experience - not just another meal - takes a lot of work and smart people. From Data Scientists to DevOps Engineers, to potato farmers, and the men and women who ensure every box is perfectly crafted for every customer, we’re collectively disrupting the food supply chain and the multi-trillion-dollar food tech industry. Our offices in Berlin, New York City, Sydney, Toronto, London, Amsterdam and Zurich are filled with more than 2,500 diverse, high-performing and international talents. We’re always looking for a few missing ingredients to perfect our recipe, so join us now and become part of the HelloFresh movement! Check out available opportunities across the globe here: https://www.hellofresh.com/careers/locations",
+    company_founding_year: "2011",
+    launch_status: "public beta",
+    sectors: "FoodTech, Food, ConsumerTech",
+    stage: "Series B",
+    selling_to: "B2C",
+    generating_revenue: true, # Does the company generate revenue? Here: "Yes"
+    profitable: true) # Is the company profitable? Here: "Yes"
   startup2.save!
 
 startup3 = User.new(
-    first_name: "Max",
-    last_name: "Example",
-    email: "example@example.com",
-    password: "123456")
+    type: "startup",
+    email: "startup1@personio.com",
+    password: "123456",
+    first_name: "Hans",
+    last_name: "Mühlenbein",
+    mobile: "015678240008",
+    company_name: "GetYourGuide",
+    position: "General Partner",
+    company_city: "Berlin, Germany",
+    company_url: "X",
+    firm_description: "lorem",
+    company_founding_year: "this",
+    launch_status: "no MVP, closed beta, public beta, publicly launched",
+    sectors: "x",
+    stage: "x",
+    selling_to: "x",
+    generating_revenue: true, # Does the company generate revenue? Here: "Yes"
+    profitable: false) # Is the company profitable? Here: "Yes"
   user3.save!
 
 startup4 = User.new(
-    first_name: "Simone",
-    last_name: "Hoffmann",
-    email: "simone.hoffmann@gmail.com",
-    password: "123456")
+    type: "startup",
+    email: "startup1@lifex.com",
+    password: "123456",
+    first_name: "Hans",
+    last_name: "Mühlenbein",
+    mobile: "015678240008",
+    company_name: "GetYourGuide",
+    position: "General Partner",
+    company_city: "Berlin, Germany",
+    company_url: "X",
+    firm_description: "lorem",
+    company_founding_year: "this",
+    launch_status: "no MVP, closed beta, public beta, publicly launched",
+    sectors: "x",
+    stage: "x",
+    selling_to: "x",
+    generating_revenue: true, # Does the company generate revenue? Here: "Yes"
+    profitable: false) # Is the company profitable? Here: "Yes"
   startup4.save!
 
 startup5 = User.new(
-    first_name: "Dominik",
-    last_name: "Wojciechowsk",
-    email: "dominik.wojciechowski@gmail.com",
-    password: "123456")
+    type: "startup",
+    email: "startup1@fineaway.com",
+    password: "123456",
+    first_name: "Hans",
+    last_name: "Mühlenbein",
+    mobile: "015678240008",
+    company_name: "GetYourGuide",
+    position: "General Partner",
+    company_city: "Berlin, Germany",
+    company_url: "X",
+    firm_description: "lorem",
+    company_founding_year: "this",
+    launch_status: "no MVP, closed beta, public beta, publicly launched",
+    sectors: "x",
+    stage: "x",
+    selling_to: "x",
+    generating_revenue: true, # Does the company generate revenue? Here: "Yes"
+    profitable: false) # Is the company profitable? Here: "Yes"
   startup5.save!
 
 startup6 = User.new(
-    first_name: "Max",
-    last_name: "Example",
-    email: "example@example.com",
-    password: "123456")
+    type: "startup",
+    email: "startup1@mcmakler.com",
+    password: "123456",
+    first_name: "Hans",
+    last_name: "Mühlenbein",
+    mobile: "015678240008",
+    company_name: "GetYourGuide",
+    position: "General Partner",
+    company_city: "Berlin, Germany",
+    company_url: "X",
+    firm_description: "lorem",
+    company_founding_year: "this",
+    launch_status: "no MVP, closed beta, public beta, publicly launched",
+    sectors: "x",
+    stage: "x",
+    selling_to: "x",
+    generating_revenue: true, # Does the company generate revenue? Here: "Yes"
+    profitable: false) # Is the company profitable? Here: "Yes"
   startup6.save!
 
 startup7 = User.new(
-    first_name: "Max",
-    last_name: "Example",
-    email: "example@example.com",
-    password: "123456")
+    type: "startup",
+    email: "startup1@hometogo.com",
+    password: "123456",
+    first_name: "Hans",
+    last_name: "Mühlenbein",
+    mobile: "015678240008",
+    company_name: "GetYourGuide",
+    position: "General Partner",
+    company_city: "Berlin, Germany",
+    company_url: "X",
+    firm_description: "lorem",
+    company_founding_year: "this",
+    launch_status: "no MVP, closed beta, public beta, publicly launched",
+    sectors: "x",
+    stage: "x",
+    selling_to: "x",
+    generating_revenue: true, # Does the company generate revenue? Here: "Yes"
+    profitable: false) # Is the company profitable? Here: "Yes"
   startup7.save!
 
 startup8 = User.new(
-    first_name: "Dominik",
-    last_name: "Wojciechowsk",
-    email: "dominik.wojciechowski@gmail.com",
-    password: "123456")
+    type: "startup",
+    email: "startup1@n26.com",
+    password: "123456",
+    first_name: "Hans",
+    last_name: "Mühlenbein",
+    mobile: "015678240008",
+    company_name: "GetYourGuide",
+    position: "General Partner",
+    company_city: "Berlin, Germany",
+    company_url: "X",
+    firm_description: "lorem",
+    company_founding_year: "this",
+    launch_status: "no MVP, closed beta, public beta, publicly launched",
+    sectors: "x",
+    stage: "x",
+    selling_to: "x",
+    generating_revenue: true, # Does the company generate revenue? Here: "Yes"
+    profitable: false) # Is the company profitable? Here: "Yes"
   startup8.save!
 
 startup9 = User.new(
-    first_name: "Max",
-    last_name: "Example",
-    email: "example@example.com",
-    password: "123456")
+    type: "startup",
+    email: "startup1@flaschenpost.com",
+    password: "123456",
+    first_name: "Hans",
+    last_name: "Mühlenbein",
+    mobile: "015678240008",
+    company_name: "GetYourGuide",
+    position: "General Partner",
+    company_city: "Berlin, Germany",
+    company_url: "X",
+    firm_description: "lorem",
+    company_founding_year: "this",
+    launch_status: "no MVP, closed beta, public beta, publicly launched",
+    sectors: "x",
+    stage: "x",
+    selling_to: "x",
+    generating_revenue: true, # Does the company generate revenue? Here: "Yes"
+    profitable: false) # Is the company profitable? Here: "Yes"
   startup9.save!
 
 startup10 = User.new(
-    first_name: "Max",
-    last_name: "Example",
-    email: "example@example.com",
-    password: "123456")
+    type: "startup",
+    email: "startup1@delivery-hero.com",
+    password: "123456",
+    first_name: "Hans",
+    last_name: "Mühlenbein",
+    mobile: "015678240008",
+    company_name: "GetYourGuide",
+    position: "General Partner",
+    company_city: "Berlin, Germany",
+    company_url: "X",
+    firm_description: "lorem",
+    company_founding_year: "this",
+    launch_status: "no MVP, closed beta, public beta, publicly launched",
+    sectors: "x",
+    stage: "x",
+    selling_to: "x",
+    generating_revenue: true, # Does the company generate revenue? Here: "Yes"
+    profitable: false) # Is the company profitable? Here: "Yes"
   startup10.save!
 
 puts '(3/6) Creating new attendances...'
