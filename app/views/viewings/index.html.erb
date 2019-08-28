@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>Matching</h1>
+</div>
+
+<% @users.each do |user|%>
+
+  <div class="card">
+
+    <div class="m-3"> company_logo </div>
+
+    <div class="">
+      <div><%= user.first_name%> <%= user.last_name %></div>
+      <div><%= user.position %></div>
+      <div><%= user.company_name %></div>
+    </div>
+
+    <div class="">
+      <div><%= user.company_city %></div>
+      <div><%= user.sectors %></div>
+      <div>Raising a <%= user.stages %></div>
+      <div><%= user.company_founding_year %></div>
+    </div>
+
+    <div><%= user.firm_description %></div>
+
+    <!-- like/dislike button -->
+
+  </div>
+
+<% end %>
+
+
