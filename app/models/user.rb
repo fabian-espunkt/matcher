@@ -12,7 +12,7 @@ class User < ApplicationRecord
   scope :investors, -> { where(kind: 'investor') }
   scope :startups, -> { where(kind: 'startup') }
 
-  validates :first_name, :last_name, :mobile, :company_name, :position, :company_city, :sectors, :ticket_size_min, :ticket_size_max, :stage, :selling_to, :generating_revenue, :profitable, :launch_status, if: :investor?, presence: true
+  validates :first_name, :last_name, :mobile, :company_name, :position, :company_city, :sectors, :ticket_size_min, :ticket_size_max, :stages, :selling_to, :launch_status, if: :investor?, presence: true
 
   def investor?
     kind == 'investor'

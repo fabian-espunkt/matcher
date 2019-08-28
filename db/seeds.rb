@@ -1,7 +1,9 @@
+
 # ------- Seeder ----------------
 
 puts 'Cleaning current database initiated...'
 sleep(1.5)
+puts '...'
 puts '(1/6) Destroying current availabilities...'
 availabilities = Availability.count
 Availability.destroy_all
@@ -11,7 +13,7 @@ viewings = Viewing.count
 Viewing.destroy_all
 sleep(1)
 puts '(3/6) Destroying current meetings...'
-meeetings = Meeting.count
+meetings = Meeting.count
 Meeting.destroy_all
 sleep(1)
 puts '(4/6) Destroying current attendances...'
@@ -26,11 +28,12 @@ puts '(6/6) Destroying current events...'
 events = Event.count
 Event.destroy_all
 sleep(2)
+puts '...'
 puts "Success! #{availabilities} availabilities, #{viewings} viewings, #{meetings} meetings,#{attendances} attendances, #{users} users and #{events} events have irreversibly been deleted from the database!"
-
+puts '...'
 puts 'Seeding new database initiated...'
 sleep(2)
-
+puts '...'
 puts '(1/6) Creating new events...'
 
 event1 = Event.new(
@@ -41,11 +44,12 @@ event1 = Event.new(
     organizer_address: "Dufourstrasse 50, 9000 St. Gallen, Schweiz",
     organizer_url: "http://www.startstgallen.startglobal.org/")
   event1.save!
+  sleep(1)
 
 puts '(2/6) Creating new users...'
 
 investor1 = User.new(
-    type: "investor",
+    kind: "investor",
     email: "klaus@lakestar.com",
     password: "123456",
     first_name: "Klaus",
@@ -57,7 +61,7 @@ investor1 = User.new(
     sectors: "Mobility, Food, FinTech",
     ticket_size_min: "100000",
     ticket_size_max: "3000000",
-    stage: "Seed, Series A, Series B, Later",
+    stages: "Seed, Series A, Series B, Later",
     selling_to: "B2C, B2B",
     generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
@@ -65,7 +69,7 @@ investor1 = User.new(
   investor1.save!
 
 investor2 = User.new(
-    type: "investor",
+    kind: "investor",
     email: "diana@index-venturesd.com",
     password: "123456",
     first_name: "Diana",
@@ -77,7 +81,7 @@ investor2 = User.new(
     sectors: "HRTech, Blockchain, Food",
     ticket_size_min: "100000",
     ticket_size_max: "10000000",
-    stage: "Seed, Series A, Series B, Later",
+    stages: "Seed, Series A, Series B, Later",
     selling_to: "B2C, B2B",
     generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
@@ -85,7 +89,7 @@ investor2 = User.new(
   investor2.save!
 
 investor3 = User.new(
-    type: "investor",
+    kind: "investor",
     email: "timo@benchmark.com",
     password: "123456",
     first_name: "Timo",
@@ -97,7 +101,7 @@ investor3 = User.new(
     sectors: "Mobility, Food, FinTech, AI",
     ticket_size_min: "100000",
     ticket_size_max: "1000000",
-    stage: "Seed, Series A, Series B, Later",
+    stages: "Seed, Series A, Series B, Later",
     selling_to: "B2C, B2B",
     generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
@@ -105,7 +109,7 @@ investor3 = User.new(
   investor3.save!
 
 investor4 = User.new(
-    type: "investor",
+    kind: "investor",
     email: "simon@creandum.com",
     password: "123456",
     first_name: "Simon",
@@ -117,7 +121,7 @@ investor4 = User.new(
     sectors: "Mobility, ConsumerTech, Food, Blockchain",
     ticket_size_min: "100000",
     ticket_size_max: "6000000",
-    stage: "Pre-Seed, Seed, Series A, Series B, Later",
+    stages: "Pre-Seed, Seed, Series A, Series B, Later",
     selling_to: "B2C, B2B",
     generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
@@ -125,7 +129,7 @@ investor4 = User.new(
   investor4.save!
 
 investor5 = User.new(
-    type: "investor",
+    kind: "investor",
     email: "Dieter@holtzbrinck.com",
     password: "123456",
     first_name: "Dieter",
@@ -137,7 +141,7 @@ investor5 = User.new(
     sectors: "Mobility, HealthTech",
     ticket_size_min: "50000",
     ticket_size_max: "20000000",
-    stage: "Seed, Series A, Series B, Later",
+    stages: "Seed, Series A, Series B, Later",
     selling_to: "B2C, B2B",
     generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
@@ -145,7 +149,7 @@ investor5 = User.new(
   investor5.save!
 
 investor6 = User.new(
-    type: "investor",
+    kind: "investor",
     email: "kerstin@partech.com",
     password: "123456",
     first_name: "Kerstin",
@@ -157,7 +161,7 @@ investor6 = User.new(
     sectors: "Mobility, SaaS, FinTech, InsurTech",
     ticket_size_min: "100000",
     ticket_size_max: "5000000",
-    stage: "Seed, Series A, Series B, Later",
+    stages: "Seed, Series A, Series B, Later",
     selling_to: "B2C, B2B",
     generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
@@ -165,7 +169,7 @@ investor6 = User.new(
   investor6.save!
 
 investor7 = User.new(
-    type: "investor",
+    kind: "investor",
     email: "john@greylock.com",
     password: "123456",
     first_name: "John",
@@ -177,7 +181,7 @@ investor7 = User.new(
     sectors: "Mobility, Food, FinTech, InsurTech, HRTech, FinTech",
     ticket_size_min: "500000",
     ticket_size_max: "20000000",
-    stage: "Seed, Series A, Series B, Later",
+    stages: "Seed, Series A, Series B, Later",
     selling_to: "B2C, B2B",
     generating_revenue: false, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
@@ -185,7 +189,7 @@ investor7 = User.new(
   investor7.save!
 
 investor8 = User.new(
-    type: "investor",
+    kind: "investor",
     email: "alan@bessemer.com",
     password: "123456",
     first_name: "Jennifer",
@@ -197,7 +201,7 @@ investor8 = User.new(
     sectors: "Mobility, Food, MedTech, FinTech",
     ticket_size_min: "250000",
     ticket_size_max: "8000000",
-    stage: "Series A, Series B, Later",
+    stages: "Series A, Series B, Later",
     selling_to: "B2C, B2B",
     generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
@@ -205,7 +209,7 @@ investor8 = User.new(
   investor8.save!
 
 investor9 = User.new(
-    type: "investor",
+    kind: "investor",
     email: "christian@cherry.com",
     password: "123456",
     first_name: "Christian",
@@ -217,7 +221,7 @@ investor9 = User.new(
     sectors: "Food, AgTech, FinTech",
     ticket_size_min: "150000",
     ticket_size_max: "6000000",
-    stage: "Seed, Series A, Series B",
+    stages: "Seed, Series A, Series B",
     selling_to: "B2C, B2B",
     generating_revenue: false, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
@@ -225,7 +229,7 @@ investor9 = User.new(
   investor9.save!
 
 investor10 = User.new(
-    type: "investor",
+    kind: "investor",
     email: "marc@gfc.com",
     password: "123456",
     first_name: "Marc",
@@ -237,7 +241,7 @@ investor10 = User.new(
     sectors: "Mobility, Food, AI, SaaS, Marketplace, FinTech",
     ticket_size_min: "200000",
     ticket_size_max: "3000000",
-    stage: "Seed, Series A, Series B, Later",
+    stages: "Seed, Series A, Series B, Later",
     selling_to: "B2C, B2B",
     generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
@@ -245,7 +249,7 @@ investor10 = User.new(
   investor10.save!
 
 startup1 = User.new(
-    type: "startup",
+    kind: "startup",
     email: "startup1@getyourguide.com",
     password: "123456",
     first_name: "Hans",
@@ -259,14 +263,14 @@ startup1 = User.new(
     company_founding_year: 2009,
     launch_status: "publicly launched",
     sectors: "TravelTech, ConsumerTech",
-    stage: "Pre-seed",
+    stages: "Pre-seed",
     selling_to: "B2C",
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
     profitable: false) # Is the company profitable? Here: "Yes"
   startup1.save!
 
 startup2 = User.new(
-    type: "startup",
+    kind: "startup",
     email: "startup2@hellofresh.com",
     password: "123456",
     first_name: "Dominik",
@@ -280,14 +284,14 @@ startup2 = User.new(
     company_founding_year: "2011",
     launch_status: "public beta",
     sectors: "FoodTech, Food, ConsumerTech",
-    stage: "Series B",
+    stages: "Series B",
     selling_to: "B2C",
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
     profitable: true) # Is the company profitable? Here: "Yes"
   startup2.save!
 
 startup3 = User.new(
-    type: "startup",
+    kind: "startup",
     email: "startup3@personio.com",
     password: "123456",
     first_name: "Hanno",
@@ -301,14 +305,14 @@ startup3 = User.new(
     company_founding_year: "2015",
     launch_status: "closed beta",
     sectors: "HRTech, SaaS",
-    stage: "Series A",
+    stages: "Series A",
     selling_to: "B2B",
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
     profitable: false) # Is the company profitable? Here: "Yes"
-  user3.save!
+startup3.save!
 
 startup4 = User.new(
-    type: "startup",
+    kind: "startup",
     email: "startup4@lifex.com",
     password: "123456",
     first_name: "Gregory",
@@ -322,14 +326,14 @@ startup4 = User.new(
     company_founding_year: "2017",
     launch_status: "no MVP",
     sectors: "LivingTech, ConsumerTech, SaaS, PropTech",
-    stage: "Seed",
+    stages: "Seed",
     selling_to: "B2C",
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
     profitable: false) # Is the company profitable? Here: "Yes"
   startup4.save!
 
 startup5 = User.new(
-    type: "startup",
+    kind: "startup",
     email: "startup5@fineaway.com",
     password: "123456",
     first_name: "Maria",
@@ -343,14 +347,14 @@ startup5 = User.new(
     company_founding_year: "2016",
     launch_status: "closed beta",
     sectors: "TravelTech, ConsumerTech",
-    stage: "Series B",
+    stages: "Series B",
     selling_to: "B2C",
     generating_revenue: false, # Does the company generate revenue? Here: "Yes"
     profitable: false) # Is the company profitable? Here: "Yes"
   startup5.save!
 
 startup6 = User.new(
-    type: "startup",
+    kind: "startup",
     email: "startup6@mcmakler.com",
     password: "123456",
     first_name: "Felix",
@@ -364,14 +368,14 @@ startup6 = User.new(
     company_founding_year: "2015",
     launch_status: "publicly launched",
     sectors: "PropTech, ConsumerTech, AI",
-    stage: "Series B",
+    stages: "Series B",
     selling_to: "B2C, B2B",
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
     profitable: false) # Is the company profitable? Here: "Yes"
   startup6.save!
 
 startup7 = User.new(
-    type: "startup",
+    kind: "startup",
     email: "startup7@hometogo.com",
     password: "123456",
     first_name: "Dirk",
@@ -385,14 +389,14 @@ startup7 = User.new(
     company_founding_year: "2014",
     launch_status: "public beta",
     sectors: "TravelTech, ConsumerTech, Blockchain",
-    stage: "Series A",
+    stages: "Series A",
     selling_to: "B2C",
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
     profitable: true) # Is the company profitable? Here: "Yes"
   startup7.save!
 
 startup8 = User.new(
-    type: "startup",
+    kind: "startup",
     email: "startup8@n26.com",
     password: "123456",
     first_name: "Maximilian",
@@ -406,14 +410,14 @@ startup8 = User.new(
     company_founding_year: "2014",
     launch_status: "closed beta",
     sectors: "FinTech, AI, Blockchain, ConsumerTech",
-    stage: "Later",
+    stages: "Later",
     selling_to: "B2C",
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
     profitable: false) # Is the company profitable? Here: "Yes"
   startup8.save!
 
 startup9 = User.new(
-    type: "startup",
+    kind: "startup",
     email: "startup9@flaschenpost.com",
     password: "123456",
     first_name: "Niklas",
@@ -427,14 +431,14 @@ startup9 = User.new(
     company_founding_year: "2016",
     launch_status: "no MVP",
     sectors: "FoodTech, ConsumerTech",
-    stage: "Series A",
+    stages: "Series A",
     selling_to: "B2C, B2B",
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
     profitable: false) # Is the company profitable? Here: "Yes"
   startup9.save!
 
 startup10 = User.new(
-    type: "startup",
+    kind: "startup",
     email: "startup1@delivery-hero.com",
     password: "123456",
     first_name: "Lukasz",
@@ -448,7 +452,7 @@ startup10 = User.new(
     company_founding_year: "2008",
     launch_status: "publicly launched",
     sectors: "Food, FoodTech, ConsumerTech",
-    stage: "Later",
+    stages: "Later",
     selling_to: "B2C",
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
     profitable: true) # Is the company profitable? Here: "Yes"
@@ -632,13 +636,13 @@ meeting9 = Meeting.new(
 
 puts '(5/6) Creating new viewings...'
 
-event1.attendances.joins(:user).where(user: { kind: 'startup' }).each do |attendance|
+event1.attendances.joins(:user).where(users: { kind: 'startup' }).each do |attendance|
   User.investors.all.each do |user|
     Viewing.create!(user: user, attendance: attendance, like: [true, false].sample)
   end
 end
 
-event1.attendances.joins(:user).where(user: { kind: 'investor' }).each do |attendance|
+event1.attendances.joins(:user).where(users: { kind: 'investor' }).each do |attendance|
   User.startups.all.each do |user|
     Viewing.create!(user: user, attendance: attendance, like: [true, false].sample)
   end
@@ -646,12 +650,11 @@ end
 
 puts '(6/6) Creating new availabilities...'
 
-
+time_start = DateTime.parse('20rd Mar 2020 08:00:00+00:00')
+time_end = DateTime.parse('20rd Mar 2020 16:00:00+00:00')
 event1.attendances.joins(:user).each do |attendance|
-  User.all.each do |user|
-    Availability.create!(attendance: attendance, start_time: "08:00", end_time: "16:00", slot_taken: [true, false].sample)
-  end
+  Availability.create!(attendance: attendance, start_time: time_start.strftime("%I:%M%p"), end_time: time_end.strftime("%I:%M%p") , slot_taken: [true, false].sample)
 end
-
-puts "Success! #{Availability.count} availabilities, #{Viewing.count} viewings, #{Meeting.count} meetings,#{Attendance.count} attendances, #{User.count} users and #{Event.count} events have successfully been added to your database!"
+puts '...'
+puts "Success! #{Availability.count} availabilities, #{Viewing.count} viewings, #{Meeting.count} meetings, #{Attendance.count} attendances, #{User.count} users and #{Event.count} event(s) have successfully been added to your database!"
 puts "------------------ Finished! Enjoy testing. ------------------"
