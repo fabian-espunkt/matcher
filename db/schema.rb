@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_27_093538) do
+ActiveRecord::Schema.define(version: 2019_08_28_102210) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,14 +46,14 @@ ActiveRecord::Schema.define(version: 2019_08_27_093538) do
   end
 
   create_table "meetings", force: :cascade do |t|
-    t.bigint "user_id"
     t.bigint "event_id"
     t.time "agreed_timeslot"
     t.string "matching_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "investor_id"
+    t.integer "startup_id"
     t.index ["event_id"], name: "index_meetings_on_event_id"
-    t.index ["user_id"], name: "index_meetings_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 2019_08_27_093538) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "type"
+    t.string "kind"
     t.string "first_name"
     t.string "last_name"
     t.string "company_name"
@@ -78,9 +78,11 @@ ActiveRecord::Schema.define(version: 2019_08_27_093538) do
     t.string "company_url"
     t.string "launch_status"
     t.integer "company_founding_year"
-    t.boolean "generating_revenue"
-    t.boolean "profitable"
-    t.string "ticket_size"
+    t.boolean "generating_revenue", default: false, null: false
+    t.boolean "profitable", default: false, null: false
+    t.string "ticket_size_min"
+    t.string "mobile"
+    t.string "ticket_size_max"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -99,7 +101,6 @@ ActiveRecord::Schema.define(version: 2019_08_27_093538) do
   add_foreign_key "attendances", "users"
   add_foreign_key "availabilities", "attendances"
   add_foreign_key "meetings", "events"
-  add_foreign_key "meetings", "users"
   add_foreign_key "viewings", "attendances"
   add_foreign_key "viewings", "users"
 end
