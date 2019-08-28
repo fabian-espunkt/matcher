@@ -11,3 +11,15 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+h1 {
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+h2 {
+  font-weight: 700;
+  letter-spacing: -1px;
+  font-size: 32px;
+}
+
