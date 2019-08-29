@@ -5,7 +5,7 @@
     <!-- card with meeting spot choices for investor -->
     <div class="card col-lg-8">
       <div class="d-flex justify-content-between align-items-center">
-        <p>Select our default meeting spot: </p>
+        <p>Select your default meeting spot: </p>
          <!-- Chosing meeting spot dropdown menu -->
         <div class="dropdown">
           <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -19,7 +19,7 @@
         </div>
          <!-- Save meeting spot -->
         <div>
-          <button type="button" class="btn btn-link">☑️</button>
+          <button type="button" class="btn btn-primary">Save</button>
         </div>
       </div>
     </div>
@@ -27,21 +27,55 @@
 
   <!-- calendar view with simple_calendar gem -->
 
-  <div class="simple-calendar bg-white">
-    <%= calendar number_of_days: 2 do |date| %>
-      <div class="border">
-        <%= date %>
+<!--   <div class="simple-calendar">
+    <#%= calendar number_of_days: 1 do |date| %>
+      <div>
+        <strong>Time</strong>
       </div>
-      <% 10.upto(18).each do |hour| %>
-        <div>
-          <div>
-            <%= Time.parse("#{hour}:00").strftime("%l %P") %>
+      <#% 8.upto(17).each do |hour| %>
+        <div class="d-flex justify-content-start align-items-center">
+          <div class="col-2 border">
+            <#%= Time.parse("#{hour}:00").strftime("%l %P") %>
           </div>
         </div>
+      <#% end %>
+       <div class="col-10 border">
+          <p>this</p>
+      </div>
+    <#% end %>
+  </div> -->
+<!--
+<div class="simple-calendar d-flex justify-content-start">
+    <#%= calendar number_of_days: 1 do |date| %>
+    <div class="col">
+      <div class="row border-bottom table">
+        <strong>Time</strong>
+      </div>
+      <#% 8.upto(17).each do |hour| %>
+        <div class="row">
+          <#%= Time.parse("#{hour}:00").strftime("%l %P") %>
+        </div>
+      <#% end %>
+    </div>
+    <#% end %>
+</div> -->
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Time</th>
+      <th scope="col">20/09/2019</th>
+    </tr>
+  </thead>
+  <tbody>
+   <% @user_appointments.each do |appointment| %>
+      <% (8..18).each do |time| %>
+        <tr>
+          <th scope="col"><%= time %>:00 am</th>
+          <td><%= appointment.startup.company_name if appointment.agreed_timeslot.hour == time %></td>
+        </tr>
       <% end %>
     <% end %>
-  </div>
-
-
-
+  </tbody>
+</table>
 </div>
+
