@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>Index view for Attendances alias Matching (process)</h1>
+
+  <% @attendances.each do |attendance| %>
+    <div class="card">
+      <div>
+        <div>
+          <%= attendance.user.kind %>
+          <%= attendance.user.first_name %>
+          <%= attendance.user.last_name %>
+          <%= attendance.user.position %>
+          <%= attendance.user.company_name %>
+        </div>
+        <div>
+          <%= attendance.user.company_city %>
+          <%= attendance.user.sectors %>
+          <%= attendance.user.stages %>
+          <%= attendance.user.company_founding_year %>
+        </div>
+        <div>
+          <%= attendance.user.firm_description %>
+        </div>
+      </div>
+      <div>
+        <%= link_to "LIKE", attendance_create_like_path(attendance), method: :post %>
+        <%= link_to "DISLIKE", attendance_create_dislike_path(attendance), method: :post %>
+      </div>
+      <div>
+        "Dislike"
+      </div>
+    </div>
+  <% end %>
+</div>
