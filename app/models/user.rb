@@ -18,6 +18,7 @@ class User < ApplicationRecord
   # validates :email, :password, :first_name, :last_name, :mobile, :company_name, :position, :company_city, :sectors, :ticket_size_min, :ticket_size_max, :stages, :selling_to, :launch_status, if: :investor?, presence: true # :generating_revenue, :profitable,
   # validates :email, :password, :first_name, :last_name, :mobile, :company_name, :position, :company_city, :company_url, :firm_description, :company_founding_year, :sectors, :stages, :selling_to, :launch_status, if: :startup?, presence: true # :generating_revenue, :profitable
 
+
   def investor?
     kind == 'investor'
   end

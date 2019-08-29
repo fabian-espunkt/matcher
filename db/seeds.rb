@@ -269,6 +269,18 @@ investor10 = User.new(
     remote_photo_url: url10)
   investor10.save!
 
+url11 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567072794/lw-ventures-logo_lhy2qj.png"
+investor11 = User.new(
+    kind: "investor",
+    email: "dominik@lw-ventures.com",
+    password: "123456",
+    first_name: "Dominik",
+    last_name: "Wojciechowski",
+    company_name: "LeWagon Ventures",
+    position: "Managing Partner",
+    remote_photo_url: url10)
+  investor11.save!
+
 url11 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/getyourguide_fjsxpb.png"
 startup1 = User.new(
     kind: "startup",

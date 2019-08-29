@@ -1,7 +1,8 @@
 <div class="container pt-5">
-  <h1>Schedule relevant meetings <br> at <%= Event.first.name %> <br>in minutes</h1>
+  <h1>Matching attendees at <br>your conference, made easy.</h1>
+  <p class="pt-2">Create a new account to use Matcher with your event today.</p>
 
-  <div class="row pt-4">
+  <div class="row pt-3">
     <div class="col-12 col-sm-8 col-md-8 col-lg col-xl-6">
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
@@ -27,7 +28,7 @@
         </div>
       </div>
       <div class="form-actions">
-        <%= f.button :submit, "Sign up", class: "btn-lg btn-primary mt-3" %>
+        <%= f.button :submit, "Create new account", class: "btn-lg btn-primary mt-3" %>
       </div>
     </div>
     <% end %>
