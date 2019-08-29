@@ -50,13 +50,13 @@
   text-decoration: underline;
 }
 
-.card {
+.selection-card {
   transition: all .2s ease-in-out;
   border-radius: 6px;
   box-shadow: -2px 2px 29px -10px rgba(0,0,0,0.75);
 }
 
-.card:hover {
+.selection-card:hover {
   transform: scale(1.02);
   box-shadow: -2px 2px 29px -10px rgba(0,0,0,1.2);
 }
