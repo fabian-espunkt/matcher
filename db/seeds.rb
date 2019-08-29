@@ -42,7 +42,8 @@ event1 = Event.new(
     address: "St. Gallen, Schweiz",
     organizer_name: "START Global",
     organizer_address: "Dufourstrasse 50, 9000 St. Gallen, Schweiz",
-    organizer_url: "http://www.startstgallen.startglobal.org/")
+    organizer_url: "http://www.startstgallen.startglobal.org/",
+    meeting_spots: "Coffee Area 1, Coffee Area 2, VIP Area")
   event1.save!
   sleep(1)
 
