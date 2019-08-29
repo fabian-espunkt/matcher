@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   resources :matchings, only: :index
   resources :appointments, only: :index
   resources :viewings, only: :index
+
+  get 'profile', to: 'pages#profile'
+  patch 'profile', to: 'pages#update', as: 'profile_update'
 end
