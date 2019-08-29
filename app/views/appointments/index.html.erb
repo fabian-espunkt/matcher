@@ -7,15 +7,19 @@
       <div class="d-flex justify-content-between align-items-center">
         <p>Select your default meeting spot: </p>
          <!-- Chosing meeting spot dropdown menu -->
+
+
+
         <div class="dropdown">
           <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
            Select Meeting Spot
          </button>
+         <% @events.each do |event|  %>
          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <% %>
-           <a class="dropdown-item .active" href="#">Coffee Area</a>
-           <a class="dropdown-item" href="#">Office room 1</a>
-           <a class="dropdown-item" href="#">Office room 2</a>
+            <% event.event.meeting_spots.split(",").each do |spot|%>
+              <a class="dropdown-item" href="#"><%= spot %></a>
+            <% end  %>
+           <% end  %>
          </div>
         </div>
          <!-- Save meeting spot -->
@@ -28,38 +32,6 @@
 
   <!-- calendar view with simple_calendar gem -->
 
-<!--   <div class="simple-calendar">
-    <#%= calendar number_of_days: 1 do |date| %>
-      <div>
-        <strong>Time</strong>
-      </div>
-      <#% 8.upto(17).each do |hour| %>
-        <div class="d-flex justify-content-start align-items-center">
-          <div class="col-2 border">
-            <#%= Time.parse("#{hour}:00").strftime("%l %P") %>
-          </div>
-        </div>
-      <#% end %>
-       <div class="col-10 border">
-          <p>this</p>
-      </div>
-    <#% end %>
-  </div> -->
-<!--
-<div class="simple-calendar d-flex justify-content-start">
-    <#%= calendar number_of_days: 1 do |date| %>
-    <div class="col">
-      <div class="row border-bottom table">
-        <strong>Time</strong>
-      </div>
-      <#% 8.upto(17).each do |hour| %>
-        <div class="row">
-          <#%= Time.parse("#{hour}:00").strftime("%l %P") %>
-        </div>
-      <#% end %>
-    </div>
-    <#% end %>
-</div> -->
 <table class="table">
   <thead>
     <tr>
