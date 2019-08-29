@@ -7,15 +7,19 @@
       <div class="d-flex justify-content-between align-items-center">
         <p>Select your default meeting spot: </p>
          <!-- Chosing meeting spot dropdown menu -->
+
+
+
         <div class="dropdown">
           <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
            Select Meeting Spot
          </button>
+         <% @events.each do |event|  %>
          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <% %>
-           <a class="dropdown-item .active" href="#">Coffee Area</a>
-           <a class="dropdown-item" href="#">Office room 1</a>
-           <a class="dropdown-item" href="#">Office room 2</a>
+            <% event.event.meeting_spots.split(",").each do |spot|%>
+              <a class="dropdown-item" href="#"><%= spot %></a>
+            <% end  %>
+           <% end  %>
          </div>
         </div>
          <!-- Save meeting spot -->
