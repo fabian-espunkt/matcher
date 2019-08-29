@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :matchings, only: :index
   resources :appointments, only: :index
   resources :viewings, only: :index
+  resources :meetings, only: [:index, :edit, :update]
 end
