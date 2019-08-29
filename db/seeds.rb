@@ -667,7 +667,7 @@ meeting7 = Meeting.new(
     investor: investor7,
     startup: startup7,
     event: event1,
-    agreed_timeslot: "08:00",
+    agreed_timeslot: "09:00",
     matching_status: "Scheduled")
   meeting7.save!
 
