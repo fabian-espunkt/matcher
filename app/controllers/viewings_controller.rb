@@ -1,6 +1,7 @@
 class ViewingsController < ApplicationController
 
   def index
+
     @users = User.all.reject { |u| u.kind == current_user.kind }
   end
 
@@ -21,3 +22,5 @@ end
 # 2. search in viewings via this user_id the current_user.id and check if value = true
   # 3. if so then save into meetings.matching_status --> to set an appointment
   # 4. if not then don't save it into meetings.matching_status
+
+

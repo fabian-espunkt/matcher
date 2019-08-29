@@ -29,7 +29,7 @@ events = Event.count
 Event.destroy_all
 sleep(2)
 puts '...'
-puts "Success! #{availabilities} availabilities, #{viewings} viewings, #{meetings} meetings,#{attendances} attendances, #{users} users and #{events} events have irreversibly been deleted from the database!"
+puts "Success! #{availabilities} availabilities, #{viewings} viewings, #{meetings} meetings, #{attendances} attendances, #{users} users and #{events} event(s) have irreversibly been deleted from the database!"
 puts '...'
 puts 'Seeding new database initiated...'
 sleep(2)
@@ -48,6 +48,7 @@ event1 = Event.new(
 
 puts '(2/6) Creating new users...'
 
+url1 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005970/lakestar_wpylzc.png"
 investor1 = User.new(
     kind: "investor",
     email: "klaus@lakestar.com",
@@ -65,12 +66,15 @@ investor1 = User.new(
     selling_to: "B2C, B2B",
     generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
-    launch_status: "no MVP, closed beta, public beta, publicly launched")
+    launch_status: "no MVP, closed beta, public beta, publicly launched",
+    remote_photo_url: url1,
+    admin: true)
   investor1.save!
 
+url2 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005970/index_y8mbom.png"
 investor2 = User.new(
     kind: "investor",
-    email: "diana@index-venturesd.com",
+    email: "diana@index-ventures.com",
     password: "123456",
     first_name: "Diana",
     last_name: "von Fürstenberg",
@@ -85,9 +89,11 @@ investor2 = User.new(
     selling_to: "B2C, B2B",
     generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
-    launch_status: "no MVP, closed beta, public beta, publicly launched")
+    launch_status: "no MVP, closed beta, public beta, publicly launched",
+    remote_photo_url: url2)
   investor2.save!
 
+url3 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/benchmark_wbymyl.png"
 investor3 = User.new(
     kind: "investor",
     email: "timo@benchmark.com",
@@ -105,9 +111,11 @@ investor3 = User.new(
     selling_to: "B2C, B2B",
     generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
-    launch_status: "no MVP, closed beta, public beta, publicly launched")
+    launch_status: "no MVP, closed beta, public beta, publicly launched",
+    remote_photo_url: url3)
   investor3.save!
 
+url4 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/creandum_ztlxox.png"
 investor4 = User.new(
     kind: "investor",
     email: "simon@creandum.com",
@@ -125,9 +133,11 @@ investor4 = User.new(
     selling_to: "B2C, B2B",
     generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
-    launch_status: "no MVP, closed beta, public beta, publicly launched")
+    launch_status: "no MVP, closed beta, public beta, publicly launched",
+    remote_photo_url: url4)
   investor4.save!
 
+url5 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/holtzbrinck_fvnssk.png"
 investor5 = User.new(
     kind: "investor",
     email: "Dieter@holtzbrinck.com",
@@ -145,9 +155,11 @@ investor5 = User.new(
     selling_to: "B2C, B2B",
     generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
-    launch_status: "no MVP, closed beta, public beta, publicly launched")
+    launch_status: "no MVP, closed beta, public beta, publicly launched",
+    remote_photo_url: url5)
   investor5.save!
 
+url6 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005970/partechh_dfehn4.png"
 investor6 = User.new(
     kind: "investor",
     email: "kerstin@partech.com",
@@ -165,9 +177,11 @@ investor6 = User.new(
     selling_to: "B2C, B2B",
     generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
-    launch_status: "no MVP, closed beta, public beta, publicly launched")
+    launch_status: "no MVP, closed beta, public beta, publicly launched",
+    remote_photo_url: url6)
   investor6.save!
 
+url7 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/greylock_yzk0js.png"
 investor7 = User.new(
     kind: "investor",
     email: "john@greylock.com",
@@ -185,9 +199,11 @@ investor7 = User.new(
     selling_to: "B2C, B2B",
     generating_revenue: false, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
-    launch_status: "closed beta, public beta, publicly launched")
+    launch_status: "closed beta, public beta, publicly launched",
+    remote_photo_url: url7)
   investor7.save!
 
+url8 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/bessemer_tadg9g.png"
 investor8 = User.new(
     kind: "investor",
     email: "alan@bessemer.com",
@@ -205,9 +221,11 @@ investor8 = User.new(
     selling_to: "B2C, B2B",
     generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
-    launch_status: "no MVP, closed beta, public beta, publicly launched")
+    launch_status: "no MVP, closed beta, public beta, publicly launched",
+    remote_photo_url: url8)
   investor8.save!
 
+url9 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/cherry_jtmt9f.png"
 investor9 = User.new(
     kind: "investor",
     email: "christian@cherry.com",
@@ -225,9 +243,11 @@ investor9 = User.new(
     selling_to: "B2C, B2B",
     generating_revenue: false, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
-    launch_status: "no MVP, closed beta, public beta, publicly launched")
+    launch_status: "no MVP, closed beta, public beta, publicly launched",
+    remote_photo_url: url9)
   investor9.save!
 
+url10 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/gfc_p6chqg.png"
 investor10 = User.new(
     kind: "investor",
     email: "marc@gfc.com",
@@ -245,9 +265,11 @@ investor10 = User.new(
     selling_to: "B2C, B2B",
     generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
-    launch_status: "no MVP, closed beta, public beta, publicly launched")
+    launch_status: "no MVP, closed beta, public beta, publicly launched",
+    remote_photo_url: url10)
   investor10.save!
 
+url11 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/getyourguide_fjsxpb.png"
 startup1 = User.new(
     kind: "startup",
     email: "startup1@getyourguide.com",
@@ -266,9 +288,11 @@ startup1 = User.new(
     stages: "Pre-seed",
     selling_to: "B2C",
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
-    profitable: false) # Is the company profitable? Here: "Yes"
+    profitable: false, # Is the company profitable? Here: "Yes"
+    remote_photo_url: url11)
   startup1.save!
 
+url12 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/hellofresh_crwz6g.png"
 startup2 = User.new(
     kind: "startup",
     email: "startup2@hellofresh.com",
@@ -287,9 +311,11 @@ startup2 = User.new(
     stages: "Series B",
     selling_to: "B2C",
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
-    profitable: true) # Is the company profitable? Here: "Yes"
+    profitable: true, # Is the company profitable? Here: "Yes"
+    remote_photo_url: url12)
   startup2.save!
 
+url13 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005970/personio_nz51ku.png"
 startup3 = User.new(
     kind: "startup",
     email: "startup3@personio.com",
@@ -308,9 +334,11 @@ startup3 = User.new(
     stages: "Series A",
     selling_to: "B2B",
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
-    profitable: false) # Is the company profitable? Here: "Yes"
-startup3.save!
+    profitable: false, # Is the company profitable? Here: "Yes"
+    remote_photo_url: url13)
+  startup3.save!
 
+url14 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005970/lifex_plzbui.png"
 startup4 = User.new(
     kind: "startup",
     email: "startup4@lifex.com",
@@ -329,9 +357,11 @@ startup4 = User.new(
     stages: "Seed",
     selling_to: "B2C",
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
-    profitable: false) # Is the company profitable? Here: "Yes"
+    profitable: false, # Is the company profitable? Here: "Yes"
+    remote_photo_url: url14)
   startup4.save!
 
+url15 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/fineway_dcc3o9.png"
 startup5 = User.new(
     kind: "startup",
     email: "startup5@fineaway.com",
@@ -350,9 +380,11 @@ startup5 = User.new(
     stages: "Series B",
     selling_to: "B2C",
     generating_revenue: false, # Does the company generate revenue? Here: "Yes"
-    profitable: false) # Is the company profitable? Here: "Yes"
+    profitable: false, # Is the company profitable? Here: "Yes"
+    remote_photo_url: url15)
   startup5.save!
 
+url16 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005970/mcmakler_pdipce.jpg"
 startup6 = User.new(
     kind: "startup",
     email: "startup6@mcmakler.com",
@@ -371,9 +403,11 @@ startup6 = User.new(
     stages: "Series B",
     selling_to: "B2C, B2B",
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
-    profitable: false) # Is the company profitable? Here: "Yes"
+    profitable: false, # Is the company profitable? Here: "Yes"
+    remote_photo_url: url16)
   startup6.save!
 
+url17 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/hometogo_rsmhan.png"
 startup7 = User.new(
     kind: "startup",
     email: "startup7@hometogo.com",
@@ -392,9 +426,11 @@ startup7 = User.new(
     stages: "Series A",
     selling_to: "B2C",
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
-    profitable: true) # Is the company profitable? Here: "Yes"
+    profitable: true, # Is the company profitable? Here: "Yes"
+    remote_photo_url: url17)
   startup7.save!
 
+url18 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005970/n26_ymfmyl.jpg"
 startup8 = User.new(
     kind: "startup",
     email: "startup8@n26.com",
@@ -413,9 +449,11 @@ startup8 = User.new(
     stages: "Later",
     selling_to: "B2C",
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
-    profitable: false) # Is the company profitable? Here: "Yes"
+    profitable: false, # Is the company profitable? Here: "Yes"
+    remote_photo_url: url18)
   startup8.save!
 
+url19 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/flaschenpost_vqugto.jpg"
 startup9 = User.new(
     kind: "startup",
     email: "startup9@flaschenpost.com",
@@ -434,9 +472,11 @@ startup9 = User.new(
     stages: "Series A",
     selling_to: "B2C, B2B",
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
-    profitable: false) # Is the company profitable? Here: "Yes"
+    profitable: false, # Is the company profitable? Here: "Yes"
+    remote_photo_url: url19)
   startup9.save!
 
+url20 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/delivery-hero_hbefxy.png"
 startup10 = User.new(
     kind: "startup",
     email: "startup1@delivery-hero.com",
@@ -455,7 +495,8 @@ startup10 = User.new(
     stages: "Later",
     selling_to: "B2C",
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
-    profitable: true) # Is the company profitable? Here: "Yes"
+    profitable: true, # Is the company profitable? Here: "Yes"
+    remote_photo_url: url20)
   startup10.save!
 
 puts '(3/6) Creating new attendances...'
