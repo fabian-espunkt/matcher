@@ -1,0 +1,62 @@
+.user-photo {
+  width: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#inner-content {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.matching-status {
+  margin-right: 15px;
+  font-size: 20px;
+  padding-left: 50px;
+}
+
+.info-one {
+  width: 20%;
+  border-left: 3px solid #F2F7F9;
+  border-right: 3px solid #F2F7F9;
+  padding-right: 30px;
+  padding-left: 35px;
+}
+
+.info-two {
+  height: 100px;
+  border-right: 3px solid #F2F7F9;
+}
+
+.info-two p {
+  margin-top: 38px;
+}
+
+.info-three {
+  border-right: 3px solid #F2F7F9;
+  padding-right: 0;
+}
+
+#waiting {
+  color: #ffad18;
+}
+
+#matched {
+  color: green;
+}
+
+#scheduled {
+  color: $blue;
+  text-decoration: underline;
+}
+
+.card {
+  transition: all .2s ease-in-out;
+  border-radius: 6px;
+  box-shadow: -2px 2px 29px -10px rgba(0,0,0,0.75);
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: -2px 2px 29px -10px rgba(0,0,0,1.2);
+}
