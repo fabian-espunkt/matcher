@@ -1,38 +1,37 @@
 
 # ------- Seeder ----------------
-
+Viewing.destroy_all
 puts 'Cleaning current database initiated...'
-sleep(1.5)
 puts '...'
 puts '(1/6) Destroying current availabilities...'
 availabilities = Availability.count
 Availability.destroy_all
-sleep(1)
+
 # puts '(2/6) Destroying current viewings...'
 # viewings = Viewing.count
 # Viewing.destroy_all
-sleep(1)
+
 puts '(3/6) Destroying current meetings...'
 meetings = Meeting.count
 Meeting.destroy_all
-sleep(1)
+
 puts '(4/6) Destroying current attendances...'
 attendances = Attendance.count
 Attendance.destroy_all
-sleep(1)
+
 puts '(5/6) Destroying current users...'
 users = User.count
 User.destroy_all
-sleep(1)
+
 puts '(6/6) Destroying current events...'
 events = Event.count
 Event.destroy_all
-sleep(2)
+
 puts '...'
-puts "Success! #{availabilities} availabilities, #{viewings} viewings, #{meetings} meetings, #{attendances} attendances, #{users} users and #{events} event(s) have irreversibly been deleted from the database!"
+puts "Success! #{availabilities} availabilities, #{meetings} meetings, #{attendances} attendances, #{users} users and #{events} event(s) have irreversibly been deleted from the database!"
 puts '...'
 puts 'Seeding new database initiated...'
-sleep(2)
+
 puts '...'
 puts '(1/6) Creating new events...'
 
@@ -45,7 +44,7 @@ event1 = Event.new(
     organizer_url: "http://www.startstgallen.startglobal.org/",
     meeting_spots: "Coffee Area 1, Coffee Area 2, VIP Area")
   event1.save!
-  sleep(1)
+
 
 puts '(2/6) Creating new users...'
 
