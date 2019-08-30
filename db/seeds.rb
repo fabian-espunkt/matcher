@@ -637,7 +637,7 @@ attendance20 = Attendance.new(
 puts '(4/6) Creating new meetings...'
 
 meeting1 = Meeting.new(
-    investor: investor1,
+    investor: investor11,
     startup: startup1,
     event: event1,
     agreed_timeslot: nil,
@@ -645,7 +645,7 @@ meeting1 = Meeting.new(
   meeting1.save!
 
 meeting2 = Meeting.new(
-    investor: investor2,
+    investor: investor11,
     startup: startup2,
     event: event1,
     agreed_timeslot: nil,
@@ -661,7 +661,7 @@ meeting3 = Meeting.new(
   meeting3.save!
 
 meeting4 = Meeting.new(
-    investor: investor4,
+    investor: investor11,
     startup: startup4,
     event: event1,
     agreed_timeslot: nil,
@@ -685,7 +685,7 @@ meeting6 = Meeting.new(
   meeting6.save!
 
 meeting7 = Meeting.new(
-    investor: investor7,
+    investor: investor11,
     startup: startup7,
     event: event1,
     agreed_timeslot: "08:00",
@@ -701,7 +701,7 @@ meeting8 = Meeting.new(
   meeting8.save!
 
 meeting9 = Meeting.new(
-    investor: investor9,
+    investor: investor11,
     startup: startup9,
     event: event1,
     agreed_timeslot: "16:00",
