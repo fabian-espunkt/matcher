@@ -1,0 +1,35 @@
+.custom-checkbox {
+  label {
+    background: #E5E5E5;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #585858;
+    font-size: 14px;
+  }
+  input {
+    display: none;
+  }
+  :checked + label {
+    background: #B1E87A;
+    font-weight: 700;
+    color: #313131;
+  }
+}
+
+.custom-radio-button {
+  label {
+    background: #E5E5E5;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #585858;
+    font-size: 14px;
+  }
+  input {
+    display: none;
+  }
+  :checked + label {
+    background: #B1E87A;
+    font-weight: 700;
+    color: #313131;
+  }
+}

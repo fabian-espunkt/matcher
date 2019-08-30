@@ -52,6 +52,7 @@ puts '(2/6) Creating new users...'
 url1 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005970/lakestar_wpylzc.png"
 investor1 = User.new(
     kind: "investor",
+    first_time: false,
     email: "klaus@lakestar.com",
     password: "123456",
     first_name: "Klaus",
@@ -75,6 +76,7 @@ investor1 = User.new(
 url2 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005970/index_y8mbom.png"
 investor2 = User.new(
     kind: "investor",
+    first_time: false,
     email: "diana@index-ventures.com",
     password: "123456",
     first_name: "Diana",
@@ -97,6 +99,7 @@ investor2 = User.new(
 url3 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/benchmark_wbymyl.png"
 investor3 = User.new(
     kind: "investor",
+    first_time: false,
     email: "timo@benchmark.com",
     password: "123456",
     first_name: "Timo",
@@ -119,6 +122,7 @@ investor3 = User.new(
 url4 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/creandum_ztlxox.png"
 investor4 = User.new(
     kind: "investor",
+    first_time: false,
     email: "simon@creandum.com",
     password: "123456",
     first_name: "Simon",
@@ -141,6 +145,7 @@ investor4 = User.new(
 url5 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/holtzbrinck_fvnssk.png"
 investor5 = User.new(
     kind: "investor",
+    first_time: false,
     email: "Dieter@holtzbrinck.com",
     password: "123456",
     first_name: "Dieter",
@@ -163,6 +168,7 @@ investor5 = User.new(
 url6 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005970/partechh_dfehn4.png"
 investor6 = User.new(
     kind: "investor",
+    first_time: false,
     email: "kerstin@partech.com",
     password: "123456",
     first_name: "Kerstin",
@@ -185,6 +191,7 @@ investor6 = User.new(
 url7 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/greylock_yzk0js.png"
 investor7 = User.new(
     kind: "investor",
+    first_time: false,
     email: "john@greylock.com",
     password: "123456",
     first_name: "John",
@@ -207,6 +214,7 @@ investor7 = User.new(
 url8 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/bessemer_tadg9g.png"
 investor8 = User.new(
     kind: "investor",
+    first_time: false,
     email: "alan@bessemer.com",
     password: "123456",
     first_name: "Jennifer",
@@ -229,6 +237,7 @@ investor8 = User.new(
 url9 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/cherry_jtmt9f.png"
 investor9 = User.new(
     kind: "investor",
+    first_time: false,
     email: "christian@cherry.com",
     password: "123456",
     first_name: "Christian",
@@ -251,6 +260,7 @@ investor9 = User.new(
 url10 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/gfc_p6chqg.png"
 investor10 = User.new(
     kind: "investor",
+    first_time: false,
     email: "marc@gfc.com",
     password: "123456",
     first_name: "Marc",
@@ -273,6 +283,7 @@ investor10 = User.new(
 url11 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567072794/lw-ventures-logo_lhy2qj.png"
 investor11 = User.new(
     kind: "investor",
+    first_time: true,
     email: "dominik@lw-ventures.com",
     password: "123456",
     first_name: "Dominik",
@@ -285,6 +296,7 @@ investor11 = User.new(
 url11 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/getyourguide_fjsxpb.png"
 startup1 = User.new(
     kind: "startup",
+    first_time: false,
     email: "startup1@getyourguide.com",
     password: "123456",
     first_name: "Hans",
@@ -308,6 +320,7 @@ startup1 = User.new(
 url12 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/hellofresh_crwz6g.png"
 startup2 = User.new(
     kind: "startup",
+    first_time: false,
     email: "startup2@hellofresh.com",
     password: "123456",
     first_name: "Dominik",
@@ -331,6 +344,7 @@ startup2 = User.new(
 url13 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005970/personio_nz51ku.png"
 startup3 = User.new(
     kind: "startup",
+    first_time: false,
     email: "startup3@personio.com",
     password: "123456",
     first_name: "Hanno",
@@ -354,6 +368,7 @@ startup3 = User.new(
 url14 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005970/lifex_plzbui.png"
 startup4 = User.new(
     kind: "startup",
+    first_time: false,
     email: "startup4@lifex.com",
     password: "123456",
     first_name: "Gregory",
@@ -377,6 +392,7 @@ startup4 = User.new(
 url15 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/fineway_dcc3o9.png"
 startup5 = User.new(
     kind: "startup",
+    first_time: false,
     email: "startup5@fineaway.com",
     password: "123456",
     first_name: "Maria",
@@ -400,6 +416,7 @@ startup5 = User.new(
 url16 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005970/mcmakler_pdipce.jpg"
 startup6 = User.new(
     kind: "startup",
+    first_time: false,
     email: "startup6@mcmakler.com",
     password: "123456",
     first_name: "Felix",
@@ -423,6 +440,7 @@ startup6 = User.new(
 url17 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/hometogo_rsmhan.png"
 startup7 = User.new(
     kind: "startup",
+    first_time: false,
     email: "startup7@hometogo.com",
     password: "123456",
     first_name: "Dirk",
@@ -446,6 +464,7 @@ startup7 = User.new(
 url18 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005970/n26_ymfmyl.jpg"
 startup8 = User.new(
     kind: "startup",
+    first_time: false,
     email: "startup8@n26.com",
     password: "123456",
     first_name: "Maximilian",
@@ -469,6 +488,7 @@ startup8 = User.new(
 url19 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/flaschenpost_vqugto.jpg"
 startup9 = User.new(
     kind: "startup",
+    first_time: false,
     email: "startup9@flaschenpost.com",
     password: "123456",
     first_name: "Niklas",
@@ -492,6 +512,7 @@ startup9 = User.new(
 url20 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/delivery-hero_hbefxy.png"
 startup10 = User.new(
     kind: "startup",
+    first_time: false,
     email: "startup1@delivery-hero.com",
     password: "123456",
     first_name: "Lukasz",
