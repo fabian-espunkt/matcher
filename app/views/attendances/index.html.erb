@@ -2,27 +2,24 @@
   <h1 class="py-4">Matching</h1>
 
   <% @attendances.each do |attendance| %>
-    <div class="card col-8 justify-content-center m-auto">
+    <div class="card col-8 justify-content-center m-auto matching-card">
       <div class="p-3">
-        <div>
-
-          <%= attendance.user.kind.capitalize %>
-          <h2><%= attendance.user.first_name %> <%= attendance.user.last_name %></h2>
-          <h5><%= attendance.user.position %></h5>
-          <h5><%= attendance.user.company_name %></h5>
+        <div class="pt-3">
+          <h2><%= attendance.user.company_name %></h2>
+          <h3><%= attendance.user.first_name %> <%= attendance.user.last_name %>, <%= attendance.user.position %></h3>
         </div>
-        <div>
-          <p><%= attendance.user.company_city %></p>
+        <div id="company-details">
           <p><%= attendance.user.sectors %></p>
+          <p><%= attendance.user.company_city %></p>
           <p><%= attendance.user.stages %></p>
-          <p><%= attendance.user.company_founding_year %></p>
+          <p>Founded <%= attendance.user.company_founding_year %></p>
         </div>
         <div>
           <p><%= truncate(attendance.user.firm_description, length: 180 ) %></p>
         </div>
         <div class="py-3">
-          <%= link_to "LIKE", attendance_create_like_path(attendance), method: :post, class: "btn btn-success" %>
-          <%= link_to "DISLIKE", attendance_create_dislike_path(attendance), method: :post, class: "btn btn-secondary" %>
+          <%= link_to "✔", attendance_create_like_path(attendance), method: :post, class: "btn btn-success mr-2 px-4" %>
+          <%= link_to "✘", attendance_create_dislike_path(attendance), method: :post, class: "btn btn-secondary px-4" %>
         </div>
       </div>
 
