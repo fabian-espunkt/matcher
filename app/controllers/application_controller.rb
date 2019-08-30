@@ -15,13 +15,13 @@ class ApplicationController < ActionController::Base
   #   redirect_to(root_path)
   # end
 
-  # def after_sign_in_path_for(resource)
-  #   if @user.first_time == true
-  #     profile_update_path
-  #   else
-  #     root_path
-  #   end
-  # end
+  def after_sign_in_path_for(resource)
+    if @user.first_time == true
+      profile_path
+    else
+      attendances_path
+    end
+  end
 
   private
 

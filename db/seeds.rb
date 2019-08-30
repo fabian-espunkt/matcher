@@ -713,13 +713,13 @@ puts '(5/6) Creating new viewings...'
 
 event1.attendances.joins(:user).where(users: { kind: 'startup' }).each do |attendance|
   User.investors.all.each do |user|
-    Viewing.create!(user: user, attendance: attendance, like: [true, false].sample)
+    Viewing.create!(user: user, attendance: attendance, like: nil)
   end
 end
 
 event1.attendances.joins(:user).where(users: { kind: 'investor' }).each do |attendance|
   User.startups.all.each do |user|
-    Viewing.create!(user: user, attendance: attendance, like: [true, false].sample)
+    Viewing.create!(user: user, attendance: attendance, like: nil)
   end
 end
 
