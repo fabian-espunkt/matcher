@@ -2,11 +2,11 @@
   <h1 class="py-4">Matching</h1>
 
   <% @attendances.each do |attendance| %>
-    <div class="card col-8 justify-content-center m-auto ">
-      <div class="p-3 ">
+    <div class="card col-8 justify-content-center m-auto">
+      <div class="p-3">
         <div>
 
-          <%= attendance.user.kind %>
+          <%= attendance.user.kind.capitalize %>
           <h2><%= attendance.user.first_name %> <%= attendance.user.last_name %></h2>
           <h5><%= attendance.user.position %></h5>
           <h5><%= attendance.user.company_name %></h5>
@@ -18,15 +18,16 @@
           <p><%= attendance.user.company_founding_year %></p>
         </div>
         <div>
-          <p><%= attendance.user.firm_description %></p>
+          <p><%= truncate(attendance.user.firm_description, length: 180 ) %></p>
         </div>
         <div class="py-3">
-          <%= link_to "LIKE", attendance_create_like_path(attendance), method: :post %>
-          <%= link_to "DISLIKE", attendance_create_dislike_path(attendance), method: :post %>
+          <%= link_to "LIKE", attendance_create_like_path(attendance), method: :post, class: "btn btn-success" %>
+          <%= link_to "DISLIKE", attendance_create_dislike_path(attendance), method: :post, class: "btn btn-secondary" %>
         </div>
       </div>
 
     </div>
+    <br>
   <% end %>
 
 </div>

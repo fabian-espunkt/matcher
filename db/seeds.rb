@@ -710,18 +710,19 @@ meeting9 = Meeting.new(
   meeting9.save!
 
 puts '(5/6) Creating new viewings...'
+puts 'not creating any right now'
 
-event1.attendances.joins(:user).where(users: { kind: 'startup' }).each do |attendance|
-  User.investors.all.each do |user|
-    Viewing.create!(user: user, attendance: attendance, like: nil)
-  end
-end
+# event1.attendances.joins(:user).where(users: { kind: 'startup' }).each do |attendance|
+#   User.investors.all.each do |user|
+#     Viewing.create!(user: user, attendance: attendance, like: nil)
+#   end
+# end
 
-event1.attendances.joins(:user).where(users: { kind: 'investor' }).each do |attendance|
-  User.startups.all.each do |user|
-    Viewing.create!(user: user, attendance: attendance, like: nil)
-  end
-end
+# event1.attendances.joins(:user).where(users: { kind: 'investor' }).each do |attendance|
+#   User.startups.all.each do |user|
+#     Viewing.create!(user: user, attendance: attendance, like: nil)
+#   end
+# end
 
 puts '(6/6) Creating new availabilities...'
 
