@@ -12,7 +12,11 @@ class PagesController < ApplicationController
     @user = current_user
     authorize @user
     @user.update(user_params)
-    redirect_to matchings_path
+    if @user.save!
+      redirect_to matchings_path
+    else
+      render :profile
+    end
   end
 
   private

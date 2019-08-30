@@ -15,8 +15,8 @@ class User < ApplicationRecord
   scope :investors, -> { where(kind: 'investor') }
   scope :startups, -> { where(kind: 'startup') }
 
-  validates :email, :password, :first_name, :last_name, if: :investor?, presence: true
-  validates :email, :password, :first_name, :last_name, if: :startup?, presence: true
+  validates :first_name, :last_name, if: :investor?, presence: true
+  validates :first_name, :last_name, if: :startup?, presence: true
 
   def investor?
     kind == 'investor'
