@@ -1,4 +1,20 @@
 <div class="container pt-5">
-  <h1><strong>Pages#home</strong></h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
+
+  <header>
+    <div class="overlay"></div>
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+      <source src="https://res.cloudinary.com/dkrolafpx/video/upload/v1567171598/header_video_laj4yi.mp4" type="video/mp4">
+    </video>
+    <div class="container h-100">
+      <div class="d-flex h-100 text-center align-items-center">
+        <div class="w-100 text-white text-center">
+          <h1>MATCHING AT CONFERENCES, MADE EASY.</h1>
+          <p>Matcher helps you to schedule relevant meetings – in minutes</p>
+          <%= link_to "Log In with existing account", new_user_session_path, class: "btn btn-primary"  %>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
 </div>
