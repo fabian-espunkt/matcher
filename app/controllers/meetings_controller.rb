@@ -1,6 +1,7 @@
 class MeetingsController < ApplicationController
   def index
     @meetings = policy_scope(Meeting)
+    @my_meetings = Meeting.all.where(investor: current_user)
   end
 
   def edit

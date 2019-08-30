@@ -1,54 +1,51 @@
 <div class="container">
   <h1 class="mb-4 py-3">Your Appointments</h1>
 
-  <div class="row mb-4">
-    <!-- card with meeting spot choices for investor -->
-    <div class="card col-lg-8">
-      <div class="d-flex justify-content-between align-items-center">
-        <p>Select your default meeting spot: </p>
-         <!-- Chosing meeting spot dropdown menu -->
-
-
-
-        <div class="dropdown">
-          <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           Select Meeting Spot
-         </button>
-         <% @events.each do |event|  %>
-         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <% event.event.meeting_spots.split(",").each do |spot|%>
-              <a class="dropdown-item" href="#"><%= spot %></a>
-            <% end  %>
-           <% end  %>
-         </div>
-        </div>
-         <!-- Save meeting spot -->
-        <div>
-          <button type="button" class="btn btn-primary">Save</button>
-        </div>
+  <div class="d-flex justify-content-between appointments-button">
+    <p>Select your default meeting spot</p>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle mb-4" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Select Default Meeting Spot
+      </button>
+      <% @events.each do |event|  %>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <% event.event.meeting_spots.split(",").each do |spot|%>
+        <a class="dropdown-item" href="#"><%= spot %></a>
+          <% end  %>
       </div>
+      <% end  %>
     </div>
   </div>
 
   <!-- calendar view with simple_calendar gem -->
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Time</th>
-      <th scope="col">20/09/2019</th>
-    </tr>
-  </thead>
-  <tbody>
-   <% @user_appointments.each do |appointment| %>
-      <% (8..18).each do |time| %>
-        <tr>
-          <th scope="col"><%= time %>:00 am</th>
-          <td><%= appointment.startup.company_name if appointment.agreed_timeslot.hour == time %></td>
-        </tr>
-      <% end %>
-    <% end %>
-  </tbody>
-</table>
+  <table class="table appointments-table">
+    <thead>
+      <tr>
+        <th >Time</th>
+        <th >Company Bookings</th>
+      </tr>
+    </thead>
+      <tbody>
+        <% (8..18).each do |time| %>
+          <tr>
+            <% if time <= 11 %>
+              <th scope="col" class="time"><%= time %>:00 am</th>
+            <% elsif time >= 12 %>
+              <th scope="col" class="time"><%= time %>:00 pm</th>
+            <% end  %>
+            <% datetime = DateTime.parse("2000-01-01 #{time}:00") %>
+            <% meeting = current_user.meetings_for_hour(datetime).first %>
+            <% if meeting %>
+                <td class="slot"><strong><%= meeting.startup.company_name%></strong></td>
+            <% else %>
+              <td></td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+  </table>
+
 </div>
+
 
