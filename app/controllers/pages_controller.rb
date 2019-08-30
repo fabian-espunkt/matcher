@@ -13,7 +13,7 @@ class PagesController < ApplicationController
     authorize @user
     @user.update!(user_params)
     if @user.update(user_params)
-      redirect_to root_path
+      redirect_to attendances_path
     else
       render :profile
     end
