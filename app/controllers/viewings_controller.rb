@@ -16,6 +16,7 @@ class ViewingsController < ApplicationController
     attendance = Attendance.find(params[:attendance_id])
     viewing.attendance = attendance
     viewing.like = false
+    viewing.user = current_user
     viewing.save
     skip_authorization
     redirect_to attendances_path
