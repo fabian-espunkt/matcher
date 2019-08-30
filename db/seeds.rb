@@ -8,9 +8,9 @@ puts '(1/6) Destroying current availabilities...'
 availabilities = Availability.count
 Availability.destroy_all
 sleep(1)
-puts '(2/6) Destroying current viewings...'
-viewings = Viewing.count
-Viewing.destroy_all
+# puts '(2/6) Destroying current viewings...'
+# viewings = Viewing.count
+# Viewing.destroy_all
 sleep(1)
 puts '(3/6) Destroying current meetings...'
 meetings = Meeting.count
@@ -732,5 +732,5 @@ event1.attendances.joins(:user).each do |attendance|
   Availability.create!(attendance: attendance, start_time: time_start.strftime("%I:%M%p"), end_time: time_end.strftime("%I:%M%p") , slot_taken: [true, false].sample)
 end
 puts '...'
-puts "Success! #{Availability.count} availabilities, #{Viewing.count} viewings, #{Meeting.count} meetings, #{Attendance.count} attendances, #{User.count} users and #{Event.count} event(s) have successfully been added to your database!"
+puts "Success! #{Availability.count} availabilities,  #{Meeting.count} meetings, #{Attendance.count} attendances, #{User.count} users and #{Event.count} event(s) have successfully been added to your database!"
 puts "------------------ Finished! Enjoy testing. ------------------"
