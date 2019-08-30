@@ -8,15 +8,15 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
 
-      <%= simple_form_for profile_update_path(@user), :method => :patch do |f| %>
+      <%= simple_form_for @user, url: profile_update_path(@user), :method => :patch do |f| %>
       <%= f.input :ticket_size_max, label: "Your max. ticket size (in €)" %>
-      <%= f.input :sectors, label: "Sectors", as: :check_boxes, input_html: { class: 'custom-checkbox' }, :collection => ["Agriculture", "Industrial Production", "Health & Life Sciences", "Retail/D2C", "Real Estate", "Education", "Finance", "Food", "Travel", "Hardware Engineering", "Media", "Telecommunication", "Logistics", "Mobility", "Productivity Software" ] %>
-      <%= f.input :stages, label: "Company Stages",input_html: { class: 'custom-checkbox' }, as: :check_boxes, :collection => ["Pre-Seed", "Seed", "Series A", "Series B", "Series C", "Later"] %>
-      <%= f.input :selling_to, label: "Customer Types", input_html: { class: 'custom-checkbox' }, as: :check_boxes, :collection => ["B2C", "B2B", "B2B2C"] %>
-      <%= f.input :launch_status, label: "Startup Status", as: :check_boxes, input_html: { class: 'custom-checkbox' }, :collection => ["Pre-MVP", "closed beta", "public beta", "publicly launched"] %>
-      <%= f.input :generating_revenue, input_html: { class: 'custom-radio-button' }, label: "Startup needs to generate revenue?", as: :radio_buttons %>
-      <%= f.input :profitable, label: "Startup needs to be profitable?", input_html: { class: 'custom-radio-button' }, as: :radio_buttons %>
-      <%= f.button :submit, "Save my profile", class: "btn-lg btn-primary" %>
+      <%= f.input :sectors, include_hidden: false, label: "Sectors", as: :check_boxes, collection_wrapper_class: 'hello', wrapper_html: { class: 'custom-checkbox' }, :collection => ["Agriculture", "Industrial Production", "Health & Life Sciences", "Retail/D2C", "Real Estate", "Education", "Finance", "Food", "Travel", "Hardware Engineering", "Media", "Telecommunication", "Logistics", "Mobility", "Productivity Software" ] %>
+      <%= f.input :stages, include_hidden: false, label: "Company Stages",wrapper_html: { class: 'custom-checkbox' }, as: :check_boxes, :collection => ["Pre-Seed", "Seed", "Series A", "Series B", "Series C", "Later"] %>
+      <%= f.input :selling_to, include_hidden: false, label: "Customer Types", wrapper_html: { class: 'custom-checkbox' }, as: :check_boxes, :collection => ["B2C", "B2B", "B2B2C"] %>
+      <%= f.input :launch_status, include_hidden: false, label: "Startup Status", as: :check_boxes, wrapper_html: { class: 'custom-checkbox' }, :collection => ["Pre-MVP", "closed beta", "public beta", "publicly launched"] %>
+      <%= f.input :generating_revenue, wrapper_html: { class: 'custom-radio-button' }, label: "Startup needs to generate revenue?", as: :radio_buttons %>
+      <%= f.input :profitable, label: "Startup needs to be profitable?", wrapper_html: { class: 'custom-radio-button' }, as: :radio_buttons %>
+      <%= f.button :submit, "Save my profile", class: "btn-lg btn-primary mb-5" %>
       <% end %>
     </div>
   </div>

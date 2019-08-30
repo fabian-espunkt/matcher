@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   resources :viewings, only: :index
 
   get 'profile', to: 'pages#profile'
-  patch 'profile', to: 'pages#update', as: 'profile_update'
+  patch 'profile/:user_id', to: 'pages#update', as: 'profile_update'
 end
