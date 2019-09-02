@@ -12,9 +12,9 @@ Rails.application.routes.draw do
   patch 'profile/:user_id', to: 'pages#update', as: 'profile_update'
 
   resources :attendances, only: :index do
-    post '/viewings', to: 'viewings#create_like', as: :create_like
-    post '/viewings', to: 'viewings#create_dislike', as: :create_dislike
+    post 'like', to: 'viewings#create_like', as: :create_like
+    post 'dislike', to: 'viewings#create_dislike', as: :create_dislike
   end
-  
+
   resources :meetings, only: [:index, :edit, :update]
 end
