@@ -85,10 +85,7 @@ ActiveRecord::Schema.define(version: 2019_09_02_135353) do
     t.boolean "admin"
     t.string "photo"
     t.boolean "first_time", default: true
-<<<<<<< HEAD
-=======
     t.string "meeting_spot"
->>>>>>> 5f367781d5cbb9c991fdd85848b3dcb4bae62be5
     t.string "stages", default: [], array: true
     t.string "sectors", default: [], array: true
     t.string "launch_status", default: [], array: true
