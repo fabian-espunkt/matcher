@@ -309,8 +309,10 @@ startup1 = User.new(
     company_founding_year: 2009,
     launch_status: ["publicly launched"],
     sectors: ["Travel"],
-    stages: ["Pre-Seed"],
+    stages: ["Later Stage"],
     selling_to: ["B2C"],
+    fte: 680,
+    funds_raised: 650000000,
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
     profitable: false, # Is the company profitable? Here: "Yes"
     remote_photo_url: url11)
@@ -331,10 +333,12 @@ startup2 = User.new(
     company_url: "www.hellofresh.com",
     firm_description: "HelloFresh is a food subscription company that sends pre-portioned ingredients to users’ doorstep each week.",
     company_founding_year: "2011",
-    launch_status: ["public beta"],
+    launch_status: ["publicly launched"],
     sectors: ["Food", "Retail/D2C"],
-    stages: ["Series B"],
+    stages: ["Later Stage"],
     selling_to: ["B2C"],
+    fte: 2800,
+    funds_raised: 200000000,
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
     profitable: true, # Is the company profitable? Here: "Yes"
     remote_photo_url: url12)
@@ -355,10 +359,12 @@ startup3 = User.new(
     company_url: "www.personio.com",
     firm_description: "Personio offers a holistic HR management and recruiting solution for Startups and SMEs.",
     company_founding_year: "2015",
-    launch_status: ["closed beta"],
+    launch_status: ["publicly launched"],
     sectors: ["Productivity Software"],
     stages: ["Series A"],
     selling_to: ["B2B"],
+    fte: 240,
+    funds_raised: 55000000,
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
     profitable: false, # Is the company profitable? Here: "Yes"
     remote_photo_url: url13)
@@ -379,10 +385,12 @@ startup4 = User.new(
     company_url: "www.joinlifex.com",
     firm_description: "LifeX Aps is a co-living startup in Copenhagen and Berlin.",
     company_founding_year: "2017",
-    launch_status: ["pre-MVP"],
+    launch_status: ["publicly launched"],
     sectors: ["Real Estate"],
     stages: ["Seed"],
     selling_to: ["B2C"],
+    fte: 25,
+    funds_raised: 3000000,
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
     profitable: false, # Is the company profitable? Here: "Yes"
     remote_photo_url: url14)
@@ -403,10 +411,12 @@ startup5 = User.new(
     company_url: "www.joinlifex.com/",
     firm_description: "Fineway makes free instant trip planning for everyone.",
     company_founding_year: "2016",
-    launch_status: ["closed beta"],
+    launch_status: ["publicly launched"],
     sectors: ["Travel"],
     stages: ["Series B"],
     selling_to: ["B2C"],
+    fte: 67,
+    funds_raised: 18000000,
     generating_revenue: false, # Does the company generate revenue? Here: "Yes"
     profitable: false, # Is the company profitable? Here: "Yes"
     remote_photo_url: url15)
@@ -429,8 +439,10 @@ startup6 = User.new(
     company_founding_year: "2015",
     launch_status: ["publicly launched"],
     sectors: ["Real Estate"],
-    stages: ["Series B"],
+    stages: ["Series C"],
     selling_to: ["B2C, B2B"],
+    fte: 412,
+    funds_raised: 75000000,
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
     profitable: false, # Is the company profitable? Here: "Yes"
     remote_photo_url: url16)
@@ -451,10 +463,12 @@ startup7 = User.new(
     company_url: "www.hometogo.com",
     firm_description: "HomeToGo is a vacation rental search engine.",
     company_founding_year: "2014",
-    launch_status: ["public beta"],
+    launch_status: ["publicly launched"],
     sectors: ["Travel"],
-    stages: ["Series A"],
+    stages: ["Series C"],
     selling_to: ["B2C"],
+    fte: 177,
+    funds_raised: 27000000,
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
     profitable: true, # Is the company profitable? Here: "Yes"
     remote_photo_url: url17)
@@ -475,10 +489,12 @@ startup8 = User.new(
     company_url: "www.n26.com",
     firm_description: "N26 is a mobile bank helps customers manage their bank accounts through smartphones.",
     company_founding_year: "2014",
-    launch_status: ["closed beta"],
+    launch_status: ["publicly launched"],
     sectors: ["Finance"],
     stages: ["Later Stage"],
     selling_to: ["B2C"],
+    fte: 1400,
+    funds_raised: 680000000,
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
     profitable: false, # Is the company profitable? Here: "Yes"
     remote_photo_url: url18)
