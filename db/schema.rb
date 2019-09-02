@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_02_130103) do
+ActiveRecord::Schema.define(version: 2019_09_02_135353) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,6 +85,7 @@ ActiveRecord::Schema.define(version: 2019_09_02_130103) do
     t.boolean "admin"
     t.string "photo"
     t.boolean "first_time", default: true
+    t.string "meeting_spot"
     t.string "stages", default: [], array: true
     t.string "sectors", default: [], array: true
     t.string "launch_status", default: [], array: true
