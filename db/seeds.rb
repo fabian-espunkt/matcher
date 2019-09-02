@@ -60,7 +60,7 @@ investor1 = User.new(
     company_name: "Lakestar",
     position: "General Partner",
     company_city: "London, United Kingdom",
-    sectors: ["Mobility", "Food", "Finance"]
+    sectors: ["Mobility", "Food", "Finance"],
     ticket_size_min: "100000",
     ticket_size_max: "3000000",
     stages: ["Seed", "Series A", "Series B", "Later Stage"],
