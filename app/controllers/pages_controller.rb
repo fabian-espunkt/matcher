@@ -11,7 +11,6 @@ class PagesController < ApplicationController
   def update
     @user = current_user
     authorize @user
-    @user.update!(user_params)
     if @user.update(user_params)
       redirect_to attendances_path
     else
@@ -22,6 +21,6 @@ class PagesController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:stages, :sectors, :selling_to, :launch_status, :generating_revenue, :profitable, :ticket_size_max, :meeting_spot)
+    params.require(:user).permit(:meeting_spot, :generating_revenue, :profitable, :ticket_size_max, stages: [], sectors: [], selling_to: [], launch_status: [])
   end
 end
