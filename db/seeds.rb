@@ -641,7 +641,7 @@ meeting1 = Meeting.new(
     startup: startup1,
     event: event1,
     agreed_timeslot: nil,
-    matching_status: "Waiting")
+    matching_status: "Matched")
   meeting1.save!
 
 meeting2 = Meeting.new(
@@ -649,7 +649,7 @@ meeting2 = Meeting.new(
     startup: startup2,
     event: event1,
     agreed_timeslot: nil,
-    matching_status: "Waiting")
+    matching_status: "Matched")
   meeting2.save!
 
 meeting3 = Meeting.new(
@@ -657,7 +657,7 @@ meeting3 = Meeting.new(
     startup: startup3,
     event: event1,
     agreed_timeslot: nil,
-    matching_status: "Waiting")
+    matching_status: "Matched")
   meeting3.save!
 
 meeting4 = Meeting.new(
