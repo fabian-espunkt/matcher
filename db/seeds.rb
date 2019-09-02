@@ -41,7 +41,7 @@ event1 = Event.new(
     address: "St. Gallen, Schweiz",
     organizer_name: "START Global",
     organizer_address: "Dufourstrasse 50, 9000 St. Gallen, Schweiz",
-    organizer_url: "http://www.startstgallen.startglobal.org/",
+    organizer_url: "http://www.startsummit.ch/",
     meeting_spots: "Coffee Area 1, Coffee Area 2, VIP Area")
   event1.save!
 
@@ -52,7 +52,7 @@ url1 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005970/lakestar_w
 investor1 = User.new(
     kind: "investor",
     first_time: false,
-    email: "klaus@lakestar.com",
+    email: "klaus@example.com",
     password: "123456",
     first_name: "Klaus",
     last_name: "Hommels",
@@ -60,14 +60,14 @@ investor1 = User.new(
     company_name: "Lakestar",
     position: "General Partner",
     company_city: "London, United Kingdom",
-    sectors: "Mobility, Food, FinTech",
+    sectors: ["Mobility", "Food", "Finance"]
     ticket_size_min: "100000",
     ticket_size_max: "3000000",
-    stages: "Seed, Series A, Series B, Later",
-    selling_to: "B2C, B2B",
+    stages: ["Seed", "Series A", "Series B", "Later Stage"],
+    selling_to: ["B2C", "B2B"],
     generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
-    launch_status: "no MVP, closed beta, public beta, publicly launched",
+    launch_status: ["pre-MVP", "closed beta", "public beta", "publicly launched"],
     remote_photo_url: url1,
     admin: true)
   investor1.save!
@@ -76,7 +76,7 @@ url2 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005970/index_y8mb
 investor2 = User.new(
     kind: "investor",
     first_time: false,
-    email: "diana@index-ventures.com",
+    email: "diana@example.com",
     password: "123456",
     first_name: "Diana",
     last_name: "von Fürstenberg",
@@ -84,14 +84,14 @@ investor2 = User.new(
     company_name: "Index Ventures",
     position: "General Partner",
     company_city: "London, United Kingdom",
-    sectors: "HRTech, Blockchain, Food",
+    sectors: ["Productivity Software", "Crypto", "Food"],
     ticket_size_min: "100000",
     ticket_size_max: "10000000",
-    stages: "Seed, Series A, Series B, Later",
-    selling_to: "B2C, B2B",
+    stages: ["Seed", "Series A", "Series B", "Later Stage"],
+    selling_to: ["B2C", "B2B"],
     generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
-    launch_status: "no MVP, closed beta, public beta, publicly launched",
+    launch_status: ["pre-MVP", "closed beta", "public beta", "publicly launched"],
     remote_photo_url: url2)
   investor2.save!
 
@@ -99,7 +99,7 @@ url3 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/benchmark_
 investor3 = User.new(
     kind: "investor",
     first_time: false,
-    email: "timo@benchmark.com",
+    email: "timo@example.com",
     password: "123456",
     first_name: "Timo",
     last_name: "Heidenstrauch",
@@ -107,14 +107,14 @@ investor3 = User.new(
     company_name: "Benchmark Capital",
     position: "Managing Partner",
     company_city: "Menlow Park, USA",
-    sectors: "Mobility, Food, FinTech, AI",
+    sectors: ["Mobility", "Food", "Travel", "Finance", "Logistics"],
     ticket_size_min: "100000",
     ticket_size_max: "1000000",
-    stages: "Seed, Series A, Series B, Later",
-    selling_to: "B2C, B2B",
+    stages: ["Seed", "Series A", "Series B", "Later Stage"],
+    selling_to: ["B2C", "B2B"],
     generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
-    launch_status: "no MVP, closed beta, public beta, publicly launched",
+    launch_status: ["pre-MVP", "closed beta", "public beta", "publicly launched"],
     remote_photo_url: url3)
   investor3.save!
 
@@ -122,7 +122,7 @@ url4 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/creandum_z
 investor4 = User.new(
     kind: "investor",
     first_time: false,
-    email: "simon@creandum.com",
+    email: "simon@example.com",
     password: "123456",
     first_name: "Simon",
     last_name: "Schmincke",
@@ -130,14 +130,14 @@ investor4 = User.new(
     company_name: "Creandum",
     position: "Partner",
     company_city: "Berlin, Germany",
-    sectors: "Mobility, ConsumerTech, Food, Blockchain",
+    sectors: ["Mobility", "Travel", "Food", "Crypto", "Retail/D2C"],
     ticket_size_min: "100000",
     ticket_size_max: "6000000",
-    stages: "Pre-Seed, Seed, Series A, Series B, Later",
-    selling_to: "B2C, B2B",
+    stages: ["Pre-Seed", "Seed", "Series A", "Series B", "Later Stage"],
+    selling_to: ["B2C", "B2B"],
     generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
-    launch_status: "no MVP, closed beta, public beta, publicly launched",
+    launch_status: ["pre-MVP", "closed beta", "public beta", "publicly launched"],
     remote_photo_url: url4)
   investor4.save!
 
@@ -145,7 +145,7 @@ url5 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/holtzbrinc
 investor5 = User.new(
     kind: "investor",
     first_time: false,
-    email: "Dieter@holtzbrinck.com",
+    email: "dieter@example.com",
     password: "123456",
     first_name: "Dieter",
     last_name: "von Heisen",
@@ -153,14 +153,14 @@ investor5 = User.new(
     company_name: "Holtzbrinck Ventures",
     position: "Investment Manager",
     company_city: "Munich, Germany",
-    sectors: "Mobility, HealthTech",
+    sectors: ["Mobility", "Health & Life Sciences", "Education", "Real Estate"],
     ticket_size_min: "50000",
     ticket_size_max: "20000000",
-    stages: "Seed, Series A, Series B, Later",
+    stages: ["Seed", "Series A", "Series B", "Later Stage"],
     selling_to: "B2C, B2B",
     generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
-    launch_status: "no MVP, closed beta, public beta, publicly launched",
+    launch_status: ["pre-MVP", "closed beta", "public beta", "publicly launched"],
     remote_photo_url: url5)
   investor5.save!
 
@@ -168,7 +168,7 @@ url6 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005970/partechh_d
 investor6 = User.new(
     kind: "investor",
     first_time: false,
-    email: "kerstin@partech.com",
+    email: "kerstin@example.com",
     password: "123456",
     first_name: "Kerstin",
     last_name: "Theissen",
@@ -176,14 +176,14 @@ investor6 = User.new(
     company_name: "Partech Ventures",
     position: "Principal",
     company_city: "Paris, France",
-    sectors: "Mobility, SaaS, FinTech, InsurTech",
+    sectors: ["Mobility", "Productivity Software", "Finance", "Insurance"],
     ticket_size_min: "100000",
     ticket_size_max: "5000000",
-    stages: "Seed, Series A, Series B, Later",
+    stages: ["Seed", "Series A", "Series B", "Later Stage"],
     selling_to: "B2C, B2B",
     generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
-    launch_status: "no MVP, closed beta, public beta, publicly launched",
+    launch_status: ["pre-MVP", "closed beta", "public beta", "publicly launched"],
     remote_photo_url: url6)
   investor6.save!
 
@@ -191,7 +191,7 @@ url7 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/greylock_y
 investor7 = User.new(
     kind: "investor",
     first_time: false,
-    email: "john@greylock.com",
+    email: "john@example.com",
     password: "123456",
     first_name: "John",
     last_name: "Simson",
@@ -199,14 +199,14 @@ investor7 = User.new(
     company_name: "Greylock",
     position: "General Partner",
     company_city: "San Francisco, USA",
-    sectors: "Mobility, Food, FinTech, InsurTech, HRTech, FinTech",
+    sectors: ["Mobility", "Food", "Finance", "Insurance", "Productivity Software", "Finance"],
     ticket_size_min: "500000",
     ticket_size_max: "20000000",
-    stages: "Seed, Series A, Series B, Later",
+    stages: ["Seed", "Series A", "Series B", "Later Stage"],
     selling_to: "B2C, B2B",
     generating_revenue: false, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
-    launch_status: "closed beta, public beta, publicly launched",
+    launch_status: ["closed beta", "public beta", "publicly launched"],
     remote_photo_url: url7)
   investor7.save!
 
@@ -214,7 +214,7 @@ url8 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/bessemer_t
 investor8 = User.new(
     kind: "investor",
     first_time: false,
-    email: "alan@bessemer.com",
+    email: "alan@example.com",
     password: "123456",
     first_name: "Jennifer",
     last_name: "Forchester",
@@ -222,14 +222,14 @@ investor8 = User.new(
     company_name: "Bessemer Ventures",
     position: "General Partner",
     company_city: "London, United Kingdom",
-    sectors: "Mobility, Food, MedTech, FinTech",
+    sectors: ["Mobility", "Food", "Health & Life Sciences", "Finance"],
     ticket_size_min: "250000",
     ticket_size_max: "8000000",
-    stages: "Series A, Series B, Later",
-    selling_to: "B2C, B2B",
+    stages: ["Series A", "Series B", "Later Stage"],
+    selling_to: ["B2C", "B2B"],
     generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
-    launch_status: "no MVP, closed beta, public beta, publicly launched",
+    launch_status: ["pre-MVP", "closed beta", "public beta", "publicly launched"],
     remote_photo_url: url8)
   investor8.save!
 
@@ -245,14 +245,14 @@ investor9 = User.new(
     company_name: "Cherry Ventures",
     position: "Managing Partner",
     company_city: "Berlin, Germany",
-    sectors: "Food, AgTech, FinTech",
+    sectors: ["Food", "Travel", "Retail/D2C", "Media", "Logistics", "Real Estate"],
     ticket_size_min: "150000",
     ticket_size_max: "6000000",
-    stages: "Seed, Series A, Series B",
-    selling_to: "B2C, B2B",
+    stages: ["Seed", "Series A", "Series B"],
+    selling_to: ["B2C", "B2B"],
     generating_revenue: false, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
-    launch_status: "no MVP, closed beta, public beta, publicly launched",
+    launch_status: ["pre-MVP", "closed beta", "public beta", "publicly launched"],
     remote_photo_url: url9)
   investor9.save!
 
@@ -260,7 +260,7 @@ url10 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/gfc_p6chq
 investor10 = User.new(
     kind: "investor",
     first_time: false,
-    email: "marc@gfc.com",
+    email: "marc@example.com",
     password: "123456",
     first_name: "Marc",
     last_name: "Samwer",
@@ -268,14 +268,14 @@ investor10 = User.new(
     company_name: "Global Founders Fund",
     position: "General Partner",
     company_city: "Berlin, Germany",
-    sectors: "Mobility, Food, AI, SaaS, Marketplace, FinTech",
+    sectors: ["Mobility", "Food", "Telecommunication", "Productivity Software", "Media", "Real Estate", "Finance"],
     ticket_size_min: "200000",
     ticket_size_max: "3000000",
-    stages: "Seed, Series A, Series B, Later",
-    selling_to: "B2C, B2B",
+    stages: ["Seed", "Series A", "Series B", "Later Stage"],
+    selling_to: ["B2C", "B2B"],
     generating_revenue: true, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
-    launch_status: "no MVP, closed beta, public beta, publicly launched",
+    launch_status: ["pre-MVP, closed beta, public beta, publicly launched"],
     remote_photo_url: url10)
   investor10.save!
 
@@ -305,12 +305,12 @@ startup1 = User.new(
     position: "Co-Founder",
     company_city: "Berlin, Germany",
     company_url: "www.getyourguide.com",
-    firm_description: "GetYourGuide is the place to book the best experiences in destinations across the globe. Since 2009, we’ve made it easy for millions of travelers to find unique and unmissable things to do wherever their travels take them. By connecting people to activities and attractions they love, we create trips full of meaningful memories. All of this is brought together in one easy-to-use website and app that makes planning and booking simple so travelers can focus on what counts: having an incredible time. Backed by leading venture capital investors, GetYourGuide has raised over $650 million in funding to date and has over 500 employees spread across 16 offices worldwide. See our open positions (careers.getyourguide.com) or get a behind-the-scenes look of life at GetYourGuide on our blog ()inside.getyourguide.com).",
+    firm_description: "GetYourGuide operates an online platform for booking tours, attractions and activities worldwide.",
     company_founding_year: 2009,
-    launch_status: "publicly launched",
-    sectors: "TravelTech, ConsumerTech",
-    stages: "Pre-seed",
-    selling_to: "B2C",
+    launch_status: ["publicly launched"],
+    sectors: ["Travel"],
+    stages: ["Pre-Seed"],
+    selling_to: ["B2C"],
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
     profitable: false, # Is the company profitable? Here: "Yes"
     remote_photo_url: url11)
@@ -329,12 +329,12 @@ startup2 = User.new(
     position: "Founder",
     company_city: "Berlin, Germany",
     company_url: "www.hellofresh.com",
-    firm_description: "lHelloFresh is on a mission to change the way people eat, forever!  As the world's leading meal kit provider, we serve more than 13 million meals per month to over 1.3 million customers in 10 countries across 3 continents. Yep, we’re that good. HelloFresh supplies everything you need to prepare quality, delicious, home-cooked meals that require no planning, no shopping and no hassle. Every ingredient needed for our thousands of exclusive recipes is carefully planned, locally sourced and delivered to your door when it’s most convenient for you.  Making dinner an experience - not just another meal - takes a lot of work and smart people. From Data Scientists to DevOps Engineers, to potato farmers, and the men and women who ensure every box is perfectly crafted for every customer, we’re collectively disrupting the food supply chain and the multi-trillion-dollar food tech industry. Our offices in Berlin, New York City, Sydney, Toronto, London, Amsterdam and Zurich are filled with more than 2,500 diverse, high-performing and international talents. We’re always looking for a few missing ingredients to perfect our recipe, so join us now and become part of the HelloFresh movement! Check out available opportunities across the globe here: https://www.hellofresh.com/careers/locations",
+    firm_description: "HelloFresh is a food subscription company that sends pre-portioned ingredients to users’ doorstep each week.",
     company_founding_year: "2011",
-    launch_status: "public beta",
-    sectors: "FoodTech, Food, ConsumerTech",
-    stages: "Series B",
-    selling_to: "B2C",
+    launch_status: ["public beta"],
+    sectors: ["Food", "Retail/D2C"],
+    stages: ["Series B"],
+    selling_to: ["B2C"],
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
     profitable: true, # Is the company profitable? Here: "Yes"
     remote_photo_url: url12)
@@ -353,12 +353,12 @@ startup3 = User.new(
     position: "Co-Founder & Managing Director",
     company_city: "Berlin, Germany",
     company_url: "www.personio.com",
-    firm_description: "Personio ist ein schnell wachsendes HR SaaS Startup: Wir bieten eine ganzheitliche Softwarelösung für Personalverwaltung und Bewerbermanagement, die für Unternehmen mit einer Größe von 10 bis 1000 Angestellten konzipiert wurde. Schon heute spielt Personio eine entscheidende Rolle, den alltäglichen operativen Betrieb von mehr als 1200 HR Teams effizienter und transparenter zu gestalten.",
+    firm_description: "Personio offers a holistic HR management and recruiting solution for Startups and SMEs.",
     company_founding_year: "2015",
-    launch_status: "closed beta",
-    sectors: "HRTech, SaaS",
-    stages: "Series A",
-    selling_to: "B2B",
+    launch_status: ["closed beta"],
+    sectors: ["Productivity Software"],
+    stages: ["Series A"],
+    selling_to: ["B2B"],
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
     profitable: false, # Is the company profitable? Here: "Yes"
     remote_photo_url: url13)
@@ -377,12 +377,12 @@ startup4 = User.new(
     position: "Founder",
     company_city: "Copenhagen, Denmark",
     company_url: "www.joinlifex.com",
-    firm_description: "LifeX is your landing pad for the big moves in life. We get you settled in your new city with end-to-end relocation services, including a flexible housing subscription in a community of like-minded, events to meet new people and help with all the practicalities of moving.",
+    firm_description: "LifeX Aps is a co-living startup in Copenhagen and Berlin.",
     company_founding_year: "2017",
-    launch_status: "no MVP",
-    sectors: "LivingTech, ConsumerTech, SaaS, PropTech",
-    stages: "Seed",
-    selling_to: "B2C",
+    launch_status: ["pre-MVP"],
+    sectors: ["Real Estate"],
+    stages: ["Seed"],
+    selling_to: ["B2C"],
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
     profitable: false, # Is the company profitable? Here: "Yes"
     remote_photo_url: url14)
@@ -401,12 +401,12 @@ startup5 = User.new(
     position: "Managing Director",
     company_city: "Hamburg, Germany",
     company_url: "www.joinlifex.com/",
-    firm_description: "Our mission: We free travelers from wasting time & money on travel planning ever again. We believe the future of travel is not search & compare but a delightful conversation to instantly create personalized trips that match your unique style & personal preferences. That’s why we’ve built an interface-agnostic conversation engine powered by advanced statistics & deep learning methods to decode your travel intent faster & better than anyone else. The purpose? To magically deliver perfectly tailored travel experiences instantly to your inbox. Free, transparent & bookable.",
+    firm_description: "Fineway makes free instant trip planning for everyone.",
     company_founding_year: "2016",
-    launch_status: "closed beta",
-    sectors: "TravelTech, ConsumerTech",
-    stages: "Series B",
-    selling_to: "B2C",
+    launch_status: ["closed beta"],
+    sectors: ["Travel"],
+    stages: ["Series B"],
+    selling_to: ["B2C"],
     generating_revenue: false, # Does the company generate revenue? Here: "Yes"
     profitable: false, # Is the company profitable? Here: "Yes"
     remote_photo_url: url15)
@@ -425,12 +425,12 @@ startup6 = User.new(
     position: "Founder",
     company_city: "Berlin, Germany",
     company_url: "www.mcmakler.com",
-    firm_description: "McMakler ist ein in Deutschland, Österreich und Frankreich aktiver Full-Service Immobiliendienstleister und kombiniert modernste, digitale Analyse-, Vermarktungs- und Kommunikationstechnologien mit der persönlichen Beratung seiner Kunden durch eigene Makler vor Ort. Das Unternehmen hat sich in den letzten Jahren zu einer bekannten und etablierten Marke entwickelt und übernimmt als einer der schnellst wachsenden Immobilienmakler Deutschlands die Vorreiterrolle im Proptech-Segment. McMakler ist ein junges, technologieaffines, mittelständisches Unternehmen mit inzwischen 550 internationalen Mitarbeitern, davon 300 eigene Makler, die in Regionalvertretungen in über 100 Städten und Ballungszentren unsere Kunden im Verkauf und in der Vermietung direkt vor Ort beraten und begleiten. Ein Großteil der Mitarbeiter arbeitet im Berliner Headquarter. Die zentralisierten Abteilungen, wie Kundenservice, Vertrieb, IT, Marketing und Verwaltung, sowie eigens entwickelte Softwarelösungen und Datenbanken im Akquise- und Vermittlungsprozess können viele Arbeitsschritte des Tagesgeschäfts schneller und professioneller als traditionelle Maklerbetrieben umsetzen und reduzieren zugleich die Kosten für Kunden und das Unternehmen.",
+    firm_description: "McMakler is a real estate agency that uses a fixed pricing model and combining the traditional service with web-based technology.",
     company_founding_year: "2015",
-    launch_status: "publicly launched",
-    sectors: "PropTech, ConsumerTech, AI",
-    stages: "Series B",
-    selling_to: "B2C, B2B",
+    launch_status: ["publicly launched"],
+    sectors: ["Real Estate"],
+    stages: ["Series B"],
+    selling_to: ["B2C, B2B"],
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
     profitable: false, # Is the company profitable? Here: "Yes"
     remote_photo_url: url16)
@@ -449,12 +449,12 @@ startup7 = User.new(
     position: "Chief Marketing Officer",
     company_city: "Düsseldorf, Germany",
     company_url: "www.hometogo.com",
-    firm_description: "HomeToGo - a company built around the idea of finding the ideal accommodation for every trip. Since its founding just five years ago, HomeToGo has localized websites in 21 countries and quickly become the world’s largest vacation rental search engine- now representing big-name brands like CASAMUNDO & Tripping. With over 16 million vacation rental offers worldwide, from more than 600 travel websites like Airbnb, booking.com, HomeAway, TripAdvisor (and more), we make finding and booking a vacation rental easier than ever.",
+    firm_description: "HomeToGo is a vacation rental search engine.",
     company_founding_year: "2014",
-    launch_status: "public beta",
-    sectors: "TravelTech, ConsumerTech, Blockchain",
-    stages: "Series A",
-    selling_to: "B2C",
+    launch_status: ["public beta"],
+    sectors: ["Travel"],
+    stages: ["Series A"],
+    selling_to: ["B2C"],
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
     profitable: true, # Is the company profitable? Here: "Yes"
     remote_photo_url: url17)
@@ -473,12 +473,12 @@ startup8 = User.new(
     position: "Co-Founder & CFO",
     company_city: "Berlin, Germany",
     company_url: "www.n26.com",
-    firm_description: "N26 ist die mobile Bank. N26 hat Banking für das Smartphone neu gestaltet – einfach, transparent und frei von versteckten Gebühren. Valentin Stalf and Maximilian Tayenthal gründeten das Unternehmen im Jahr 2013 and brachten N26 Anfang 2015 offiziell auf den Markt​. Dank des rein digitalen Geschäftsmodells operiert N26 zu deutlich geringeren Kosten und mit einer schlanken Organisationsstruktur – ohne veraltete IT Systeme und ohne ein teures Filialnetzwerk. Diese Kostenvorteile gibt N26 an ihre Kunden weiter. ​N26 kooperiert mit den innovativsten Fintechs und traditionellen Anbietern, um ihren Kunden die besten Produkte zu bieten. Partner sind u.a. TransferWise (Fremdwährungsüberweisungen), WeltSparen (Sparen), Clark und Allianz (Versicherungen) und auxmoney (Verbraucherkredit). Heute zählt N26 zu den schnellst wachsenden Banken in Europa, hat über 2,5 Millionen Kunden in 25 Ländern und mehr als 700 Mitarbeiter. N26 hat insgesamt USD 215 Millionen von weltweit renommierten Investoren eingesammelt, darunter Allianz X, Tencent Holdings Limited, Li Ka-Shings Horizons Ventures, Peter Thiels Valar Ventures, Mitglieder des Zalando Managements und Earlybird Venture Capital.",
+    firm_description: "N26 is a mobile bank helps customers manage their bank accounts through smartphones.",
     company_founding_year: "2014",
-    launch_status: "closed beta",
-    sectors: "FinTech, AI, Blockchain, ConsumerTech",
-    stages: "Later",
-    selling_to: "B2C",
+    launch_status: ["closed beta"],
+    sectors: ["Finance"],
+    stages: ["Later Stage"],
+    selling_to: ["B2C"],
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
     profitable: false, # Is the company profitable? Here: "Yes"
     remote_photo_url: url18)
@@ -497,12 +497,12 @@ startup9 = User.new(
     position: "Chief Operating Officer",
     company_city: "Münster, Germany",
     company_url: "www.wirsindflaschenpost.de",
-    firm_description: "Wir liefern innerhalb von 120 Minuten die Getränke zu unseren Kunden - und das bis an die Wohnungstür. Gemeinsam mit über 1.500 Kollegen schaffen wir es, eine komplette Branche neu zu erfinden und liefern mittlerweile über 30.000 Bestellungen pro Woche in neun Städten aus. Seit dem Jahr 2016 sind wir unaufhaltsam dabei, ganz Deutschland zu erschließen. Wir suchen entschlossene Visionäre, um gemeinsam die Erfolgsgeschichte der flaschenpost fortzuführen. Du möchtest Teil dieses Teams werden und unsere Expansion in andere Städte mit vorantreiben? Dann schau jetzt vorbei auf www.wirsindflaschenpost.de.",
+    firm_description: "Flaschenpost offers on-demand beverage deliveries.",
     company_founding_year: "2016",
-    launch_status: "no MVP",
-    sectors: "FoodTech, ConsumerTech",
-    stages: "Series A",
-    selling_to: "B2C, B2B",
+    launch_status: ["pre-MVP"],
+    sectors: ["Food", "Logistics"],
+    stages: ["Series A"],
+    selling_to: ["B2C", "B2B"],
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
     profitable: false, # Is the company profitable? Here: "Yes"
     remote_photo_url: url19)
@@ -521,12 +521,12 @@ startup10 = User.new(
     position: "Founder",
     company_city: "Berlin, Germany",
     company_url: "www.delivery-hero.com",
-    firm_description: "Ever since Delivery Hero SE started, we’ve been transforming the way people order food. With over 290,000 restaurant partners, Delivery Hero is one of the world’s leading online food ordering and delivery marketplaces. Our c. 19,000 employees all share one common goal: to always deliver an amazing experience. To achieve this goal, we’re working as one team across almost 30 brands in 39 countries – and we’re always striving to create, innovate and grow. Our headquarters are based in Berlin, with more than 1,000 Heroes from over 80 nationalities. Become a part of our success story and join our ambitious international team where you can make an impact in a fast-growing industry. In return, we offer a challenging and dynamic environment where you can grow and develop your career with the right support, every step of the way.",
+    firm_description: "Delivery Hero is a network of online food ordering sites with over 100 restaurant partners worldwide.",
     company_founding_year: "2008",
-    launch_status: "publicly launched",
-    sectors: "Food, FoodTech, ConsumerTech",
-    stages: "Later",
-    selling_to: "B2C",
+    launch_status: ["publicly launched"],
+    sectors: ["Food", "Logistics"],
+    stages: ["Later Stage"],
+    selling_to: ["B2C"],
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
     profitable: true, # Is the company profitable? Here: "Yes"
     remote_photo_url: url20)
