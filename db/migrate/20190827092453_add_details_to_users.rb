@@ -12,7 +12,7 @@ class AddDetailsToUsers < ActiveRecord::Migration[5.2]
     add_column :users, :business_models, :string
     add_column :users, :selling_to, :string
     add_column :users, :company_url, :string
-    add_column :users, :launch_status, :string
+    add_column :users, :launch_status, :text, array: true, default: []
     add_column :users, :company_founding_year, :integer
     add_column :users, :generating_revenue, :boolean, null: false, default: false
     add_column :users, :profitable, :boolean, null: false, default: false
