@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_30_100643) do
+ActiveRecord::Schema.define(version: 2019_09_02_135353) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,14 +79,15 @@ ActiveRecord::Schema.define(version: 2019_08_30_100643) do
     t.string "company_url"
     t.string "launch_status"
     t.integer "company_founding_year"
-    t.boolean "generating_revenue"
-    t.boolean "profitable"
+    t.boolean "generating_revenue", default: false, null: false
+    t.boolean "profitable", default: false, null: false
     t.string "ticket_size_min"
     t.string "mobile"
     t.string "ticket_size_max"
     t.boolean "admin"
     t.string "photo"
     t.boolean "first_time", default: true
+    t.string "meeting_spot"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

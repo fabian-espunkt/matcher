@@ -1,23 +1,18 @@
+
 <div class="container">
   <h1 class="mb-4 py-3">Your Appointments</h1>
 
-  <div class="d-flex justify-content-between appointments-button">
-    <p>Select your default meeting spot</p>
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle mb-4" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Select Default Meeting Spot
-      </button>
-      <% @events.each do |event|  %>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <% event.event.meeting_spots.split(",").each do |spot|%>
-        <a class="dropdown-item" href="#"><%= spot %></a>
-          <% end  %>
-      </div>
-      <% end  %>
-    </div>
+  <div class="d-flex mb-4">
+    <div id="selection-text"> <strong>Select your default meeting spot</strong> &nbsp; &nbsp;</div>
+    <!-- <p>Select your default meeting spot</p> -->
+    <%= simple_form_for @user, url: profile_update_path(@user), wrapper: :inline_form, html: { class: "form-inline" }, wrapper_mappings: {
+    boolean: :inline_boolean}, :method => :patch do |f| %>
+      <%= f.input :meeting_spot, input_html: { class: "mb-2 mr-sm-2" }, :collection => @event.event.meeting_spots.split(",") %>
+      <%= f.button :submit, "Save", class: "btn-primary mb-2" %>
+    <% end %>
   </div>
 
-  <!-- calendar view with simple_calendar gem -->
+
 
   <table class="table appointments-table">
     <thead>
