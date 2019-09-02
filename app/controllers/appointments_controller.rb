@@ -4,5 +4,7 @@ class AppointmentsController < ApplicationController
     @sched_appointments = Meeting.all.where(matching_status: "Scheduled")
     @user_appointments = @sched_appointments.where(investor: current_user)
     @events = Meeting.where(investor_id: current_user.id)
+    @user = current_user
+    @event = @events.first
   end
 end

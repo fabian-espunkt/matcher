@@ -17,6 +17,5 @@ class AddDetailsToUsers < ActiveRecord::Migration[5.2]
     add_column :users, :generating_revenue, :boolean, null: false, default: false
     add_column :users, :profitable, :boolean, null: false, default: false
     add_column :users, :ticket_size, :string
-    # fraglich? profile picture, pitch_deck, company_logo
   end
 end
