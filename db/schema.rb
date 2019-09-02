@@ -72,21 +72,21 @@ ActiveRecord::Schema.define(version: 2019_09_02_130103) do
     t.string "position"
     t.string "company_city"
     t.string "firm_description"
-    t.string "business_models"
+    t.string "business_models", default: [], array: true
+    t.string "selling_to", default: [], array: true
     t.string "company_url"
     t.integer "company_founding_year"
-    t.boolean "generating_revenue"
-    t.boolean "profitable"
+    t.boolean "generating_revenue", default: false, null: false
+    t.boolean "profitable", default: false, null: false
     t.string "ticket_size_min"
     t.string "mobile"
     t.string "ticket_size_max"
     t.boolean "admin"
     t.string "photo"
     t.boolean "first_time", default: true
-    t.string "stages", array: true
-    t.string "selling_to", array: true
-    t.string "sectors", array: true
-    t.string "launch_status", array: true
+    t.string "stages", default: [], array: true
+    t.string "sectors", default: [], array: true
+    t.string "launch_status", default: [], array: true
     t.integer "funds_raised"
     t.integer "fte"
     t.index ["email"], name: "index_users_on_email", unique: true

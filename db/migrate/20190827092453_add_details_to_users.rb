@@ -7,16 +7,15 @@ class AddDetailsToUsers < ActiveRecord::Migration[5.2]
     add_column :users, :position, :string
     add_column :users, :company_city, :string
     add_column :users, :firm_description, :string
-    add_column :users, :stages, :string
-    add_column :users, :sectors, :string
-    add_column :users, :business_models, :string
-    add_column :users, :selling_to, :string
+    add_column :users, :stages, :string, array: true, default: []
+    add_column :users, :sectors, :string, array: true, default: []
+    add_column :users, :business_models, :string, array: true, default: []
+    add_column :users, :selling_to, :string, array: true, default: []
     add_column :users, :company_url, :string
     add_column :users, :launch_status, :text, array: true, default: []
     add_column :users, :company_founding_year, :integer
     add_column :users, :generating_revenue, :boolean, null: false, default: false
     add_column :users, :profitable, :boolean, null: false, default: false
     add_column :users, :ticket_size, :string
-    # fraglich? profile picture, pitch_deck, company_logo
   end
 end
