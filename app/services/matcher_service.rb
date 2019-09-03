@@ -14,10 +14,12 @@ class MatcherService
       if viewing.user.kind == "investor"
         Meeting.create(event: viewing.attendance.event, agreed_timeslot: nil, matching_status: "Matched", investor: viewing.user, startup: viewing.attendance.user)
         # Viewing.find_by(user: viewing.user, attendance: viewing.attendance.user, like: true).destroy
+
       else
         Meeting.create(event: viewing.attendance.event, agreed_timeslot: nil, matching_status: "Matched", investor: viewing.attendance.user, startup: viewing.user)
         # Viewing.find_by(user: viewing.user, attendance: viewing.attendance.user, like: true).destroy
+
       end
-     end
+    end
   end
 end
