@@ -27,7 +27,7 @@
           <% if meeting.matching_status == "Waiting" %>
           <p id="waiting"><strong><%= meeting.matching_status.upcase %></strong></p>
           <% elsif meeting.matching_status == "Matched" %>
-          <p id="matched"><strong><%= meeting.matching_status.upcase %></strong></p>
+          <p id="matched"><strong><%= meeting.matching_status.upcase %></strong><br><span class="schedule-now"><%= link_to "Schedule now", appointments_path, class: "btn btn-primary mr-2 px-4" %></span></p>
           <% elsif meeting.matching_status == "Scheduled" %>
           <p id="scheduled"><strong><%= link_to meeting.matching_status.upcase, appointments_path %></strong></p>
           <% end %>
