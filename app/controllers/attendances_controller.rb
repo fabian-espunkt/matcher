@@ -11,5 +11,7 @@ class AttendancesController < ApplicationController
     @attendances = @attendances.reject do |attendance|
       attendance.viewings.pluck(:user_id).include? current_user.id
     end
+    @meetings = Meeting.all
   end
+
 end

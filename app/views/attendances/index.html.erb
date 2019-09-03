@@ -1,5 +1,9 @@
 <div class="container">
   <h1 class="py-4">Matching</h1>
+  <% if @meetings.present? %>
+  <p>match <%= @meetings.count %></p>
+
+  <% end %>
 
   <% @attendances.each do |attendance| %>
     <div class="card col-8 justify-content-center m-auto matching-card">
