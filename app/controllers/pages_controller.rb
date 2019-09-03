@@ -12,7 +12,7 @@ class PagesController < ApplicationController
     @user = current_user
     authorize @user
     if @user.update(user_params)
-      redirect_to attendances_path
+      redirect_to appointments_path, notice: "Updated your meeting spot successfully"
     else
       render :profile
     end
