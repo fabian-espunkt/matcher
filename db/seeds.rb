@@ -298,8 +298,8 @@ startup1 = User.new(
     first_time: false,
     email: "startup1@getyourguide.com",
     password: "123456",
-    first_name: "Hans",
-    last_name: "Mühlenbein",
+    first_name: "Johannes",
+    last_name: "Reck",
     mobile: "015678240008",
     company_name: "GetYourGuide",
     position: "Co-Founder",
@@ -547,6 +547,18 @@ startup10 = User.new(
     profitable: true, # Is the company profitable? Here: "Yes"
     remote_photo_url: url20)
   startup10.save!
+
+startup11 = User.new(
+    kind: "startup",
+    first_time: true,
+    email: "max@alpacando.com",
+    company_city: "Berlin, Germany",
+    password: "123456",
+    first_name: "Max",
+    last_name: "Mustermann",
+    company_name: "Alcapando",
+    position: "Founder")
+  startup11.save!
 
 puts '(3/6) Creating new attendances...'
 

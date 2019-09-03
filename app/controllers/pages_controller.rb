@@ -21,6 +21,6 @@ class PagesController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:meeting_spot, :generating_revenue, :profitable, :ticket_size_max, stages: [], sectors: [], selling_to: [], launch_status: [], availability: [])
+    params.require(:user).permit(:photo, :company_founding_year, :funds_raised, :company_url, :firm_description, :fte, :meeting_spot, :generating_revenue, :profitable, :ticket_size_max, stages: [], sectors: [], selling_to: [], launch_status: [], availability: [])
   end
 end
