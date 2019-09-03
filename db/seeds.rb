@@ -52,7 +52,7 @@ url1 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005970/lakestar_w
 investor1 = User.new(
     kind: "investor",
     first_time: false,
-    email: "klaus@example.com",
+    email: "lakestar@example.com",
     password: "123456",
     first_name: "Klaus",
     last_name: "Hommels",
@@ -76,7 +76,7 @@ url2 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005970/index_y8mb
 investor2 = User.new(
     kind: "investor",
     first_time: false,
-    email: "diana@example.com",
+    email: "index@example.com",
     password: "123456",
     first_name: "Diana",
     last_name: "von Fürstenberg",
@@ -99,7 +99,7 @@ url3 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/benchmark_
 investor3 = User.new(
     kind: "investor",
     first_time: false,
-    email: "timo@example.com",
+    email: "benchmark@example.com",
     password: "123456",
     first_name: "Timo",
     last_name: "Heidenstrauch",
@@ -122,7 +122,7 @@ url4 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/creandum_z
 investor4 = User.new(
     kind: "investor",
     first_time: false,
-    email: "simon@example.com",
+    email: "creandum@example.com",
     password: "123456",
     first_name: "Simon",
     last_name: "Schmincke",
@@ -145,7 +145,7 @@ url5 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/holtzbrinc
 investor5 = User.new(
     kind: "investor",
     first_time: false,
-    email: "dieter@example.com",
+    email: "holtzbrinck@example.com",
     password: "123456",
     first_name: "Dieter",
     last_name: "von Heisen",
@@ -168,7 +168,7 @@ url6 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005970/partechh_d
 investor6 = User.new(
     kind: "investor",
     first_time: false,
-    email: "kerstin@example.com",
+    email: "partech@example.com",
     password: "123456",
     first_name: "Kerstin",
     last_name: "Theissen",
@@ -191,7 +191,7 @@ url7 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/greylock_y
 investor7 = User.new(
     kind: "investor",
     first_time: false,
-    email: "john@example.com",
+    email: "greylock@example.com",
     password: "123456",
     first_name: "John",
     last_name: "Simson",
@@ -214,7 +214,7 @@ url8 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/bessemer_t
 investor8 = User.new(
     kind: "investor",
     first_time: false,
-    email: "alan@example.com",
+    email: "bessemer@example.com",
     password: "123456",
     first_name: "Jennifer",
     last_name: "Forchester",
@@ -237,7 +237,7 @@ url9 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/cherry_jtm
 investor9 = User.new(
     kind: "investor",
     first_time: false,
-    email: "christian@cherry.com",
+    email: "cherry@example.com",
     password: "123456",
     first_name: "Christian",
     last_name: "Meermann",
@@ -260,7 +260,7 @@ url10 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/gfc_p6chq
 investor10 = User.new(
     kind: "investor",
     first_time: false,
-    email: "marc@example.com",
+    email: "gfc@example.com",
     password: "123456",
     first_name: "Marc",
     last_name: "Samwer",
@@ -296,7 +296,7 @@ url11 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/getyourgu
 startup1 = User.new(
     kind: "startup",
     first_time: false,
-    email: "startup1@getyourguide.com",
+    email: "getyourguide@example.com",
     password: "123456",
     first_name: "Hans",
     last_name: "Mühlenbein",
@@ -322,7 +322,7 @@ url12 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/hellofres
 startup2 = User.new(
     kind: "startup",
     first_time: false,
-    email: "startup2@hellofresh.com",
+    email: "hellofresh@example.com",
     password: "123456",
     first_name: "Dominik",
     last_name: "Richter",
@@ -348,7 +348,7 @@ url13 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005970/personio_
 startup3 = User.new(
     kind: "startup",
     first_time: false,
-    email: "startup3@personio.com",
+    email: "personio@example.com",
     password: "123456",
     first_name: "Hanno",
     last_name: "Renner",
@@ -374,7 +374,7 @@ url14 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005970/lifex_plz
 startup4 = User.new(
     kind: "startup",
     first_time: false,
-    email: "startup4@lifex.com",
+    email: "lifex@example.com",
     password: "123456",
     first_name: "Gregory",
     last_name: "Lime",
@@ -400,7 +400,7 @@ url15 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/fineway_d
 startup5 = User.new(
     kind: "startup",
     first_time: false,
-    email: "startup5@fineaway.com",
+    email: "fineaway@example.com",
     password: "123456",
     first_name: "Maria",
     last_name: "Thormann",
@@ -426,7 +426,7 @@ url16 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005970/mcmakler_
 startup6 = User.new(
     kind: "startup",
     first_time: false,
-    email: "startup6@mcmakler.com",
+    email: "mcmakler@example.com",
     password: "123456",
     first_name: "Felix",
     last_name: "Jahn",
@@ -452,7 +452,7 @@ url17 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/hometogo_
 startup7 = User.new(
     kind: "startup",
     first_time: false,
-    email: "startup7@hometogo.com",
+    email: "hometogo@example.com",
     password: "123456",
     first_name: "Dirk",
     last_name: "Lorchester",
@@ -478,7 +478,7 @@ url18 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005970/n26_ymfmy
 startup8 = User.new(
     kind: "startup",
     first_time: false,
-    email: "startup8@n26.com",
+    email: "n26@example.com",
     password: "123456",
     first_name: "Maximilian",
     last_name: "Tayenthal",
@@ -504,7 +504,7 @@ url19 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/flaschenp
 startup9 = User.new(
     kind: "startup",
     first_time: false,
-    email: "startup9@flaschenpost.com",
+    email: "flaschenpost@example.com",
     password: "123456",
     first_name: "Niklas",
     last_name: "Mayer",
@@ -528,7 +528,7 @@ url20 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/delivery-
 startup10 = User.new(
     kind: "startup",
     first_time: false,
-    email: "startup1@delivery-hero.com",
+    email: "delivery-hero@example.com",
     password: "123456",
     first_name: "Lukasz",
     last_name: "Gadowski",
