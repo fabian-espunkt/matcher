@@ -14,8 +14,7 @@
       <%= f.input :stages, include_hidden: false, label: "Company Stages",wrapper_html: { class: 'custom-checkbox' }, as: :check_boxes, :collection => ["Pre-Seed", "Seed", "Series A", "Series B", "Series C", "Later Stage"], wrapper: :vertical_collection_inline %>
       <%= f.input :selling_to, include_hidden: false, label: "Customer Types", wrapper_html: { class: 'custom-checkbox' }, as: :check_boxes, :collection => ["B2C", "B2B", "B2B2C"], wrapper: :vertical_collection_inline %>
       <%= f.input :launch_status, include_hidden: false, label: "Startup Status", as: :check_boxes, wrapper_html: { class: 'custom-checkbox' }, :collection => ["pre-MVP", "closed beta", "public beta", "publicly launched"], wrapper: :vertical_collection_inline %>
-      <%= f.input :generating_revenue, wrapper_html: { class: 'custom-radio-button' }, label: "Startup needs to generate revenue?", as: :radio_buttons, wrapper: :vertical_collection_inline %>
-      <%= f.input :profitable, label: "Startup needs to be profitable?", wrapper_html: { class: 'custom-radio-button' }, as: :radio_buttons, wrapper: :vertical_collection_inline %>
+      <%= f.input :generating_revenue, wrapper_html: { class: 'custom-radio-button' }, label: "Must the startup generate revenue?", as: :radio_buttons, collection: [['Yes', true],['No, pre-revenue only', false]], wrapper: :vertical_collection_inline %>
       <br>
       <h2>Availability</h2>
       <p>Tell us at which times you will be available for meetings (Sa, 07.09)</p>
