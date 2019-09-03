@@ -652,77 +652,77 @@ attendance20 = Attendance.new(
 
 puts '(4/6) Creating new meetings...'
 
-meeting1 = Meeting.new(
-    investor: investor11,
-    startup: startup1,
-    event: event1,
-    agreed_timeslot: nil,
-    matching_status: "Matched")
-  meeting1.save!
+# meeting1 = Meeting.new(
+#     investor: investor11,
+#     startup: startup1,
+#     event: event1,
+#     agreed_timeslot: nil,
+#     matching_status: "Matched")
+#   meeting1.save!
 
-meeting2 = Meeting.new(
-    investor: investor11,
-    startup: startup2,
-    event: event1,
-    agreed_timeslot: nil,
-    matching_status: "Matched")
-  meeting2.save!
+# meeting2 = Meeting.new(
+#     investor: investor11,
+#     startup: startup2,
+#     event: event1,
+#     agreed_timeslot: nil,
+#     matching_status: "Matched")
+#   meeting2.save!
 
-meeting3 = Meeting.new(
-    investor: investor3,
-    startup: startup3,
-    event: event1,
-    agreed_timeslot: nil,
-    matching_status: "Matched")
-  meeting3.save!
+# meeting3 = Meeting.new(
+#     investor: investor3,
+#     startup: startup3,
+#     event: event1,
+#     agreed_timeslot: nil,
+#     matching_status: "Matched")
+#   meeting3.save!
 
-meeting4 = Meeting.new(
-    investor: investor11,
-    startup: startup4,
-    event: event1,
-    agreed_timeslot: nil,
-    matching_status: "Matched")
-  meeting4.save!
+# meeting4 = Meeting.new(
+#     investor: investor11,
+#     startup: startup4,
+#     event: event1,
+#     agreed_timeslot: nil,
+#     matching_status: "Matched")
+#   meeting4.save!
 
-meeting5 = Meeting.new(
-    investor: investor5,
-    startup: startup5,
-    event: event1,
-    agreed_timeslot: nil,
-    matching_status: "Matched")
-  meeting5.save!
+# meeting5 = Meeting.new(
+#     investor: investor5,
+#     startup: startup5,
+#     event: event1,
+#     agreed_timeslot: nil,
+#     matching_status: "Matched")
+#   meeting5.save!
 
-meeting6 = Meeting.new(
-    investor: investor6,
-    startup: startup6,
-    event: event1,
-    agreed_timeslot: nil,
-    matching_status: "Matched")
-  meeting6.save!
+# meeting6 = Meeting.new(
+#     investor: investor6,
+#     startup: startup6,
+#     event: event1,
+#     agreed_timeslot: nil,
+#     matching_status: "Matched")
+#   meeting6.save!
 
-meeting7 = Meeting.new(
-    investor: investor11,
-    startup: startup7,
-    event: event1,
-    agreed_timeslot: "08:00",
-    matching_status: "Scheduled")
-  meeting7.save!
+# meeting7 = Meeting.new(
+#     investor: investor11,
+#     startup: startup7,
+#     event: event1,
+#     agreed_timeslot: "08:00",
+#     matching_status: "Scheduled")
+#   meeting7.save!
 
-meeting8 = Meeting.new(
-    investor: investor7,
-    startup: startup8,
-    event: event1,
-    agreed_timeslot: "09:00",
-    matching_status: "Scheduled")
-  meeting8.save!
+# meeting8 = Meeting.new(
+#     investor: investor7,
+#     startup: startup8,
+#     event: event1,
+#     agreed_timeslot: "09:00",
+#     matching_status: "Scheduled")
+#   meeting8.save!
 
-meeting9 = Meeting.new(
-    investor: investor11,
-    startup: startup9,
-    event: event1,
-    agreed_timeslot: "16:00",
-    matching_status: "Scheduled")
-  meeting9.save!
+# meeting9 = Meeting.new(
+#     investor: investor11,
+#     startup: startup9,
+#     event: event1,
+#     agreed_timeslot: "16:00",
+#     matching_status: "Scheduled")
+#   meeting9.save!
 
 puts '(5/6) Creating new viewings...'
 puts 'not creating any right now'
