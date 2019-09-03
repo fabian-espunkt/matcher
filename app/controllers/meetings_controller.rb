@@ -1,9 +1,15 @@
 class MeetingsController < ApplicationController
   def index
     @meetings = policy_scope(Meeting)
-    @my_meetings_investors = Meeting.all.where(investor: current_user)
-    @my_meetings_startups =  Meeting.all.where(startup: current_user)
-    @my_likes = Viewing.all.where(user: current_user, like: true)
+    if current_user.investor?
+      @my_meetings = Meeting.where(investor: current_user)
+    else
+      @my_meetings = Meeting.where(startup: current_user)
+    end
+    # @my_meetings_investors = Meeting.where(investor: current_user)
+    # @my_meetings_startups =  Meeting.where(startup: current_user)
+    @my_likes = Viewing.where(user: current_user, like: true)
+
   end
 
   def edit
