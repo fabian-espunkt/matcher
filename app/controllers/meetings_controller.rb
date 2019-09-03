@@ -19,6 +19,9 @@ class MeetingsController < ApplicationController
     @meeting = Meeting.find(params[:id])
     authorize @meeting
     @meeting.update(meeting_params)
+    if @meeting.matching_status == "Matched"
+      flash[:alert] = "You have matched!"
+    end
     redirect_to meetings_path
   end
 

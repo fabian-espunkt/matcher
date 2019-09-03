@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 2019_09_03_084753) do
     t.string "launch_status", default: [], array: true
     t.integer "funds_raised"
     t.integer "fte"
-    t.string "meeting_spot", default: [], array: true
+    t.string "meeting_spot"
     t.string "availability", default: [], array: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
