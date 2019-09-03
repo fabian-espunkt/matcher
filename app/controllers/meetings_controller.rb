@@ -3,13 +3,12 @@ class MeetingsController < ApplicationController
     @meetings = policy_scope(Meeting)
     if current_user.investor?
       @my_meetings = Meeting.where(investor: current_user)
+      other_users_ids = @my_meetings.pluck(:startup_id)
     else
       @my_meetings = Meeting.where(startup: current_user)
+      other_users_ids = @my_meetings.pluck(:investor_id)
     end
-    # @my_meetings_investors = Meeting.where(investor: current_user)
-    # @my_meetings_startups =  Meeting.where(startup: current_user)
-    @my_likes = Viewing.where(user: current_user, like: true)
-
+    @my_likes = Viewing.includes(:attendance).where(user: current_user, like: true).where.not(attendances: { user_id: other_users_ids })
   end
 
   def edit
