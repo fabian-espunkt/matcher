@@ -5,7 +5,7 @@
   <div class="d-flex mb-4">
     <div id="selection-text"> Select your default meeting spot: &nbsp; &nbsp;</div>
     <!-- <p>Select your default meeting spot</p> -->
-    <%= simple_form_for @user, url: profile_update_path(@user), wrapper: :inline_form, html: { class: "form-inline" }, wrapper_mappings: {
+    <%= simple_form_for @user, url: meeting_spot_path(@user), wrapper: :inline_form, html: { class: "form-inline" }, wrapper_mappings: {
     boolean: :inline_boolean}, :method => :patch do |f| %>
       <%= f.input :meeting_spot, input_html: { class: "mb-2 mr-sm-2" }, :collection => @event.meeting_spots.split(",") %>
       <%= f.button :submit, "Save", class: "btn-primary mb-2" %>

@@ -1,17 +1,33 @@
-<div class="container">
+<% if @my_meetings.count > 0 %>
+  <div class="container">
     <h1 class="mb-5 py-3">Your Matches</h1>
-
-    <div class="user-card cards">
-    <% @my_meetings.each do |meeting| %>
-      <% if current_user.kind == "investor" %>
-        <%= render 'meeting_startup_card', meeting: meeting %>
-      <% else %>
-        <%= render 'meeting_investor_card', meeting: meeting %>
+      <div class="user-card cards">
+      <% @my_meetings.each do |meeting| %>
+        <% if current_user.kind == "investor" %>
+          <%= render 'meeting_startup_card', meeting: meeting %>
+        <% else %>
+          <%= render 'meeting_investor_card', meeting: meeting %>
+        <% end %>
       <% end %>
+      </div>
+  </div>
+<% else %>
+  <div class="container">
+    <h1 class="mb-3 py-3">Your Matches</h1>
+    <p id="no-matches"> No matches, yet!</p>
+    <% if current_user.kind == "investor" %>
+      <div class="py-3" id="no-matches">
+        <%= link_to "Continue Swiping Startups <<", attendances_path, class: "btn btn-primary mr-2 px-4" %>
+      </div>
+    <% else %>
+      <div class="py-3" id="no-matches">
+        <%= link_to "Continue Swiping Investors", attendances_path, class: "btn btn-primary mr-2 px-4" %>
+      </div>
     <% end %>
-    </div>
+<% end %>
 
   <% if @my_likes.count > 0 %>
+<div class="container">
   <h1 class="mb-5 py-3">Your Likes</h1>
 
   <!-- cards -->

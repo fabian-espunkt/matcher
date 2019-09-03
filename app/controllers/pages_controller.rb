@@ -11,8 +11,9 @@ class PagesController < ApplicationController
   def update
     @user = current_user
     authorize @user
+
     if @user.update(user_params)
-      redirect_to attendances_path
+      redirect_to attendances_path, notice: "Updated your profile successfully"
     else
       render :profile
     end
@@ -21,6 +22,6 @@ class PagesController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:meeting_spot, :generating_revenue, :profitable, :ticket_size_max, stages: [], sectors: [], selling_to: [], launch_status: [], availability: [])
+    params.require(:user).permit(:generating_revenue, :meeting_spot, :profitable, :ticket_size_max, stages: [], sectors: [], selling_to: [], launch_status: [], availability: [])
   end
 end
