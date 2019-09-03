@@ -7,6 +7,6 @@ class MatcherService
       else
         Meeting.create(event: viewing.attendance.event, agreed_timeslot: nil, matching_status: "Matched", investor: viewing.attendance.user, startup: viewing.user)
       end
-     end
+    end
   end
 end
