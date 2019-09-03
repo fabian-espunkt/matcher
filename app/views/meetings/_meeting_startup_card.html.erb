@@ -1,43 +1,39 @@
- <!-- cards -->
+<div class="row mb-4" id="selection-card">
+  <div class="card col-lg-12 selection-card">
+    <div class="d-flex justify-content-between align-items-center" id="inner-content">
 
-    <div class="row mb-4" id="selection-card">
-      <div class="card col-lg-12 selection-card">
-        <div class="d-flex justify-content-between align-items-center" id="inner-content">
-
-          <div class="col-sm-6 d-flex justfiy-content-between align-items-center">
-            <div class="col">
-              <%= cl_image_tag meeting.startup.photo, class: "user-photo" %>
-            </div>
-            <div class="line-height-10 info-one col">
-              <strong><%= meeting.startup.first_name %> <%= meeting.startup.last_name %></strong></p>
-              <p><%= meeting.startup.position %><br> <%= meeting.startup.company_name %></p>
-            </div>
-            <div class="col info-two">
-              <p><%= meeting.startup.company_city %></p>
-            </div>
-          </div>
-
-
-          <div class="col-sm-6 d-flex justfiy-content-between align-items-center">
-            <div class="col info-three">
-
-              <p><strong>Business Model: </strong><%= meeting.startup.selling_to %> </p>
-              <p><strong>Category: </strong><%= meeting.startup.sectors %></p>
-              <p><strong>Raising: </strong> <%= meeting.startup.stages %></p>
-            </div>
-            <div class="matching-status col-">
-              <% if meeting.matching_status == "Waiting" %>
-              <p id="waiting"><strong><%= meeting.matching_status.upcase %></strong></p>
-              <% elsif meeting.matching_status == "Matched" %>
-              <p id="matched"><strong><%= meeting.matching_status.upcase %></strong></p>
-              <% elsif meeting.matching_status == "Scheduled" %>
-              <p id="scheduled"><strong><%= link_to meeting.matching_status.upcase, appointments_path %></strong></p>
-              <% end %>
-            </div>
-          </div>
-
+      <div class="col-sm-6 d-flex justfiy-content-between align-items-center">
+        <div class="col">
+          <%= cl_image_tag meeting.startup.photo, class: "user-photo" %>
+        </div>
+        <div class="line-height-10 info-one col">
+          <strong><%= meeting.startup.first_name %> <%= meeting.startup.last_name %></strong></p>
+          <p><%= meeting.startup.position %><br> <%= meeting.startup.company_name %></p>
+        </div>
+        <div class="col info-two">
+          <p><%= meeting.startup.company_city %></p>
         </div>
       </div>
+
+
+      <div class="col-sm-6 d-flex justfiy-content-between align-items-center">
+        <div class="col info-three">
+
+          <p><strong>Business Model: </strong><%= meeting.startup.selling_to %> </p>
+          <p><strong>Category: </strong><%= meeting.startup.sectors %></p>
+          <p><strong>Raising: </strong> <%= meeting.startup.stages %></p>
+        </div>
+        <div class="matching-status col-">
+          <% if meeting.matching_status == "Waiting" %>
+          <p id="waiting"><strong><%= meeting.matching_status.upcase %></strong></p>
+          <% elsif meeting.matching_status == "Matched" %>
+          <p id="matched"><strong><%= meeting.matching_status.upcase %></strong></p>
+          <% elsif meeting.matching_status == "Scheduled" %>
+          <p id="scheduled"><strong><%= link_to meeting.matching_status.upcase, appointments_path %></strong></p>
+          <% end %>
+        </div>
+      </div>
+
     </div>
-
-
+  </div>
+</div>
