@@ -564,31 +564,369 @@ startup11 = User.new(
     position: "Founder")
   startup11.save!
 
-  url21 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567591240/new%20cropped%20startup%20logos/delivery-hero_qoe6fz.png"
-  startup12 = User.new(
-      kind: "startup",
-      first_time: false,
-      email: "eastnine@example.com",
-      password: "123456",
-      first_name: "Jason",
-      last_name: "Goodman",
-      mobile: "015607824008",
-      company_name: "Eastnine",
-      position: "Founder",
-      company_city: "Berlin, Germany",
-      company_url: "www.eastnine.com",
-      firm_description: "Eastnine is on a mission to banish the ‘not today’ from daily fitness.",
-      company_founding_year: "2018",
-      launch_status: ["publicly launched"],
-      sectors: ["Health & Life Sciences"],
-      stages: ["Seed"],
-      selling_to: ["B2C"],
-      fte: 19,
-      funds_raised: 2000000,
-      generating_revenue: true, # Does the company generate revenue? Here: "Yes"
-      profitable: true, # Is the company profitable? Here: "Yes"
-      remote_photo_url: url21)
-    startup12.save!
+url21 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567591240/new%20cropped%20startup%20logos/delivery-hero_qoe6fz.png"
+startup12 = User.new(
+    kind: "startup",
+    first_time: false,
+    email: "eastnine@example.com",
+    password: "123456",
+    first_name: "Jason",
+    last_name: "Goodman",
+    mobile: "015607824008",
+    company_name: "Eastnine",
+    position: "Founder",
+    company_city: "Berlin, Germany",
+    company_url: "www.eastnine.com",
+    firm_description: "Eastnine is on a mission to banish the ‘not today’ from daily fitness.",
+    company_founding_year: "2018",
+    launch_status: ["publicly launched"],
+    sectors: ["Health & Life Sciences"],
+    stages: ["Seed"],
+    selling_to: ["B2C"],
+    fte: 19,
+    funds_raised: 2000000,
+    generating_revenue: true, # Does the company generate revenue? Here: "Yes"
+    profitable: true, # Is the company profitable? Here: "Yes"
+    remote_photo_url: url21)
+  startup12.save!
+
+url22 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567598715/new%20cropped%20startup%20logos/medwing-logo_hnsvsn.png"
+startup13 = User.new(
+    kind: "startup",
+    first_time: false,
+    email: "medwing@example.com",
+    password: "123456",
+    first_name: "Timo",
+    last_name: "Fischer",
+    mobile: "015607824008",
+    company_name: "Medwing",
+    position: "Founder & MD",
+    company_city: "Berlin, Germany",
+    company_url: "www.medwing.com",
+    firm_description: "MEDWING serves as the most trusted and convenient platform for finding work opportunities in healthcare.",
+    company_founding_year: "2017",
+    launch_status: ["publicly launched"],
+    sectors: ["Health & Life Sciences"],
+    stages: ["Seed"],
+    selling_to: ["B2C"],
+    fte: 81,
+    funds_raised: 3000000,
+    generating_revenue: true, # Does the company generate revenue? Here: "Yes"
+    profitable: false, # Is the company profitable? Here: "Yes"
+    remote_photo_url: url22)
+  startup13.save!
+
+url23 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567598715/new%20cropped%20startup%20logos/tourradar_Logo_neu_icrfje.png"
+startup14 = User.new(
+    kind: "startup",
+    first_time: false,
+    email: "tourradar@example.com",
+    password: "123456",
+    first_name: "Travis",
+    last_name: "Pittman",
+    mobile: "015607824008",
+    company_name: "TourRadar",
+    position: "Founder & CEO",
+    company_city: "Vienna, Austria",
+    company_url: "www.tourradar.com",
+    firm_description: "TourRadar is an online marketplace for travellers to compare and book multi-day tours.",
+    company_founding_year: "2010",
+    launch_status: ["publicly launched"],
+    sectors: ["Travel"],
+    stages: ["Series C"],
+    selling_to: ["B2C"],
+    fte: 221,
+    funds_raised: 66500000,
+    generating_revenue: true, # Does the company generate revenue? Here: "Yes"
+    profitable: false, # Is the company profitable? Here: "Yes"
+    remote_photo_url: url23)
+  startup14.save!
+
+url24 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567598715/new%20cropped%20startup%20logos/INFARMLogo_hnmho3.png"
+startup15 = User.new(
+    kind: "startup",
+    first_time: false,
+    email: "infarm@example.com",
+    password: "123456",
+    first_name: "Guy",
+    last_name: "Galonska",
+    mobile: "015607824008",
+    company_name: "Infarm",
+    position: "Founder & CTO",
+    company_city: "Berlin, Germany",
+    company_url: "www.infarm.com",
+    firm_description: "Infarm is a leading Indoor Urban Farming Company. We are the new farmers, and the city is our farm.",
+    company_founding_year: "2017",
+    launch_status: ["publicly launched"],
+    sectors: ["Food"],
+    stages: ["Series B"],
+    selling_to: ["B2C", "B2B"],
+    fte: 146,
+    funds_raised: 134000000,
+    generating_revenue: true, # Does the company generate revenue? Here: "Yes"
+    profitable: false, # Is the company profitable? Here: "Yes"
+    remote_photo_url: url24)
+  startup15.save!
+
+url25 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567598715/new%20cropped%20startup%20logos/logo-blue-export_mpcl77.png"
+startup16 = User.new(
+    kind: "startup",
+    first_time: false,
+    email: "shift@example.com",
+    password: "123456",
+    first_name: "Albert",
+    last_name: "Belousov",
+    mobile: "015607824008",
+    company_name: "Shift",
+    position: "Founder & CEO",
+    company_city: "Gößnitz, Germany",
+    company_url: "www.shift.parts",
+    firm_description: "Shift is largest CNC machining network in Europe.",
+    company_founding_year: "2018",
+    launch_status: ["publicly launched"],
+    sectors: ["Industrial Production"],
+    stages: ["Seed"],
+    selling_to: ["B2C"],
+    fte: 21,
+    funds_raised: 4000000,
+    generating_revenue: true, # Does the company generate revenue? Here: "Yes"
+    profitable: false, # Is the company profitable? Here: "Yes"
+    remote_photo_url: url25)
+  startup16.save!
+
+url26 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567598715/new%20cropped%20startup%20logos/heyjob_gsfzna.jpg"
+startup17 = User.new(
+    kind: "startup",
+    first_time: false,
+    email: "heyjobs@example.com",
+    password: "123456",
+    first_name: "Marius",
+    last_name: "Lutzer",
+    mobile: "015607824008",
+    company_name: "HeyJobs",
+    position: "Founder & MD",
+    company_city: "Berlin, Germany",
+    company_url: "www.heyjobs.com",
+    firm_description: "HeyJobs is a Predictable Hiring Platform using Performance Marketing and AI.",
+    company_founding_year: "2016",
+    launch_status: ["publicly launched"],
+    sectors: ["Productivity Tools"],
+    stages: ["Seed"],
+    selling_to: ["B2C"],
+    fte: 124,
+    funds_raised: 15000000,
+    generating_revenue: true, # Does the company generate revenue? Here: "Yes"
+    profitable: false, # Is the company profitable? Here: "Yes"
+    remote_photo_url: url26)
+  startup17.save!
+
+url27 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567598715/new%20cropped%20startup%20logos/large-1_iz41qt.png"
+startup18 = User.new(
+    kind: "startup",
+    first_time: false,
+    email: "dashdash@example.com",
+    password: "123456",
+    first_name: "Torben",
+    last_name: "Schulz",
+    mobile: "015607824008",
+    company_name: "DashDash",
+    position: "Founder & MD",
+    company_city: "Berlin, Germany",
+    company_url: "www.dashdash.com",
+    firm_description: "DashDash gives the world access to the best business data and APIs in a spreadsheet.",
+    company_founding_year: "2018",
+    launch_status: ["publicly launched"],
+    sectors: ["Productivity"],
+    stages: ["Series A"],
+    selling_to: ["B2B"],
+    fte: 38,
+    funds_raised: 10000000,
+    generating_revenue: true, # Does the company generate revenue? Here: "Yes"
+    profitable: false, # Is the company profitable? Here: "Yes"
+    remote_photo_url: url27)
+  startup18.save!
+
+url28 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567598714/new%20cropped%20startup%20logos/drover_vulvsa.jpg"
+startup19 = User.new(
+    kind: "startup",
+    first_time: false,
+    email: "drover@example.com",
+    password: "123456",
+    first_name: "Felix",
+    last_name: "Leuschner",
+    mobile: "015607824008",
+    company_name: "Drover",
+    position: "Founder & CEO",
+    company_city: "London, UK",
+    company_url: "www.drover.com",
+    firm_description: "Drover is a marketplace company offering monthly, all-in car subscriptions to customers.",
+    company_founding_year: "2015",
+    launch_status: ["publicly launched"],
+    sectors: ["Mobility"],
+    stages: ["Series A"],
+    selling_to: ["B2BC"],
+    fte: 117,
+    funds_raised: 11000000,
+    generating_revenue: true, # Does the company generate revenue? Here: "Yes"
+    profitable: false, # Is the company profitable? Here: "Yes"
+    remote_photo_url: url28)
+  startup19.save!
+
+url29 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567598714/new%20cropped%20startup%20logos/amboss_logo_web-1_nsgn0k.png"
+startup20 = User.new(
+    kind: "startup",
+    first_time: false,
+    email: "amboss@example.com",
+    password: "123456",
+    first_name: "Sievert",
+    last_name: "Weiss",
+    mobile: "015607824008",
+    company_name: "Amboss",
+    position: "Founder & MD",
+    company_city: "Berlin, Germany",
+    company_url: "www.amboss.com",
+    firm_description: "Amboss is a knowledge platform which empowers healthcare professionals around the world to perform to the highest medical standards.",
+    company_founding_year: "2012",
+    launch_status: ["publicly launched"],
+    sectors: ["Health & Life Sciences"],
+    stages: ["Series A"],
+    selling_to: ["B2C", "B2B"],
+    fte: 175,
+    funds_raised: 7000000,
+    generating_revenue: true, # Does the company generate revenue? Here: "Yes"
+    profitable: false, # Is the company profitable? Here: "Yes"
+    remote_photo_url: url29)
+  startup20.save!
+
+url30 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567598714/new%20cropped%20startup%20logos/homelike_bv8e2q.jpg"
+startup21 = User.new(
+  kind: "startup",
+  first_time: false,
+  email: "homelike@example.com",
+  password: "123456",
+  first_name: "Dustin",
+  last_name: "Figge",
+  mobile: "015607824008",
+  company_name: "Homelike",
+  position: "Founder & CEO",
+  company_city: "Cologne, Germany",
+  company_url: "www.homelike.com",
+  firm_description: "Homelike is the B2B booking platform for furnished business apartments.",
+  company_founding_year: "2017",
+  launch_status: ["publicly launched"],
+  sectors: ["Travel"],
+  stages: ["Series B"],
+  selling_to: ["B2BC"],
+  fte: 119,
+  funds_raised: 21000000,
+  generating_revenue: true, # Does the company generate revenue? Here: "Yes"
+  profitable: false, # Is the company profitable? Here: "Yes"
+  remote_photo_url: url30)
+  startup21.save!
+
+url31 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567598714/new%20cropped%20startup%20logos/hedvig-wordmark-color_2x_sizw12.png"
+startup22 = User.new(
+  kind: "startup",
+  first_time: false,
+  email: "hedvig@example.com",
+  password: "123456",
+  first_name: "Lucas",
+  last_name: "Carlsén",
+  mobile: "015607824008",
+  company_name: "Hedvig",
+  position: "Founder & CEO",
+  company_city: "Stockholm, Sweden",
+  company_url: "www.hedvig.com",
+  firm_description: "We’re on a mission to make the insurance world for consumers a better place.",
+  company_founding_year: "2018",
+  launch_status: ["publicly launched"],
+  sectors: ["Insurance"],
+  stages: ["Series C"],
+  selling_to: ["B2C"],
+  fte: 41,
+  funds_raised: 52000000,
+  generating_revenue: true, # Does the company generate revenue? Here: "Yes"
+  profitable: false, # Is the company profitable? Here: "Yes"
+  remote_photo_url: url31)
+startup22.save!
+
+url32 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567598714/new%20cropped%20startup%20logos/automation-hero_ujpf9h.jpg"
+startup23 = User.new(
+  kind: "startup",
+  first_time: false,
+  email: "automationhero@example.com",
+  password: "123456",
+  first_name: "Stefan",
+  last_name: "Groschupf",
+  mobile: "015607824008",
+  company_name: "Automation Hero",
+  position: "Founder & CEO",
+  company_city: "San Francisco, USA",
+  company_url: "www.automationhero.com",
+  firm_description: "Automation hero is putting AI and RPA to work for your enterprise.",
+  company_founding_year: "2018",
+  launch_status: ["publicly launched"],
+  sectors: ["Productivity Software"],
+  stages: ["Series A"],
+  selling_to: ["B2B"],
+  fte: 31,
+  funds_raised: 19000000,
+  generating_revenue: true, # Does the company generate revenue? Here: "Yes"
+  profitable: false, # Is the company profitable? Here: "Yes"
+  remote_photo_url: url32)
+startup23.save!
+
+url33 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567598714/new%20cropped%20startup%20logos/finimize_kxnoku.png"
+startup24 = User.new(
+  kind: "startup",
+  first_time: false,
+  email: "finimize@example.com",
+  password: "123456",
+  first_name: "Maximilian",
+  last_name: "Rofagha",
+  mobile: "015607824008",
+  company_name: "Finimize",
+  position: "Founder & CEO",
+  company_city: "London, UK",
+  company_url: "www.finimize.com",
+  firm_description: "The tools and information you need to be financially savvy. In minutes.",
+  company_founding_year: "2016",
+  launch_status: ["publicly launched"],
+  sectors: ["Finance"],
+  stages: ["Seed"],
+  selling_to: ["B2C"],
+  fte: 97,
+  funds_raised: 2000000,
+  generating_revenue: true, # Does the company generate revenue? Here: "Yes"
+  profitable: false, # Is the company profitable? Here: "Yes"
+  remote_photo_url: url33)
+startup24.save!
+
+url34 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567598714/new%20cropped%20startup%20logos/freighthub_gbu5xy.png"
+startup25 = User.new(
+  kind: "startup",
+  first_time: false,
+  email: "freighthub@example.com",
+  password: "123456",
+  first_name: "Ferry",
+  last_name: "Heilemann",
+  mobile: "015607824008",
+  company_name: "FreightHub",
+  position: "Co-Founder & CEO",
+  company_city: "Berlin, Germany",
+  company_url: "www.freighthub.com",
+  firm_description: "FreightHub, Inc. is the market place for shippers and drivers that gives them the tools needed to be efficient and profitable.",
+  company_founding_year: "2017",
+  launch_status: ["publicly launched"],
+  sectors: ["Logistics"],
+  stages: ["Series A"],
+  selling_to: ["B2B"],
+  fte: 81,
+  funds_raised: 53000000,
+  generating_revenue: true, # Does the company generate revenue? Here: "Yes"
+  profitable: false, # Is the company profitable? Here: "Yes"
+  remote_photo_url: url34)
+startup25.save!
 
 puts '(3/6) Creating new attendances...'
 
