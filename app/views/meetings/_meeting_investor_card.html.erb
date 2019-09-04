@@ -6,13 +6,16 @@
         <div class="col">
           <%= cl_image_tag meeting.investor.photo, class: "user-photo" %>
         </div>
+        <hr noshade style="background-color: #c3bdbd42;height: 100px;width: 2.2px;">
         <div class="line-height-10 info-one col">
           <strong><%= meeting.investor.first_name %> <%= meeting.investor.last_name %></strong></p>
           <p><%= meeting.investor.position %><br> <%= meeting.investor.company_name %></p>
         </div>
+        <hr noshade style="background-color: #c3bdbd42;height: 100px;width: 2.2px;">
         <div class="col info-two">
           <p><%= meeting.investor.company_city %></p>
         </div>
+        <hr noshade style="background-color: #c3bdbd42;height: 100px;width: 2.2px;">
       </div>
 
 
@@ -23,6 +26,7 @@
           <p><strong>Categories: </strong><%= meeting.investor.sectors.join(", ") %></p>
           <p><strong>Stages: </strong> <%= meeting.investor.stages.join(", ") %></p>
         </div>
+        <hr noshade style="background-color: #c3bdbd42;height: 100px;width: 2.2px;">
         <div class="matching-status col-">
           <% if meeting.matching_status == "Waiting" %>
           <p id="waiting"><strong><%= meeting.matching_status.upcase %></strong></p>

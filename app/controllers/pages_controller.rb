@@ -6,6 +6,10 @@ class PagesController < ApplicationController
 
   def profile
     @user = current_user
+    @avails = []
+    current_user.attendances.each do |atte|
+      atte.availabilities.each { |avail| @avails << avail }
+    end
   end
 
   def update
@@ -27,7 +31,7 @@ class PagesController < ApplicationController
   end
 
   def save_availabilities
-    availabilities = params[:user][:availability]
+    availabilities = params[:user][:availabilities]
     attendance = current_user.attendances.last
     availabilities.each do |availability|
       times = availability.split("-")

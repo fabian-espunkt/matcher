@@ -42,13 +42,16 @@
               <div class="col">
                 <%= cl_image_tag viewing.attendance.user.photo, class: "user-photo" %>
               </div>
+              <hr noshade style="background-color: #c3bdbd42;height: 100px;width: 2.2px;">
               <div class="line-height-10 info-one col">
                 <strong><%= viewing.attendance.user.first_name %> <%= viewing.attendance.user.last_name %></strong></p>
                 <p><%= viewing.attendance.user.position %><br> <%= viewing.attendance.user.company_name %></p>
               </div>
+                <hr noshade style="background-color: #c3bdbd42;height: 100px;width: 2.2px;">
               <div class="col info-two">
                 <p><%= viewing.attendance.user.company_city %></p>
               </div>
+             <hr noshade style="background-color: #c3bdbd42;height: 100px;width: 2.2px;">
             </div>
 
             <div class="col-sm-6 d-flex justfiy-content-between align-items-center">
@@ -57,6 +60,7 @@
                 <p><strong>Category: </strong><%= viewing.attendance.user.sectors.join(", ") %></p>
                 <p><strong>Raising: </strong> <%= viewing.attendance.user.stages.join(", ")  %></p>
               </div>
+              <hr noshade style="background-color: #c3bdbd42;height: 100px;width: 2.2px;">
               <div class="matching-status col-">
                 <p id="waiting"><strong>WAITING</strong></p>
               </div>
