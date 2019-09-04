@@ -15,6 +15,10 @@
           <li class="<%= params[:controller] == "attendances" && params[:action] == "index" ? "nav-item active": "nav-item" %>">
             <%= link_to "Matching", attendances_path, class: "nav-link" %>
           </li>
+          <!-- notification for new matches -->
+          <p> <% if @meetings.present? %>
+            <p class="text-white bg-danger px-2 rounded-circle"><%= @meetings.count %></p></p>
+            <% end %>
           <li class="<%= params[:controller] == "meetings" && params[:action] == "index" ? "nav-item active": "nav-item" %>">
             <%= link_to "Selection", meetings_path, class: "nav-link" %>
           </li>
