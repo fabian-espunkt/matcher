@@ -289,7 +289,7 @@ investor11 = User.new(
     last_name: "Wojciechowski",
     company_name: "LeWagon Ventures",
     position: "Managing Partner",
-    company_city: "Berlin, Germany"
+    company_city: "Berlin, Germany",
     remote_photo_url: url11)
   investor11.save!
 
