@@ -72,7 +72,7 @@ investor1 = User.new(
     admin: true)
   investor1.save!
 
-url2 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005970/index_y8mbom.png"
+url2 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567591240/new%20cropped%20startup%20logos/index_hub1a4.png"
 investor2 = User.new(
     kind: "investor",
     first_time: false,
@@ -164,7 +164,7 @@ investor5 = User.new(
     remote_photo_url: url5)
   investor5.save!
 
-url6 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005970/partechh_dfehn4.png"
+url6 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567591240/new%20cropped%20startup%20logos/partechh_cnx9e4.png"
 investor6 = User.new(
     kind: "investor",
     first_time: false,
@@ -203,7 +203,7 @@ investor7 = User.new(
     ticket_size_min: "500000",
     ticket_size_max: "20000000",
     stages: ["Seed", "Series A", "Series B", "Later Stage"],
-    selling_to: "B2C, B2B",
+    selling_to: ["B2C, B2B"],
     generating_revenue: false, # Is revenue an investment requirement? Here: "Yes"
     profitable: false, # Is profitability an investment requirement? Here: "Yes"
     launch_status: ["closed beta", "public beta", "publicly launched"],
@@ -256,7 +256,7 @@ investor9 = User.new(
     remote_photo_url: url9)
   investor9.save!
 
-url10 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/gfc_p6chqg.png"
+url10 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567591240/new%20cropped%20startup%20logos/gfc_j74y2k.png"
 investor10 = User.new(
     kind: "investor",
     first_time: false,
@@ -344,7 +344,7 @@ startup2 = User.new(
     remote_photo_url: url12)
   startup2.save!
 
-url13 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005970/personio_nz51ku.png"
+url13 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567591240/new%20cropped%20startup%20logos/personio_azxdun.png"
 startup3 = User.new(
     kind: "startup",
     first_time: false,
@@ -396,7 +396,7 @@ startup4 = User.new(
     remote_photo_url: url14)
   startup4.save!
 
-url15 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/fineway_dcc3o9.png"
+url15 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567591240/new%20cropped%20startup%20logos/fineway_vbj62x.png"
 startup5 = User.new(
     kind: "startup",
     first_time: false,
@@ -448,7 +448,7 @@ startup6 = User.new(
     remote_photo_url: url16)
   startup6.save!
 
-url17 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/hometogo_rsmhan.png"
+url17 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567591240/new%20cropped%20startup%20logos/hometogo_x3iwcq.png"
 startup7 = User.new(
     kind: "startup",
     first_time: false,
@@ -474,7 +474,7 @@ startup7 = User.new(
     remote_photo_url: url17)
   startup7.save!
 
-url18 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005970/n26_ymfmyl.jpg"
+url18 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567591240/new%20cropped%20startup%20logos/n26_j8wzsa.jpg"
 startup8 = User.new(
     kind: "startup",
     first_time: false,
@@ -500,7 +500,7 @@ startup8 = User.new(
     remote_photo_url: url18)
   startup8.save!
 
-url19 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/flaschenpost_vqugto.jpg"
+url19 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567591240/new%20cropped%20startup%20logos/flaschenpost_wombwz.jpg"
 startup9 = User.new(
     kind: "startup",
     first_time: false,
@@ -519,12 +519,14 @@ startup9 = User.new(
     sectors: ["Food", "Logistics"],
     stages: ["Series A"],
     selling_to: ["B2C", "B2B"],
+    fte: 388,
+    funds_raised: 70000000,
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
     profitable: false, # Is the company profitable? Here: "Yes"
     remote_photo_url: url19)
   startup9.save!
 
-url20 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/delivery-hero_hbefxy.png"
+url20 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567591240/new%20cropped%20startup%20logos/delivery-hero_qoe6fz.png"
 startup10 = User.new(
     kind: "startup",
     first_time: false,
@@ -533,7 +535,7 @@ startup10 = User.new(
     first_name: "Lukasz",
     last_name: "Gadowski",
     mobile: "015607824008",
-    company_name: "Delivery-Hero",
+    company_name: "DeliveryHero",
     position: "Founder",
     company_city: "Berlin, Germany",
     company_url: "www.delivery-hero.com",
@@ -543,6 +545,8 @@ startup10 = User.new(
     sectors: ["Food", "Logistics"],
     stages: ["Later Stage"],
     selling_to: ["B2C"],
+    fte: 177,
+    funds_raised: 2600000000,
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
     profitable: true, # Is the company profitable? Here: "Yes"
     remote_photo_url: url20)
@@ -559,6 +563,32 @@ startup11 = User.new(
     company_name: "Alcapando",
     position: "Founder")
   startup11.save!
+
+  url21 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567591240/new%20cropped%20startup%20logos/delivery-hero_qoe6fz.png"
+  startup12 = User.new(
+      kind: "startup",
+      first_time: false,
+      email: "eastnine@example.com",
+      password: "123456",
+      first_name: "Jason",
+      last_name: "Goodman",
+      mobile: "015607824008",
+      company_name: "Eastnine",
+      position: "Founder",
+      company_city: "Berlin, Germany",
+      company_url: "www.eastnine.com",
+      firm_description: "Eastnine is on a mission to banish the ‘not today’ from daily fitness.",
+      company_founding_year: "2018",
+      launch_status: ["publicly launched"],
+      sectors: ["Health & Life Sciences"],
+      stages: ["Seed"],
+      selling_to: ["B2C"],
+      fte: 19,
+      funds_raised: 2000000,
+      generating_revenue: true, # Does the company generate revenue? Here: "Yes"
+      profitable: true, # Is the company profitable? Here: "Yes"
+      remote_photo_url: url21)
+    startup12.save!
 
 puts '(3/6) Creating new attendances...'
 
