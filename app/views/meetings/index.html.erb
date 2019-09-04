@@ -23,17 +23,17 @@
         <p id="no-matches"> No matches, yet! Go back to <%= link_to "Matching View", attendances_path %> and like more investors</p>
       </div>
     <% end %>
+    </div>
 <% end %>
-
-  <% if @my_likes.count > 0 %>
-  <h1 class="mb-5 py-3">Your Likes</h1>
 
   <!-- cards -->
   <div class="container">
-    <div class="user-card cards">
+    <% if @my_likes.count > 0 %>
+    <h1 class="mb-3 py-3">Your Likes</h1>
+    <div class="user-card cards ml-3">
       <!-- one row = one card -->
       <% @my_likes.each do |viewing| %>
-      <div class="row mb-4" id="selection-card">
+      <div class="row mb-3" id="selection-card">
         <%link_to "" %>
         <div class="card col-lg-12 selection-card">
           <div class="d-flex justify-content-between align-items-center" id="inner-content">

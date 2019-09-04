@@ -289,7 +289,8 @@ investor11 = User.new(
     last_name: "Wojciechowski",
     company_name: "LeWagon Ventures",
     position: "Managing Partner",
-    remote_photo_url: url10)
+    company_city: "Berlin, Germany"
+    remote_photo_url: url11)
   investor11.save!
 
 url11 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567005969/getyourguide_fjsxpb.png"
