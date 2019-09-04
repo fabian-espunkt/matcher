@@ -564,7 +564,7 @@ startup11 = User.new(
     position: "Founder")
   startup11.save!
 
-url21 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567591240/new%20cropped%20startup%20logos/delivery-hero_qoe6fz.png"
+url21 = "https://res.cloudinary.com/dkrolafpx/image/upload/v1567598714/new%20cropped%20startup%20logos/eastnine_eevziy.png"
 startup12 = User.new(
     kind: "startup",
     first_time: false,
@@ -1029,6 +1029,81 @@ attendance20 = Attendance.new(
     user: investor10,
     event: event1)
   attendance20.save!
+
+attendance21 = Attendance.new(
+    user: startup11,
+    event: event1)
+  attendance21.save!
+
+attendance22 = Attendance.new(
+  user: startup12,
+  event: event1)
+attendance22.save!
+
+attendance23 = Attendance.new(
+  user: startup13,
+  event: event1)
+attendance23.save!
+
+attendance24 = Attendance.new(
+  user: startup14,
+  event: event1)
+attendance24.save!
+
+attendance25 = Attendance.new(
+  user: startup15,
+  event: event1)
+attendance25.save!
+
+attendance26 = Attendance.new(
+  user: startup16,
+  event: event1)
+attendance26.save!
+
+attendance27 = Attendance.new(
+  user: startup17,
+  event: event1)
+attendance27.save!
+
+attendance28 = Attendance.new(
+  user: startup18,
+  event: event1)
+attendance28.save!
+
+attendance29 = Attendance.new(
+  user: startup19,
+  event: event1)
+attendance29.save!
+
+attendance30 = Attendance.new(
+  user: startup20,
+  event: event1)
+attendance30.save!
+
+attendance31 = Attendance.new(
+  user: startup21,
+  event: event1)
+attendance31.save!
+
+attendance32 = Attendance.new(
+  user: startup22,
+  event: event1)
+attendance32.save!
+
+attendance33 = Attendance.new(
+  user: startup23,
+  event: event1)
+attendance33.save!
+
+attendance34 = Attendance.new(
+  user: startup24,
+  event: event1)
+attendance34.save!
+
+attendance35 = Attendance.new(
+  user: startup25,
+  event: event1)
+attendance35.save!
 
 puts '(4/6) Creating new meetings...'
 
