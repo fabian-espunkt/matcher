@@ -1,29 +1,29 @@
 <div class="container">
-  <h1 class="py-4">Matching</h1>
-  <% if @meetings.present? %>
-  <p>match <%= @meetings.count %></p>
-
-  <% end %>
-
+  <h1 class="pt-3 pb-5">Find Founders</h1>
   <% @attendances.each do |attendance| %>
     <div class="card col-8 justify-content-center m-auto matching-card">
       <div class="p-3">
-        <div class="pt-3">
-          <h2><%= attendance.user.company_name %></h2>
-          <h3><%= attendance.user.first_name %> <%= attendance.user.last_name %>, <%= attendance.user.position %></h3>
+        <div class="pt-3 d-flex justify-content-between">
+          <div class="header-text">
+            <h2><%= attendance.user.company_name %></h2>
+            <h3><%= attendance.user.first_name %> <%= attendance.user.last_name %>, <%= attendance.user.position %></h3>
+          </div>
+          <div>
+            <%= cl_image_tag attendance.user.photo, class: "matching-company-logo" %>
+          </div>
         </div>
         <div id="company-details">
-          <p><%= attendance.user.sectors %></p>
+          <p><%= attendance.user.selling_to.join(", ")%> – <%= attendance.user.sectors.join(", ") %></p>
           <p><%= attendance.user.company_city %></p>
-          <p><%= attendance.user.stages %></p>
-          <p>Founded <%= attendance.user.company_founding_year %></p>
+          <p><%= attendance.user.stages.join(", ") %>, raised <%= number_to_currency(attendance.user.funds_raised, delimiter: ",", precision: 0, unit: "€")  %> to date</p>
+          <p>Founded <%= attendance.user.company_founding_year %>, now <%= attendance.user.fte %> employees</p>
         </div>
         <div>
           <p><%= truncate(attendance.user.firm_description, length: 180 ) %></p>
         </div>
         <div class="py-3">
           <%= link_to "✔", attendance_create_like_path(attendance), method: :post, class: "like btn btn-success mr-2 px-4" %>
-          <%= link_to "✘", attendance_create_dislike_path(attendance), method: :post, class: "btn btn-secondary px-4" %>
+          <%= link_to "Pass on this founder", attendance_create_dislike_path(attendance), method: :post, class: "matching-pass-link" %>
         </div>
       </div>
 
