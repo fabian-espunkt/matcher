@@ -19,6 +19,8 @@ class User < ApplicationRecord
   validates :first_name, :last_name, if: :investor?, presence: true
   validates :first_name, :last_name, if: :startup?, presence: true
 
+  accepts_nested_attributes_for :attendances
+
   def investor?
     kind == 'investor'
   end
@@ -33,5 +35,10 @@ class User < ApplicationRecord
 
   def meetings_for_hour(datetime)
     scheduled_investor_meetings.where(agreed_timeslot: datetime...(datetime + 1.hour))
+  end
+
+  def formatted_availabilities
+    availabilities = attendances.last.availabilities
+    return availabilities.map { |availability| "#{availability.start_time.strftime("%H:%M")}-#{availability.end_time.strftime("%H:%M")}" }
   end
 end
