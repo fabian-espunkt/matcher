@@ -14,58 +14,58 @@
 <% else %>
   <div class="container">
     <h1 class="mb-3 py-3">Your Matches</h1>
-    <p id="no-matches"> No matches, yet!</p>
     <% if current_user.kind == "investor" %>
-      <div class="py-3" id="no-matches">
-        <%= link_to "Continue Swiping Startups <<", attendances_path, class: "btn btn-primary mr-2 px-4" %>
+      <div class="pb-3">
+        <p id="no-matches"> No matches, yet! Go back to <%= link_to "Matching View", attendances_path %> and like more startups</p>
       </div>
     <% else %>
-      <div class="py-3" id="no-matches">
-        <%= link_to "Continue Swiping Investors", attendances_path, class: "btn btn-primary mr-2 px-4" %>
+      <div class="pb-3">
+        <p id="no-matches"> No matches, yet! Go back to <%= link_to "Matching View", attendances_path %> and like more investors</p>
       </div>
     <% end %>
 <% end %>
 
   <% if @my_likes.count > 0 %>
-<div class="container">
   <h1 class="mb-5 py-3">Your Likes</h1>
 
   <!-- cards -->
-  <div class="user-card cards">
-    <!-- one row = one card -->
-    <% @my_likes.each do |viewing| %>
-    <div class="row mb-4" id="selection-card">
-      <%link_to "" %>
-      <div class="card col-lg-12 selection-card">
-        <div class="d-flex justify-content-between align-items-center" id="inner-content">
+  <div class="container">
+    <div class="user-card cards">
+      <!-- one row = one card -->
+      <% @my_likes.each do |viewing| %>
+      <div class="row mb-4" id="selection-card">
+        <%link_to "" %>
+        <div class="card col-lg-12 selection-card">
+          <div class="d-flex justify-content-between align-items-center" id="inner-content">
 
-          <div class="col-sm-6 d-flex justfiy-content-between align-items-center">
-            <div class="col">
-              <%= cl_image_tag viewing.attendance.user.photo, class: "user-photo" %>
+            <div class="col-sm-6 d-flex justfiy-content-between align-items-center">
+              <div class="col">
+                <%= cl_image_tag viewing.attendance.user.photo, class: "user-photo" %>
+              </div>
+              <div class="line-height-10 info-one col">
+                <strong><%= viewing.attendance.user.first_name %> <%= viewing.attendance.user.last_name %></strong></p>
+                <p><%= viewing.attendance.user.position %><br> <%= viewing.attendance.user.company_name %></p>
+              </div>
+              <div class="col info-two">
+                <p><%= viewing.attendance.user.company_city %></p>
+              </div>
             </div>
-            <div class="line-height-10 info-one col">
-              <strong><%= viewing.attendance.user.first_name %> <%= viewing.attendance.user.last_name %></strong></p>
-              <p><%= viewing.attendance.user.position %><br> <%= viewing.attendance.user.company_name %></p>
-            </div>
-            <div class="col info-two">
-              <p><%= viewing.attendance.user.company_city %></p>
-            </div>
-          </div>
 
-          <div class="col-sm-6 d-flex justfiy-content-between align-items-center">
-            <div class="col info-three">
-              <p><strong>Business Model: </strong><%= viewing.attendance.user.selling_to %> </p>
-              <p><strong>Category: </strong><%= viewing.attendance.user.sectors %></p>
-              <p><strong>Raising: </strong> <%= viewing.attendance.user.stages %></p>
-            </div>
-            <div class="matching-status col-">
-              <p id="waiting"><strong>WAITING</strong></p>
+            <div class="col-sm-6 d-flex justfiy-content-between align-items-center">
+              <div class="col info-three">
+                <p><strong>Business Model: </strong><%= viewing.attendance.user.selling_to.join(", ") %> </p>
+                <p><strong>Category: </strong><%= viewing.attendance.user.sectors.join(", ") %></p>
+                <p><strong>Raising: </strong> <%= viewing.attendance.user.stages.join(", ")  %></p>
+              </div>
+              <div class="matching-status col-">
+                <p id="waiting"><strong>WAITING</strong></p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+      <% end %>
     <% end %>
-  <% end %>
+    </div>
   </div>
 </div>
