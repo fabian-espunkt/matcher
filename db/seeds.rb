@@ -1105,6 +1105,11 @@ attendance35 = Attendance.new(
   event: event1)
 attendance35.save!
 
+attendance36 = Attendance.new(
+  user: investor11,
+  event: event1)
+attendance36.save!
+
 puts '(4/6) Creating new meetings...'
 
 # meeting1 = Meeting.new(
