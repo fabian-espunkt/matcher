@@ -22,7 +22,7 @@
     <h2>Availability</h2>
     <p>Tell us at which times you will be available for meetings (Sa, 07.09)</p>
     <br>
-    <%= f.input :availability, include_hidden: false, label: "Your Time Slots", as: :check_boxes, wrapper_html: { class: 'custom-checkbox' }, :collection => ["08:00-10:00", "10:00-12:00", "12:00-14:00", "14:00-16:00", "16:00-18:00", "18:00-20:00"], wrapper: :vertical_collection_inline %>
+    <%= f.input :availability, include_hidden: false, label: "Your Time Slots", as: :check_boxes, wrapper_html: { class: 'custom-checkbox' }, :collection => @avails, wrapper: :vertical_collection_inline %>
     <br>
     <h2>Profile Picture</h2>
     <p>Upload an image so that investors can recognize you easily</p>

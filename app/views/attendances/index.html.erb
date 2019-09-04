@@ -1,7 +1,11 @@
 
 
 <div class="container">
-  <h1 class="pt-3 pb-5">Find Founders</h1>
+  <% if current_user.kind == "investors" %>
+    <h1 class="pt-3 pb-5">Find Founders</h1>
+  <% else %>
+    <h1 class="pt-3 pb-5">Find Investors</h1>
+  <% end %>
 
   <% if @meetings.count > 0 %>
     <div class="alert flash flash-success alert-dismissible fade show" role="alert">

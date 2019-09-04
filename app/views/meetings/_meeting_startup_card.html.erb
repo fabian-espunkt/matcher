@@ -6,13 +6,16 @@
         <div class="col">
           <%= cl_image_tag meeting.startup.photo, class: "user-photo" %>
         </div>
+        <hr noshade style="background-color: #c3bdbd42;height: 100px;width: 2.2px;">
         <div class="line-height-10 info-one col">
           <strong><%= meeting.startup.first_name %> <%= meeting.startup.last_name %></strong></p>
           <p><%= meeting.startup.position %><br> <%= meeting.startup.company_name %></p>
         </div>
+        <hr noshade style="background-color: #c3bdbd42;height: 100px;width: 2.2px;">
         <div class="col info-two">
           <p><%= meeting.startup.company_city %></p>
         </div>
+        <hr noshade style="background-color: #c3bdbd42;height: 100px;width: 2.2px;">
       </div>
 
 
@@ -22,12 +25,13 @@
           <p><strong>Category: </strong><%= meeting.startup.sectors.join(", ") %></p>
           <p><strong>Raising: </strong> <%= meeting.startup.stages.join(", ") %></p>
         </div>
+        <hr noshade style="background-color: #c3bdbd42;height: 100px;width: 2.2px;">
         <div class="matching-status col-">
           <% if meeting.matching_status == "Waiting" %>
           <p id="waiting"><strong><%= meeting.matching_status.upcase %></strong></p>
           <% elsif meeting.matching_status == "Matched" %>
             <div class="d-flex align-content-start">
-              <p id="matched"><strong><%= meeting.matching_status.upcase %></strong><br><span id="waiting-description"></span>(waiting for Founder to schedule)</p>
+              <p id="matched"><strong><%= meeting.matching_status.upcase %></strong><br><span id="waiting-description">(waiting for startup to schedule)</span></p>
             </div>
           <% elsif meeting.matching_status == "Scheduled" %>
           <p id="scheduled"><strong><%= link_to meeting.matching_status.upcase, appointments_path %></strong></p>
