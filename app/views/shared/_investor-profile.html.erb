@@ -14,6 +14,8 @@
     <%= f.input :launch_status, include_hidden: false, label: "Startup Status", as: :check_boxes, wrapper_html: { class: 'custom-checkbox' }, :collection => ["pre-MVP", "closed beta", "public beta", "publicly launched"], wrapper: :vertical_collection_inline %>
     <%= f.input :generating_revenue, wrapper_html: { class: 'custom-radio-button' }, label: "Must the startup generate revenue?", as: :radio_buttons, collection: [['Yes', true],['No, pre-revenue only', false]], wrapper: :vertical_collection_inline %>
 
+    <h2>Availability</h2>
+    <p>Tell us at which times you will be available for meetings (Fr, 20.03.2020)</p>
     <%= f.simple_fields_for :attendances do %>
       <%= f.simple_fields_for :availabilities do %>
         <%= f.input :availabilities, include_hidden: false, label: "Your Time Slots", as: :check_boxes, wrapper_html: { class: 'custom-checkbox' }, :collection => Availability::SLOTS, wrapper: :vertical_collection_inline, checked: current_user.formatted_availabilities %>
@@ -24,10 +26,10 @@
   </div>
 </div>
 
-<div class="row">
+<!-- <div class="row">
   <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-    <h2>Availability</h2>
-    <p>Tell us at which times you will be available for meetings (Fr, 20.03.2020)</p>
     <br>
   </div>
-</div>
+</div> -->
+
+<!-- end of code -->

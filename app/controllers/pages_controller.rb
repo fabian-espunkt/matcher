@@ -27,7 +27,7 @@ class PagesController < ApplicationController
   end
 
   def save_availabilities
-    availabilities = params[:user][:availabilities]
+    availabilities = params[:user][:availability]
     attendance = current_user.attendances.last
     availabilities.each do |availability|
       times = availability.split("-")
@@ -35,3 +35,5 @@ class PagesController < ApplicationController
     end
   end
 end
+
+# end of code

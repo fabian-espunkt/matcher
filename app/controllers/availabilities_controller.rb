@@ -1,7 +1,7 @@
 class AvailabilitiesController < ApplicationController
 
   def create
-    @availability =
+    # @availability
     # @user = current_user
     # authorize @user
 
