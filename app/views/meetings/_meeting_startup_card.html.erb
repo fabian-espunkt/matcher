@@ -18,10 +18,9 @@
 
       <div class="col-sm-6 d-flex justfiy-content-between align-items-center">
         <div class="col info-three">
-
-          <p><strong>Business Model: </strong><%= meeting.startup.selling_to %> </p>
-          <p><strong>Category: </strong><%= meeting.startup.sectors %></p>
-          <p><strong>Raising: </strong> <%= meeting.startup.stages %></p>
+          <p><strong>Business Model: </strong><%= meeting.startup.selling_to.join(", ") %> </p>
+          <p><strong>Category: </strong><%= meeting.startup.sectors.join(", ") %></p>
+          <p><strong>Raising: </strong> <%= meeting.startup.stages.join(", ") %></p>
         </div>
         <div class="matching-status col-">
           <% if meeting.matching_status == "Waiting" %>
