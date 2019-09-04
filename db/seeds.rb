@@ -753,11 +753,11 @@ puts 'not creating any right now'
 
 puts '(6/6) Creating new availabilities...'
 
-time_start = DateTime.parse('20rd Mar 2020 08:00:00+00:00')
-time_end = DateTime.parse('20rd Mar 2020 16:00:00+00:00')
-event1.attendances.joins(:user).each do |attendance|
-  Availability.create!(attendance: attendance, start_time: time_start.strftime("%I:%M%p"), end_time: time_end.strftime("%I:%M%p") , slot_taken: [true, false].sample)
-end
+# time_start = DateTime.parse('20rd Mar 2020 08:00:00+00:00')
+# time_end = DateTime.parse('20rd Mar 2020 16:00:00+00:00')
+# event1.attendances.joins(:user).each do |attendance|
+#   Availability.create!(attendance: attendance, start_time: time_start.strftime("%I:%M%p"), end_time: time_end.strftime("%I:%M%p") , slot_taken: [true, false].sample)
+# end
 puts '...'
 puts "Success! #{Availability.count} availabilities,  #{Meeting.count} meetings, #{Attendance.count} attendances, #{User.count} users and #{Event.count} event(s) have successfully been added to your database!"
 puts "------------------ Finished! Enjoy testing. ------------------"

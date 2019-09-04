@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'availabilities/new'
+  get 'availabilities/create'
   get 'appointments/index'
   get 'events/index'
   devise_for :users
@@ -8,6 +10,7 @@ Rails.application.routes.draw do
   resources :appointments, only: :index
   resources :viewings, only: :index
   resources :meeting_spot, only: :update
+  resources :availabilities, only: [:create]
 
   get 'profile', to: 'pages#profile'
   patch 'profile/:user_id', to: 'pages#update', as: 'profile_update'

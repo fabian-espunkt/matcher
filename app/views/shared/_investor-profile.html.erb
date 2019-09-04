@@ -6,7 +6,6 @@
 
 <div class="row">
   <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-
     <%= simple_form_for @user, url: profile_update_path(@user), :method => :patch do |f| %>
     <%= f.input :ticket_size_max, label: "Your max. ticket size (in €)", as: :currency %>
     <%= f.input :sectors, include_hidden: false, label: "Sectors", as: :check_boxes, wrapper_html: { class: 'custom-checkbox' }, :collection => ["Agriculture", "Industrial Production", "Health & Life Sciences", "Retail/D2C", "Real Estate", "Education", "Finance", "Food", "Travel", "Hardware Engineering", "Media", "Telecommunication", "Logistics", "Mobility", "Productivity Software", "Crypto", "Insurance" ], wrapper: :vertical_collection_inline %>
@@ -14,12 +13,21 @@
     <%= f.input :selling_to, include_hidden: false, label: "Customer Types", wrapper_html: { class: 'custom-checkbox' }, as: :check_boxes, :collection => ["B2C", "B2B", "B2B2C"], wrapper: :vertical_collection_inline %>
     <%= f.input :launch_status, include_hidden: false, label: "Startup Status", as: :check_boxes, wrapper_html: { class: 'custom-checkbox' }, :collection => ["pre-MVP", "closed beta", "public beta", "publicly launched"], wrapper: :vertical_collection_inline %>
     <%= f.input :generating_revenue, wrapper_html: { class: 'custom-radio-button' }, label: "Must the startup generate revenue?", as: :radio_buttons, collection: [['Yes', true],['No, pre-revenue only', false]], wrapper: :vertical_collection_inline %>
-    <br>
-    <h2>Availability</h2>
-    <p>Tell us at which times you will be available for meetings (Sa, 07.09)</p>
-    <br>
-    <%= f.input :availability, include_hidden: false, label: "Your Time Slots", as: :check_boxes, wrapper_html: { class: 'custom-checkbox' }, :collection => ["08:00-10:00", "10:00-12:00", "12:00-14:00", "14:00-16:00", "16:00-18:00", "18:00-20:00"], wrapper: :vertical_collection_inline %>
+
+    <%= f.simple_fields_for :attendances do %>
+      <%= f.simple_fields_for :availabilities do %>
+        <%= f.input :availabilities, include_hidden: false, label: "Your Time Slots", as: :check_boxes, wrapper_html: { class: 'custom-checkbox' }, :collection => Availability::SLOTS, wrapper: :vertical_collection_inline, checked: current_user.formatted_availabilities %>
+      <% end %>
+    <% end %>
     <%= f.button :submit, "Save my profile", class: "btn-lg btn-primary mb-5 mt-3" %>
     <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <h2>Availability</h2>
+    <p>Tell us at which times you will be available for meetings (Fr, 20.03.2020)</p>
+    <br>
   </div>
 </div>
