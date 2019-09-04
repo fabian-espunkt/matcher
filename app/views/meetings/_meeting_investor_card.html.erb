@@ -18,10 +18,10 @@
 
       <div class="col-sm-6 d-flex justfiy-content-between align-items-center">
         <div class="col info-three">
-
-          <p><strong>Business Model: </strong><%= meeting.investor.selling_to %> </p>
-          <p><strong>Category: </strong><%= meeting.investor.sectors %></p>
-          <p><strong>Raising: </strong> <%= meeting.investor.stages %></p>
+          <p>Investing in:</p>
+          <p><strong>Business Models: </strong><%= meeting.investor.selling_to.join(", ") %> </p>
+          <p><strong>Categories: </strong><%= meeting.investor.sectors.join(", ") %></p>
+          <p><strong>Stages: </strong> <%= meeting.investor.stages.join(", ") %></p>
         </div>
         <div class="matching-status col-">
           <% if meeting.matching_status == "Waiting" %>

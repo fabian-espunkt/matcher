@@ -11,6 +11,30 @@
       margin: 0;
     }
   }
+  .btn-success {
+    width: 80px;
+    height: 45px;
+    font-size: 23px;
+    padding: 5px 0.75rem;
+    color: #679C05;
+    &:hover {
+      background-color: #A1DD08;
+      border: none;
+      color: #518002;
+    }
+  }
+  .matching-pass-link {
+    margin-left: 15px;
+    font-size: 15px;
+    color: #757474;
+    &:hover {
+      color: #464646;
+    }
+  }
+  .matching-company-logo {
+    width: 100px;
+    margin-right: 3px;
+  }
   h2 {
     font-weight: 800 !important;
   }
@@ -26,10 +50,15 @@
 }
 
 #no-matches {
-  font-size: 22px;
-  margin-left: 22px;
+  font-size: 17px;
 }
 
 .schedule-now a {
   margin-top: 10px;
 }
+
+
+#waiting-description {
+  font-size: 12px !important;
+}
+
