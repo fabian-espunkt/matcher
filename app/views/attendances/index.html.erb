@@ -1,12 +1,13 @@
+
+
 <div class="container">
   <h1 class="pt-3 pb-5">Find Founders</h1>
 
-  <% if @meetings.count >0 %>
-    <div class="flash flash-success alert-dismissible fade show" role="alert">
-      <span><strong>Yay!</strong> 🎉 You have a new match! <%= link_to "See more", meetings_path %></span>
-      <a data-dismiss="alert" aria-label="Close">
-        <i class="fas fa-times"></i>
-      </a>
+  <% if @meetings.count > 0 %>
+    <div class="alert flash flash-success alert-dismissible fade show" role="alert">
+         <span><strong>Yay!</strong> 🎉 You have a new match! <%= link_to "See more", meetings_path %></span>
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
     </div>
   <% end %>
   <% @attendances.each do |attendance| %>
