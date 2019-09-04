@@ -546,7 +546,7 @@ startup10 = User.new(
     stages: ["Later Stage"],
     selling_to: ["B2C"],
     fte: 177,
-    funds_raised: 2600000000,
+    funds_raised: 260000000,
     generating_revenue: true, # Does the company generate revenue? Here: "Yes"
     profitable: true, # Is the company profitable? Here: "Yes"
     remote_photo_url: url20)
