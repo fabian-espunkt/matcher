@@ -16,7 +16,7 @@
 <% else %>
   <div class="user-card cards">
   <!-- one row = one card -->
-    <% @meetings.each do |meeting| %>
+    <% @all_meetings.each do |meeting| %>
     <div class="row mb-4">
       <div class="card col-lg-12">
         <div class="d-flex justify-content-between align-items-center" id="inner-content">
@@ -55,10 +55,6 @@
   <% end %>
 </div>
 
-
-
-
-
 <div class="container">
   <table class="table appointments-table">
     <thead>
@@ -67,19 +63,20 @@
         <th >Company Bookings</th>
       </tr>
     </thead>
+      <!-- %= meeting.availability.start_time strftime('%H:%M') %> -->
       <tbody>
         <% (["08:00-08:30", "08:30-09:00", "09:00-09:30", "09:30-10:00", "10:00-10:30", "10:30-11:00", "11:00-11:30", "11:30-12:00", "12:00-12:30", "12:30-13:00", "13:00-13:30", "13:30-14:00", "14:00-14:30", "14:30-15:00", "15:00-15:30", "15:30-16:00", "16:00-16:30", "16:30-17:00", "17:00-17:30", "17:30-18:00", "18:00-18:30", "18:30-19:00", "19:00-19:30", "19:30-20:00"]).each do |time| %>
           <tr>
+          <% @meetings.each do |meeting| %>
             <th scope="col" class="time"><%= time %></th>
-            <% datetime = DateTime.parse(time).hour %>
-            <% raise %>
-            <% meeting = current_user.meetings_for_hour(datetime).first %>
-            <% if meeting %>
-                <td class="slot"><strong><%= meeting.startup.company_name%></strong></td>
+            <% meeting1 = "#{meeting.availability.start_time.strftime('%H:%M')}-#{meeting.availability.end_time.strftime('%H:%M')}" %>
+            <% if meeting1 == time %>
+                <td class="slot"><strong><%= meeting.investor.company_name%></strong></td>
             <% else %>
               <td></td>
             <% end %>
           </tr>
+          <% end %>
         <% end %>
       </tbody>
   </table>

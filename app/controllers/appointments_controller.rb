@@ -3,7 +3,8 @@ class AppointmentsController < ApplicationController
     @appointments = policy_scope(Meeting)
     @sched_appointments = Meeting.all.where(matching_status: "Scheduled")
     @user_appointments = @sched_appointments.where(investor: current_user)
-    @meetings = Meeting.where(startup_id: current_user.id)
+    @all_meetings = Meeting.where(startup_id: current_user.id)
+    @meetings = @all_meetings.with_slot_booked
     @user = current_user
     @event = Event.first
     @investor_availabilities = []
