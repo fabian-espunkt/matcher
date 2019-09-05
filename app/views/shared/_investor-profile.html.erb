@@ -21,7 +21,7 @@
         <%= f.input :availabilities, include_hidden: false, label: "Your Time Slots", as: :check_boxes, wrapper_html: { class: 'custom-checkbox' }, :collection => Availability::SLOTS, wrapper: :vertical_collection_inline, checked: current_user.formatted_availabilities %>
       <% end %>
     <% end %>
-    <%= f.button :submit, "Save my profile", class: "btn-lg btn-primary mb-5 mt-3" %>
+    <%= f.button :submit, "Save my profile", remote: true, class: "btn-lg btn-primary mb-5 mt-3" %>
     <% end %>
   </div>
 </div>
