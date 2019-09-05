@@ -1,7 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
-  margin-top: 30px;
+  margin-top: 20px;
   padding: 0;
   .nav-link {
     margin-right: 20px;
@@ -15,6 +15,11 @@
 .navbar-lewagon .navbar-brand img {
   width: 200px;
 }
+
+.navbar-lewagon .dropdown {
+  cursor: pointer;
+}
+
 
 #current-user {
   padding-left: 24px;
