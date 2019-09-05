@@ -11,7 +11,8 @@
       <%= f.button :submit, "Save", class: "btn-primary mb-2" %>
     <% end %>
   </div>
-  <div class="container d-flex">
+  <div class="container d-flex no-margin-left">
+       <% if @meetings.present? %>
   <table class="table appointments-table col-6">
     <thead>
       <tr>
@@ -21,7 +22,9 @@
     </thead>
       <tbody>
         <% (["10:00-10:30", "10:30-11:00", "11:00-11:30", "11:30-12:00", "12:00-12:30", "12:30-13:00", "13:00-13:30", "13:30-14:00", "14:00-14:30", "14:30-15:00", "15:00-15:30", "15:30-16:00", "16:00-16:30", "16:30-17:00", "17:00-17:30", "17:30-18:00"]).each do |time| %>
+
           <tr>
+
           <% @all_meetings_i.each do |meeting| %>
             <th scope="col" class="time"><%= time %></th>
             <% meeting1 = "#{meeting.availability.start_time.strftime('%H:%M')}-#{meeting.availability.end_time.strftime('%H:%M')}" %>
@@ -32,6 +35,13 @@
             <% end %>
           </tr>
           <% end %>
+        <% end %>
+
+        <!-- ELSE STATEMENT -->
+        <% else %>
+          <div class="text-center mt-5">
+            <p>No meetings scheduled (yet) – <%= link_to "match", attendances_path %> more profiles, or go to your <%= link_to "selection", meetings_path %> or come back later!</p>
+          </div>
         <% end %>
       </tbody>
   </table>
@@ -89,7 +99,8 @@
     <% end %>
 </div>
 
-<div class="container d-flex">
+<div class="container d-flex no-margin-left">
+        <% if @meetings.present? %>
   <table class="table appointments-table col-6">
     <thead>
       <tr>
@@ -99,6 +110,7 @@
     </thead>
       <tbody>
         <% (["10:00-10:30", "10:30-11:00", "11:00-11:30", "11:30-12:00", "12:00-12:30", "12:30-13:00", "13:00-13:30", "13:30-14:00", "14:00-14:30", "14:30-15:00", "15:00-15:30", "15:30-16:00", "16:00-16:30", "16:30-17:00", "17:00-17:30", "17:30-18:00"]).each do |time| %>
+
           <tr>
           <% @meetings.each do |meeting| %>
             <th scope="col" class="time"><%= time %></th>
@@ -111,6 +123,13 @@
           </tr>
           <% end %>
         <% end %>
+        <!-- ELSE STATEMENT -->
+        <% else %>
+          <div class="text-center mt-3">
+            <p>No meetings scheduled (yet) – <%= link_to "match", attendances_path %> more profiles, or go to your <%= link_to "selection", meetings_path %> or come back later! </p>
+          </div>
+
+        <% end %>
       </tbody>
   </table>
   <% end %>
@@ -118,7 +137,8 @@
 
 
 
-
-<%= render "shared/show-details", meeting: @meetings.first %>
+<% if @meetings.present? %>
+  <%= render "shared/show-details", meeting: @meetings.first %>
+<% end %>
 </div>
 
