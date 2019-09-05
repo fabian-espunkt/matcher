@@ -1,6 +1,7 @@
 class Availability < ApplicationRecord
   belongs_to :attendance
   validates :start_time, :end_time, presence: true
+  has_many :meetings, dependent: :destroy
 
   scope :not_taken, -> { where(slot_taken: [nil, false]) }
 
