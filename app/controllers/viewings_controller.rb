@@ -8,7 +8,11 @@ class ViewingsController < ApplicationController
     viewing.user = current_user
     viewing.save
     skip_authorization
-    redirect_to attendances_path
+    respond_to do |format|
+            format.html { redirect_to attendances_path }
+            format.js # <-- will render `app/viewings/create_like.js.erb`
+
+    end
   end
 
   def create_dislike
@@ -19,6 +23,9 @@ class ViewingsController < ApplicationController
     viewing.user = current_user
     viewing.save
     skip_authorization
-    redirect_to attendances_path
+    respond_to do |format|
+            format.html { redirect_to attendances_path }
+            format.js # <-- will render `app/viewings/create_dislike.js.erb`
+    end
   end
 end
