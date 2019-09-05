@@ -16,4 +16,8 @@ class AppointmentsController < ApplicationController
       meeting.investor.availabilities.each { |avail| @investor_availabilities << "#{avail.start_time.strftime('%H:%M')} - #{avail.end_time.strftime('%H:%M')}" }
     end
   end
+
+  def show
+    @appointment = Appointment.find(params[:id])
+  end
 end
