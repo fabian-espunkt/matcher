@@ -1,37 +1,33 @@
 <div class="calendar-info hidden">
-  <div >
-    <div class="card p-5">
-      <div class="d-flex">
-        <div class="d-flex mb-4 justify-content-between">
+  <div class="card p-5">
+    <div class="d-flex mb-4 justify-content-between">
+        <h2 id="calendar-company-name"><%= meeting.startup.company_name %></h2>
+        <%= cl_image_tag meeting.startup.photo, class: "calendar-company-logo" %>
+    </div>
 
-            <h2 class=""><%= meeting.startup.company_name %></h2>
-            <%= cl_image_tag meeting.startup.photo, class: "matching-company-logo w-25" %>
+    <div id="calendar-person-name">
+      <p><%= meeting.startup.first_name %> <%= meeting.startup.last_name %></p>
+      <p><%= meeting.startup.position %></p>
+    </div>
 
-        </div>
-        <br>
-      </div>
+    <div id="calendar-person-contact">
+      Mobile: <%= link_to meeting.startup.mobile, meeting.startup.mobile %> <br>
+      E-Mail: <%= mail_to meeting.startup.email, meeting.startup.email %>
+    </div>
 
-      <h3><%= meeting.startup.first_name %> <%= meeting.startup.last_name %></h3>
-      <h4><%= meeting.startup.position %></h4>
-      <br>
-
-
-      <div style="line-height: 0.8">
-        <p><%= meeting.startup.company_city %> – <%= meeting.startup.first_name %></p>
-        <p> <%= meeting.startup.sectors.join(", ") %></p>
-        <p> <%= meeting.startup.selling_to.join(", ") %></p>
-        <p> <%= meeting.startup.stages.join(", ") %>, raised <%= meeting.startup.funds_raised  %>€ to date</p>
-        <p>Founded in <%= meeting.startup.company_founding_year%>, now <%= meeting.startup.fte %> employees</p>
-      </div>
-      <br>
-
-      <%= meeting.startup.firm_description %>
-
+    <div id="calendar-company-details">
+      <p><%= meeting.startup.company_city %></p>
+      <p><%= meeting.startup.selling_to.join(", ") %> – <%= meeting.startup.sectors.join(", ") %></p>
+      <p></p>
+      <p><%= meeting.startup.stages.join(", ") %>, raised <%= number_to_currency(meeting.startup.funds_raised, delimiter: ",", precision: 0, unit: "€")  %> to date</p>
+      <p>Founded in <%= meeting.startup.company_founding_year%>, now <%= meeting.startup.fte %> employees</p>
+    </div>
+    <br>
+    <div id="calendar-firm-description">
+      <p><%= meeting.startup.firm_description %></p>
     </div>
   </div>
 </div>
-
-
 
 
 

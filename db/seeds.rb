@@ -833,7 +833,7 @@ startup22 = User.new(
   password: "123456",
   first_name: "Lucas",
   last_name: "Carlsén",
-  mobile: "015607824008",
+  mobile: "0156 07824008",
   company_name: "Hedvig",
   position: "Founder & CEO",
   company_city: "Stockholm, Sweden",
