@@ -20,7 +20,7 @@
 
         <div class="col-sm-6 d-flex justfiy-content-between align-items-center">
           <div class="col info-three">
-            <p>Founded <%= meeting.startup.company_founding_year %>, <%= meeting.startup.fte %> FTEs</p>
+            <p>Founded <%= meeting.startup.company_founding_year %>, <%= meeting.startup.fte %> employees</p>
             <p><%= meeting.startup.selling_to.join(", ") %> – <%= meeting.startup.sectors.join(", ") %> </p>
             <p><%= meeting.startup.stages.join(", ") %></p>
             <p>Raised <%= number_to_currency(meeting.startup.funds_raised, delimiter: ",", precision: 0, unit: "€") %> to date</p>

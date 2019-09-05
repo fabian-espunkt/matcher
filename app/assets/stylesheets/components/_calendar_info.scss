@@ -3,11 +3,40 @@
 }
 
 .calendar-info {
+  margin-top: 35px;
   .card {
     padding: 10px;
     margin-left: 30px;
     border-radius: 3px;
     border: solid 1px lightgrey;
-    box-shadow: 1px 1px 10px #e8e8e882;
+    .calendar-company-logo {
+      height: 30px;
+    }
+    #calendar-company-name {
+      font-weight: 800;
+    }
+    #calendar-person-name {
+      p {
+        font-size: 21px;
+        line-height: 1.5;
+        margin-bottom: 0;
+      }
+      margin-bottom: 30px;
+    }
+    #calendar-person-contact {
+      margin-bottom: 25px;
+    }
+    #calendar-company-details {
+      p {
+        line-height: 1.5;
+        margin-bottom: 0;
+        color: #464646,
+      }
+    }
+    #calendar-firm-description {
+      p {
+        color: #464646,
+      }
+    }
   }
 }

@@ -1,15 +1,28 @@
 
 .time {
-  width: 20%;
+  width: 6%;
   min-width: 100px;
   border-right: solid 1px grey;
+  font-weight: 500;
+  font-size: 14px;
 }
 
+.table th {
+  padding: 5px;
+}
+
+.table td {
+  padding: 5px 5px 5px 13px;
+}
+
+
 .slot {
-  background-color: #72dc72;
+  background-color: #D6E4FF;
   width: 39%;
+  font-size: 14px;
   &:hover {
     cursor: pointer;
+    background-color: #ADC8FF;
   }
 }
 
