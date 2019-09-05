@@ -16,7 +16,7 @@
 <% else %>
   <div class="user-card cards">
   <!-- one row = one card -->
-    <% @events.each do |meeting| %>
+    <% @all_meetings.each do |meeting| %>
     <div class="row mb-4">
       <div class="card col-lg-12">
         <div class="d-flex justify-content-between align-items-center" id="inner-content">
@@ -25,23 +25,25 @@
             <div class="col">
               <%= cl_image_tag meeting.investor.photo, class: "user-photo" %>
             </div>
+            <hr noshade style="background-color: #c3bdbd42;height: 100px;width: 2.2px;">
             <div class="line-height-10 info-one col">
 
               <strong><%= meeting.investor.first_name %> <%= meeting.investor.last_name %></strong></p>
               <p><%= meeting.investor.position %><br> <%= meeting.investor.company_name %></p>
             </div>
+            <hr noshade style="background-color: #c3bdbd42;height: 100px;width: 2.2px;">
             <div class="col info-two">
               <p id="matched-2"><strong><%= meeting.matching_status.upcase %></strong></p>
             </div>
+            <hr noshade style="background-color: #c3bdbd42;height: 100px;width: 2.2px;">
           </div>
 
           <div class="col-sm-6 d-flex justfiy-content-between align-items-center">
             <div class="col d-flex info-three">
               <p><strong>Schedule now: &nbsp; &nbsp;</strong>
-                <%= simple_form_for @user, url: meeting_spot_path(@user), wrapper: :inline_form, html: { class: "form-inline" }, wrapper_mappings: {
-                boolean: :inline_boolean}, :method => :patch do |f| %>
-                  <%= f.input :meeting_spot, input_html: { class: "mb-2 mr-sm-2 optional" }, :collection => ["Fr, 08:00-09:00", "Fr, 09:00-10:00", "Fr, 10:00-11:00", "Fr, 11:00-12:00", "Fr, 12:00-13:00", "Fr, 14:00-15:00", "Fr, 15:00-16:00", "Fr, 16:00-17:00", "Fr, 17:00-18:00"] %>
-                  <%= f.button :submit, "Book", class: "btn-primary mb-2" %>
+                <%= simple_form_for meeting, url:  availability_meeting_path(meeting), wrapper: :inline_form, html: { class: "form-inline" }, wrapper_mappings: { boolean: :inline_boolean} do |f| -%>
+                  <%= f.association :availability, input_html: { class: "mb-2 mr-sm-2 optional" }, collection: meeting.investor.availabilities.not_taken, label_method: ->(item) {item.label} %>
+                  <%= f.button :submit, "Book", class: "btn-primary mb-2 book-button" %>
                 <% end %>
               </p>
             </div>
@@ -61,22 +63,20 @@
         <th >Company Bookings</th>
       </tr>
     </thead>
+      <!-- %= meeting.availability.start_time strftime('%H:%M') %> -->
       <tbody>
-        <% (8..18).each do |time| %>
+        <% (["08:00-08:30", "08:30-09:00", "09:00-09:30", "09:30-10:00", "10:00-10:30", "10:30-11:00", "11:00-11:30", "11:30-12:00", "12:00-12:30", "12:30-13:00", "13:00-13:30", "13:30-14:00", "14:00-14:30", "14:30-15:00", "15:00-15:30", "15:30-16:00", "16:00-16:30", "16:30-17:00", "17:00-17:30", "17:30-18:00", "18:00-18:30", "18:30-19:00", "19:00-19:30", "19:30-20:00"]).each do |time| %>
           <tr>
-            <% if time <= 11 %>
-              <th scope="col" class="time"><%= time %>:00 am</th>
-            <% elsif time >= 12 %>
-              <th scope="col" class="time"><%= time %>:00 pm</th>
-            <% end  %>
-            <% datetime = DateTime.parse("2000-01-01 #{time}:00") %>
-            <% meeting = current_user.meetings_for_hour(datetime).first %>
-            <% if meeting %>
-                <td class="slot"><strong><%= meeting.startup.company_name%></strong></td>
+          <% @meetings.each do |meeting| %>
+            <th scope="col" class="time"><%= time %></th>
+            <% meeting1 = "#{meeting.availability.start_time.strftime('%H:%M')}-#{meeting.availability.end_time.strftime('%H:%M')}" %>
+            <% if meeting1 == time %>
+                <td class="slot"><strong><%= meeting.investor.company_name%></strong></td>
             <% else %>
               <td></td>
             <% end %>
           </tr>
+          <% end %>
         <% end %>
       </tbody>
   </table>
