@@ -30,11 +30,18 @@ class PagesController < ApplicationController
   end
 
   def save_availabilities
-    availabilities = params[:user][:availabilities]
-    attendance = current_user.attendances.last
-    availabilities.each do |availability|
+    if params[:user][:availabilities].nil?
+      availability = params[:user][:availability]
+      attendance = current_user.attendances.last
       times = availability.split("-")
       Availability.create(attendance: attendance, start_time: times[0], end_time: times[1])
+    else
+      availabilities = params[:user][:availabilities]
+      attendance = current_user.attendances.last
+      availabilities.each do |availability|
+        times = availability.split("-")
+        Availability.create(attendance: attendance, start_time: times[0], end_time: times[1])
+      end
     end
   end
 end
