@@ -27,6 +27,7 @@ let index2 = 0;
 // const likeBtn = document.querySelectorAll('.like-btn');
 
 const likeBtn = document.querySelectorAll('.like-btn');
+const dislikeBtn = document.querySelectorAll('.dislike-btn');
 // const counter = document.querySelector('#attendence-counter');
 // const parsedCounter = Number.parseInt(counter.innerText, 10);
 
@@ -62,6 +63,20 @@ likeBtn.forEach((likeBtn) => {
   })
 });
 
+
+dislikeBtn.forEach((dislikeBtn) => {
+  if (index2 !== 0) {
+    dislikeBtn.style.display = 'none';
+  }
+  index2 += 1;
+  dislikeBtn.style.display = "";
+  // console.log(likeBtn.parentElement.parentElement.parentElement)
+  dislikeBtn.addEventListener('click', (event) => {
+    dislikeBtn.parentElement.parentElement.parentElement.style.display = 'none';
+    dislikeBtn.parentElement.parentElement.parentElement.nextSibling.nextSibling.style.display = "";
+    // counter -= 1;
+  })
+});
     // parsedCounter -= 1;
 // console.log(parsedCounter);
 
