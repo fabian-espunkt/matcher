@@ -57,7 +57,11 @@
             </div>
             <hr noshade style="background-color: #c3bdbd42;height: 100px;width: 2.2px;">
             <div class="col info-two">
-              <p id="matched-2"><strong><%= meeting.matching_status.upcase %></strong></p>
+              <% if meeting.availability_id == nil %>
+                <p id="matched"><strong>MATCHED</strong></p>
+              <% elsif meeting.availability_id != nil %>
+                <p id="scheduled-2"><strong>SCHEDULED</strong></p>
+              <% end %>
             </div>
             <hr noshade style="background-color: #c3bdbd42;height: 100px;width: 2.2px;">
           </div>
