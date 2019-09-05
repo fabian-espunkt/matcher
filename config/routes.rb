@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :viewings, only: :index
   resources :meeting_spot, only: :update
   resources :availabilities, only: [:create]
+  resources :availability_meetings, only: :update
 
   get 'profile', to: 'pages#profile'
   patch 'profile/:user_id', to: 'pages#update', as: 'profile_update'

@@ -11,7 +11,7 @@ class MeetingSpotController < ApplicationController
 
   private
 
-   def user_params
+  def user_params
     params.require(:user).permit(:meeting_spot, :generating_revenue, :profitable, :ticket_size_max, stages: [], sectors: [], selling_to: [], launch_status: [], availability: [])
   end
 end

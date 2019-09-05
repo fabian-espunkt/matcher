@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_03_084753) do
+ActiveRecord::Schema.define(version: 2019_09_05_082509) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(version: 2019_09_03_084753) do
     t.datetime "updated_at", null: false
     t.integer "investor_id"
     t.integer "startup_id"
+    t.bigint "availability_id"
+    t.index ["availability_id"], name: "index_meetings_on_availability_id"
     t.index ["event_id"], name: "index_meetings_on_event_id"
   end
 
@@ -108,6 +110,7 @@ ActiveRecord::Schema.define(version: 2019_09_03_084753) do
   add_foreign_key "attendances", "events"
   add_foreign_key "attendances", "users"
   add_foreign_key "availabilities", "attendances"
+  add_foreign_key "meetings", "availabilities"
   add_foreign_key "meetings", "events"
   add_foreign_key "viewings", "attendances"
   add_foreign_key "viewings", "users"

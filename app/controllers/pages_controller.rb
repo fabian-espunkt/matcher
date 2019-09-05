@@ -15,7 +15,6 @@ class PagesController < ApplicationController
   def update
     @user = current_user
     authorize @user
-
     if @user.update(user_params)
       save_availabilities
       redirect_to attendances_path, notice: "Updated your profile successfully"

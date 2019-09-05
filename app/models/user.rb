@@ -34,11 +34,11 @@ class User < ApplicationRecord
   end
 
   def meetings_for_hour(datetime)
-    scheduled_investor_meetings.where(agreed_timeslot: datetime...(datetime + 1.hour))
+    scheduled_investor_meetings.where(agreed_timeslot: datetime...(datetime + 0.5.hour))
   end
 
   def formatted_availabilities
     availabilities = attendances.last.availabilities
-    return availabilities.map { |availability| "#{availability.start_time.strftime("%H:%M")}-#{availability.end_time.strftime("%H:%M")}" }
+    return availabilities.map { |availability| "#{availability.start_time.strftime('%H:%M')}-#{availability.end_time.strftime('%H:%M')}" }
   end
 end
