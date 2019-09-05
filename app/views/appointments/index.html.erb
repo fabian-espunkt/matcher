@@ -61,17 +61,24 @@
             </div>
             <hr noshade style="background-color: #c3bdbd42;height: 100px;width: 2.2px;">
           </div>
-
-          <div class="col-sm-6 d-flex justfiy-content-between align-items-center">
-            <div class="col d-flex info-three">
-              <p><strong>Schedule now: &nbsp; &nbsp;</strong>
-                <%= simple_form_for meeting, url:  availability_meeting_path(meeting), wrapper: :inline_form, html: { class: "form-inline" }, wrapper_mappings: { boolean: :inline_boolean} do |f| -%>
-                  <%= f.association :availability, input_html: { class: "mb-2 mr-sm-2 optional" }, collection: meeting.investor.availabilities.not_taken, label_method: ->(item) {item.label} %>
-                  <%= f.button :submit, "Book", class: "btn-primary mb-2 book-button" %>
-                <% end %>
-              </p>
+          <% if meeting.availability_id == nil %>
+            <div class="col-sm-6 d-flex justfiy-content-between align-items-center">
+              <div class="col d-flex info-three">
+                <p><strong>Schedule now: &nbsp; &nbsp;</strong>
+                  <%= simple_form_for meeting, url:  availability_meeting_path(meeting), wrapper: :inline_form, html: { class: "form-inline" }, wrapper_mappings: { boolean: :inline_boolean} do |f| -%>
+                    <%= f.association :availability, input_html: { class: "mb-2 mr-sm-2 optional" }, collection: meeting.investor.availabilities.not_taken, label_method: ->(item) {item.label} %>
+                    <%= f.button :submit, "Book", class: "btn-primary mb-2 book-button" %>
+                  <% end %>
+                </p>
+              </div>
             </div>
-          </div>
+          <% else %>
+            <div class="col-sm-6 d-flex justfiy-content-between align-items-center">
+              <div class="col d-flex info-three">
+                <p id = "schedule-confirmation"><strong>Yay! 🎉 You'll meet <%= meeting.investor.company_name %> at <%= "#{meeting.availability.start_time.strftime('%H:%M')} - #{meeting.availability.end_time.strftime('%H:%M')}" %>  &nbsp; &nbsp;</strong></p>
+              </div>
+            </div>
+          <% end  %>
         </div>
       </div>
     </div>
