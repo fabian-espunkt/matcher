@@ -22,9 +22,9 @@
             <%= link_to "Appointments", appointments_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= cl_image_tag "https://media.licdn.com/dms/image/C4D03AQEWF3sTMdiatA/profile-displayphoto-shrink_200_200/0?e=1573084800&v=beta&t=Fy4xyL9WzeaGU87av2DgkNq4NpuBav_DWN29E1SUXRs", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <p id="current-user"><strong> Welcome, <%= current_user.company_name %>!</strong> <br> <hr /> <!-- <p id="current-user"><strong>User: </strong><%= current_user.first_name%> <%= current_user.last_name %></p> <hr /> </p> -->
+              <p id="current-user"><%= current_user.first_name %> <%= current_user.last_name %><br><strong><%= current_user.company_name %></strong> <br> <hr />
               <%= link_to "Edit Profile", profile_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
