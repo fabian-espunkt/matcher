@@ -4,7 +4,7 @@
     <div class="card col-lg-12 selection-card">
       <div class="d-flex justify-content-between align-items-center" id="inner-content">
 
-        <div class="col-sm-6 d-flex justfiy-content-between align-items-center">
+        <div class="col-sm-6 d-flex justfiy-content-between align-items-center no-margin-left">
           <div class="col logo-div">
             <%= cl_image_tag meeting.startup.photo, class: "user-photo" %>
           </div>
@@ -31,7 +31,7 @@
             <p id="waiting"><strong><%= meeting.matching_status.upcase %></strong></p>
             <% elsif meeting.matching_status == "Matched" %>
               <div class="d-flex align-content-start text-center">
-                <p id="matched"><strong><%= meeting.matching_status.upcase %></strong><br><span id="waiting-description">(waiting for startup to schedule)</span></p>
+                <p id="matched"><strong><%= meeting.matching_status.upcase %></strong><br><span id="waiting-description">(startup is choosing a date)</span></p>
               </div>
             <% elsif meeting.matching_status == "Scheduled" %>
             <p id="scheduled"><strong><%= link_to meeting.matching_status.upcase, appointments_path %></strong></p>

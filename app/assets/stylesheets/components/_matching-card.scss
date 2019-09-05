@@ -2,7 +2,7 @@
   transition: all .2s ease-in-out;
   &:hover {
     border: none;
-    box-shadow: 1px 2px 10px 1px rgba(0,0,0,0.13);
+    box-shadow: 1px 2px 10px 1px rgba(0,0,0,0.1);
     transform: scale(1.005);
   }
   #company-details {
@@ -11,16 +11,18 @@
       margin: 0;
     }
   }
-  .btn-success {
+  .btn-primary {
     width: 80px;
     height: 45px;
     font-size: 23px;
     padding: 5px 0.75rem;
-    color: #679C05;
+    color: white;
+    border: none;
+    background-color: #1369FF;
     &:hover {
-      background-color: #A1DD08;
+      background-color: #105EE6;
       border: none;
-      color: #518002;
+      color: white;
     }
   }
   .matching-pass-link {

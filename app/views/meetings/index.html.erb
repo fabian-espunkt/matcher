@@ -1,6 +1,6 @@
 <% if @my_meetings.count > 0 %>
   <div class="container">
-    <h1 class="mb-5 py-3">Your Matches</h1>
+    <h1 class="mb-3 py-3">Your Matches</h1>
       <div class="user-card cards">
       <% @my_meetings.each do |meeting| %>
         <% if current_user.kind == "investor" %>
@@ -38,7 +38,7 @@
       <%link_to "" %>
       <div class="card col-lg-12 selection-card">
         <div class="d-flex justify-content-between align-items-center" id="inner-content">
-          <div class="col-sm-6 d-flex justfiy-content-between align-items-center">
+          <div class="col-sm-6 d-flex justfiy-content-between align-items-center no-margin-left">
             <div class="col logo-div">
               <%= cl_image_tag viewing.attendance.user.photo, class: "user-photo" %>
             </div>
