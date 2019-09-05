@@ -53,8 +53,8 @@
   <% end %>
 </div>
 
-<div class="container">
-  <table class="table appointments-table">
+<div class="container d-flex">
+  <table class="table appointments-table col-6">
     <thead>
       <tr>
         <th >Time</th>
@@ -80,6 +80,16 @@
         <% end %>
       </tbody>
   </table>
+
+  <!-- Show card depending on the appointments -->
+  <% if @appointment.present? %>
+    <%= render partial: "show-details" %>
+  <% else %>
+    <div class="m-auto">
+      Click on one of your appointments to see the company\'s details!
+    </div>
+  <% end %>
+
 </div>
 
 

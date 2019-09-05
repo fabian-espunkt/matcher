@@ -1,0 +1,24 @@
+<div class="col-6">
+    <div class="card">
+      <p>Click on one of your appointment to get the details of this company</p>
+      <div class="pt-3 d-flex justify-content-between">
+        <div class="header-text">
+          <h2><%= @appointment.user.company_name %></h2>
+          <h3><%= @appointment.user.first_name %> <%= @appointment.user.last_name %>, <%= @appointment.user.position %></h3>
+        </div>
+        <div>
+          <%= cl_image_tag @appointment.user.photo, class: "matching-company-logo" %>
+        </div>
+      </div>
+      <div id="company-details">
+        <p><%= @appointment.user.selling_to.join(", ")%> – <%= @appointment.user.sectors.join(", ") %></p>
+        <p><%= @appointment.user.company_city %></p>
+        <p><%= @appointment.user.stages.join(", ") %>, raised <%= number_to_currency(@appointment.user.funds_raised, delimiter: ",", precision: 0, unit: "€")  %> to date</p>
+        <p>Founded <%= @appointment.user.company_founding_year %>, now <%= @appointment.user.fte %> employees</p>
+      </div>
+      <div>
+        <p><%= truncate(@appointment.user.firm_description, length: 180 ) %></p>
+      </div>
+
+    </div>
+  </div>
