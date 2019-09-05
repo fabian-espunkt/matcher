@@ -1,44 +1,46 @@
-<div class="row mb-4" id="selection-card">
-  <div class="card col-lg-12 selection-card">
-    <div class="d-flex justify-content-between align-items-center" id="inner-content">
+<div class="container">
 
-      <div class="col-sm-6 d-flex justfiy-content-between align-items-center">
-        <div class="col">
-          <%= cl_image_tag meeting.startup.photo, class: "user-photo" %>
+  <div class="row mb-4" id="selection-card">
+    <div class="card col-lg-12 selection-card">
+      <div class="d-flex justify-content-between align-items-center" id="inner-content">
+
+        <div class="col-sm-6 d-flex justfiy-content-between align-items-center">
+          <div class="col logo-div">
+            <%= cl_image_tag meeting.startup.photo, class: "user-photo" %>
+          </div>
+          <hr noshade style="background-color: #c3bdbd42;height: 100px;width: 2.2px;">
+          <div class="line-height-10 info-one col">
+            <strong id="bold-name"><%= meeting.startup.first_name %> <%= meeting.startup.last_name %></strong></p>
+            <p><%= meeting.startup.position %> at <%= meeting.startup.company_name %></p>
+            <p><%= meeting.startup.company_city %></p>
+          </div>
+          <hr noshade style="background-color: #c3bdbd42;height: 100px;width: 2.2px;">
         </div>
-        <hr noshade style="background-color: #c3bdbd42;height: 100px;width: 2.2px;">
-        <div class="line-height-10 info-one col">
-          <strong><%= meeting.startup.first_name %> <%= meeting.startup.last_name %></strong></p>
-          <p><%= meeting.startup.position %><br> <%= meeting.startup.company_name %></p>
+
+
+        <div class="col-sm-6 d-flex justfiy-content-between align-items-center">
+          <div class="col info-three">
+            <p>Founded <%= meeting.startup.company_founding_year %>, <%= meeting.startup.fte %> FTEs</p>
+            <p><%= meeting.startup.selling_to.join(", ") %> – <%= meeting.startup.sectors.join(", ") %> </p>
+            <p><%= meeting.startup.stages.join(", ") %></p>
+            <p>Raised <%= number_to_currency(meeting.startup.funds_raised, delimiter: ",", precision: 0, unit: "€") %> to date</p>
+          </div>
+          <hr noshade style="background-color: #c3bdbd42;height: 100px;width: 2.2px;">
+          <div class="matching-status col-">
+            <% if meeting.matching_status == "Waiting" %>
+            <p id="waiting"><strong><%= meeting.matching_status.upcase %></strong></p>
+            <% elsif meeting.matching_status == "Matched" %>
+              <div class="d-flex align-content-start text-center">
+                <p id="matched"><strong><%= meeting.matching_status.upcase %></strong><br><span id="waiting-description">(waiting for startup to schedule)</span></p>
+              </div>
+            <% elsif meeting.matching_status == "Scheduled" %>
+            <p id="scheduled"><strong><%= link_to meeting.matching_status.upcase, appointments_path %></strong></p>
+            <% end %>
+          </div>
         </div>
-        <hr noshade style="background-color: #c3bdbd42;height: 100px;width: 2.2px;">
-        <div class="col info-two">
-          <p><%= meeting.startup.company_city %></p>
-        </div>
-        <hr noshade style="background-color: #c3bdbd42;height: 100px;width: 2.2px;">
+
       </div>
-
-
-      <div class="col-sm-6 d-flex justfiy-content-between align-items-center">
-        <div class="col info-three">
-          <p><strong>Business Model: </strong><%= meeting.startup.selling_to.join(", ") %> </p>
-          <p><strong>Category: </strong><%= meeting.startup.sectors.join(", ") %></p>
-          <p><strong>Raising: </strong> <%= meeting.startup.stages.join(", ") %></p>
-        </div>
-        <hr noshade style="background-color: #c3bdbd42;height: 100px;width: 2.2px;">
-        <div class="matching-status col-">
-          <% if meeting.matching_status == "Waiting" %>
-          <p id="waiting"><strong><%= meeting.matching_status.upcase %></strong></p>
-          <% elsif meeting.matching_status == "Matched" %>
-            <div class="d-flex align-content-start">
-              <p id="matched"><strong><%= meeting.matching_status.upcase %></strong><br><span id="waiting-description">(waiting for startup to schedule)</span></p>
-            </div>
-          <% elsif meeting.matching_status == "Scheduled" %>
-          <p id="scheduled"><strong><%= link_to meeting.matching_status.upcase, appointments_path %></strong></p>
-          <% end %>
-        </div>
-      </div>
-
     </div>
   </div>
+
 </div>
