@@ -1,23 +1,38 @@
-<div class="col-6">
-  <div class="card">
-    <p>Click on one of your appointment to get the details of this company</p>
-    <div class="pt-3 d-flex justify-content-between">
-      <div class="header-text">
-        <h2><%= @appointment.user.company_name %></h2>
-        <h3><%= @appointment.user.first_name %> <%= @appointment.user.last_name %>, <%= @appointment.user.position %></h3>
+<div class="calendar-info hidden">
+  <div >
+    <div class="card p-5">
+      <div class="d-flex">
+        <div class="d-flex mb-4 justify-content-between">
+
+            <h2 class=""><%= meeting.startup.company_name %></h2>
+            <%= cl_image_tag meeting.startup.photo, class: "matching-company-logo w-25" %>
+
+        </div>
+        <br>
       </div>
-      <div>
-        <%= cl_image_tag @appointment.user.photo, class: "matching-company-logo" %>
+
+      <h3><%= meeting.startup.first_name %> <%= meeting.startup.last_name %></h3>
+      <h4><%= meeting.startup.position %></h4>
+      <br>
+
+
+      <div style="line-height: 0.8">
+        <p><%= meeting.startup.company_city %> – <%= meeting.startup.first_name %></p>
+        <p> <%= meeting.startup.sectors.join(", ") %></p>
+        <p> <%= meeting.startup.selling_to.join(", ") %></p>
+        <p> <%= meeting.startup.stages.join(", ") %>, raised <%= meeting.startup.funds_raised  %>€ to date</p>
+        <p>Founded in <%= meeting.startup.company_founding_year%>, now <%= meeting.startup.fte %> employees</p>
       </div>
-    </div>
-    <div id="company-details">
-      <p><%= @appointment.user.selling_to.join(", ")%> – <%= @appointment.user.sectors.join(", ") %></p>
-      <p><%= @appointment.user.company_city %></p>
-      <p><%= @appointment.user.stages.join(", ") %>, raised <%= number_to_currency(@appointment.user.funds_raised, delimiter: ",", precision: 0, unit: "€")  %> to date</p>
-      <p>Founded <%= @appointment.user.company_founding_year %>, now <%= @appointment.user.fte %> employees</p>
-    </div>
-    <div>
-      <p><%= truncate(@appointment.user.firm_description, length: 180 ) %></p>
+      <br>
+
+      <%= meeting.startup.firm_description %>
+
     </div>
   </div>
 </div>
+
+
+
+
+
+

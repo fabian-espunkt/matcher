@@ -8,6 +8,9 @@
 .slot {
   background-color: #72dc72;
   width: 39%;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .appointments-table, .appointments-header, .appointments-button {

@@ -104,7 +104,7 @@
             <th scope="col" class="time"><%= time %></th>
             <% meeting1 = "#{meeting.availability.start_time.strftime('%H:%M')}-#{meeting.availability.end_time.strftime('%H:%M')}" %>
             <% if meeting1 == time %>
-                <td class="slot"><strong><%= meeting.investor.company_name%></strong></td>
+                <td class="slot"> <strong><%= meeting.investor.company_name%></strong> </td>
             <% else %>
               <td></td>
             <% end %>
@@ -115,15 +115,10 @@
   </table>
   <% end %>
 
-  <!-- Show card depending on the appointments -->
-  <% if @appointment.present? %>
-    <%= render partial: "show-details" %>
-  <% else %>
-    <div class="m-auto">
-      Click on one of your appointments to see the company's details!
-    </div>
-  <% end %>
 
+
+
+
+<%= render "shared/show-details", meeting: @meetings.first %>
 </div>
-
 

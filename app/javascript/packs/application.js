@@ -1,8 +1,8 @@
 import "bootstrap";
+import { displayCalendarInfo } from "packs/slot";
 
 
-
-
+displayCalendarInfo()
 // const cards = document.querySelectorAll('.matching-card');
 // let index = 0;
 // const likeBtn = document.getElementById('like-button');
