@@ -6,6 +6,8 @@ class AvailabilityMeetingsController < ApplicationController
     @meeting = Meeting.find(params[:id])
     if @meeting.update(meeting_params)
       @meeting.availability.update(slot_taken: true)
+      @meeting.matching_status = "Scheduled"
+      @meeting.save!
       redirect_to appointments_path, notice: "Congrats! You booked your slot successfully."
     else
       render 'appointments/index'

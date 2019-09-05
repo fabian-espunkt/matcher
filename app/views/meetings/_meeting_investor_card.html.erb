@@ -29,11 +29,11 @@
         <hr noshade style="background-color: #c3bdbd42;height: 100px;width: 2.2px;">
         <div class="matching-status col-">
           <% if meeting.matching_status == "Waiting" %>
-          <p id="waiting"><strong><%= meeting.matching_status.upcase %></strong></p>
+            <p id="waiting"><strong><%= meeting.matching_status.upcase %></strong></p>
           <% elsif meeting.matching_status == "Matched" %>
-          <p id="matched"><strong><%= meeting.matching_status.upcase %></strong><br><span class="schedule-now"><%= link_to "Schedule now", appointments_path, class: "btn btn-primary mr-2 px-4" %></span></p>
+            <p id="matched"><strong><%= meeting.matching_status.upcase %></strong><br><span class="schedule-now"><%= link_to "Schedule now", appointments_path, class: "btn btn-primary mr-2 px-4" %></span></p>
           <% elsif meeting.matching_status == "Scheduled" %>
-          <p id="scheduled"><strong><%= link_to meeting.matching_status.upcase, appointments_path %></strong></p>
+            <p id="scheduled-2"><strong><%= link_to meeting.matching_status.upcase, appointments_path %></strong></p>
           <% end %>
         </div>
       </div>
