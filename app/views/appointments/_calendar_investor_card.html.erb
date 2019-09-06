@@ -19,13 +19,11 @@
         <tbody>
           <% (["10:00-10:30", "10:30-11:00", "11:00-11:30", "11:30-12:00", "12:00-12:30", "12:30-13:00", "13:00-13:30", "13:30-14:00", "14:00-14:30", "14:30-15:00", "15:00-15:30", "15:30-16:00", "16:00-16:30", "16:30-17:00", "17:00-17:30", "17:30-18:00"]).each do |time| %>
             <tr>
-              <% @all_meetings_i.each do |meeting| %>
-                <th scope="col" class="time"><%= time %></th>
+              <th scope="col" class="time"><%= time %></th>
+              <% @all_meetings_i.each_with_index do |meeting, index| %>
                 <% meeting1 = "#{meeting.availability.start_time.strftime('%H:%M')}-#{meeting.availability.end_time.strftime('%H:%M')}" %>
                 <% if meeting1 == time %>
-                    <td class="slot"><strong><%= meeting.startup.company_name%></strong></td>
-                <% else %>
-                  <td></td>
+                    <td class="slot" data-index="<%= index %>" ><strong><%= meeting.startup.company_name%></strong></td>
                 <% end %>
               <% end %>
             </tr>
@@ -37,9 +35,12 @@
         <p>No meetings scheduled (yet) – <%= link_to "match", attendances_path %> more profiles, or go to your <%= link_to "selection", meetings_path %> or come back later!</p>
       </div>
     <% end %>
-
   <% if @all_meetings_i.present? %>
-    <%= render "shared/show-details", meeting: @meetings_i.first %>
+
+    <% @all_meetings_i.each_with_index do |meeting, index| %>
+      <%= render "shared/show-details", meeting: meeting, m_index: index%>
+    <% end %>
   <% end %>
+
 </div>
 

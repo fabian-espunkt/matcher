@@ -1,4 +1,4 @@
-import "bootstrap";
+<import "bootstrap";
 import { displayCalendarInfo } from "packs/slot";
 
 displayCalendarInfo();
