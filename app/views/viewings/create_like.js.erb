@@ -1,5 +1,6 @@
-document.querySelectorAll('.matching-card')[0].remove();
 
+(function(){
+document.querySelectorAll('.matching-card')[0].remove();
 const cards = document.querySelectorAll('.matching-card');
 const counter = document.querySelector('#attendence-counter');
 var counter = document.querySelector('#attendence-counter');
@@ -10,3 +11,5 @@ var newCounter = counter;
 
 counter.innerText = newCounter;
 console.log(newCounter);
+
+})()

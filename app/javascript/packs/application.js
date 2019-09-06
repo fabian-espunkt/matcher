@@ -1,7 +1,8 @@
-<import "bootstrap";
+import "bootstrap";
 import { displayCalendarInfo } from "packs/slot";
+const slots = document.querySelectorAll('.slot');
 
-displayCalendarInfo();
+if(slots) displayCalendarInfo();
 
 // const calendar = document.querySelectorAll(".appointments-table");
 
