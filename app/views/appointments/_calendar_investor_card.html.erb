@@ -30,11 +30,16 @@
               <% end %>
             </tr>
           <% end %>
+        </tbody>
+      </table>
     <% else %>
       <div class="text-center mt-5">
         <p>No meetings scheduled (yet) – <%= link_to "match", attendances_path %> more profiles, or go to your <%= link_to "selection", meetings_path %> or come back later!</p>
       </div>
-        </tbody>
-    </table>
     <% end %>
-  </div>
+
+  <% if @all_meetings_i.present? %>
+    <%= render "shared/show-details", meeting: @meetings_i.first %>
+  <% end %>
+</div>
+
