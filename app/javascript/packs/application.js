@@ -1,23 +1,14 @@
 import "bootstrap";
 import { displayCalendarInfo } from "packs/slot";
 
+displayCalendarInfo();
 
-displayCalendarInfo()
-// const cards = document.querySelectorAll('.matching-card');
-// let index = 0;
-// const likeBtn = document.getElementById('like-button');
+// const calendar = document.querySelectorAll(".appointments-table");
 
-// cards.forEach((card) => {
-//   if (index !== 0) {
-//     card.style.display = 'none';
-//   }
-//   index += 1;
-//   card.addEventListener('click', (event) => {
-//     card.style.display = 'none';
-//     card.nextSibling.nextSibling.style.display = "";
-
-//   })
-// });
+//   if(calendar) {
+//     console.log(calendar)
+//     displayCalendarInfo();
+//   };
 
 
 
