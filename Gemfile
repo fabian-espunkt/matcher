@@ -20,7 +20,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem "simple_calendar", "~> 2.0"
 gem 'cloudinary', '~> 1.9.1'
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', '~> 1.3'
 gem 'bootstrap-select-rails'
 gem 'autonumeric-rails'
 
